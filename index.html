@@ -43,18 +43,18 @@
     "@type": "PaintingContractor",
     "name": "{{MARQUE}}",
     "url": "https://{{URL}}",
-    "logo": "https://{{URL}}/public/images/logo.webp",
+    "logo": "https://{{URL}}/public/images/logo-{{SLUG}}.webp",
     "telephone": "{{TEL}}",
     "description": "{{VAR_META_DESC}}",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "{{NOM}}",
+      "addressLocality": "{{NOM_COMPLET}}",
       "postalCode": "{{CODE_POSTAL}}",
       "addressCountry": "FR"
     },
     "areaServed": {
       "@type": "City",
-      "name": "{{NOM}}"
+      "name": "{{NOM_COMPLET}}"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -62,7 +62,10 @@
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peinture intérieure" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peinture extérieure" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pose de papiers peints et revêtements muraux" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ravalement de façade" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pose de papiers peints et revêtements muraux" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Préparation des supports et enduits" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rénovation intérieure" } }
       ]
     }
   }

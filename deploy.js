@@ -92,6 +92,44 @@ if (!skipVilles) {
 console.log('');
 console.log('─'.repeat(58));
 
+// ─── Détection de l'outil de transfert ───────────────────────────────────────
+// Utilise rsync s'il est disponible (plus efficace), sinon scp (dispo par défaut
+// sur Windows 10+ / macOS / Linux via OpenSSH).
+
+function hasCommand(cmd) {
+  try {
+    const probe = process.platform === 'win32' ? `where ${cmd}` : `command -v ${cmd}`;
+    execSync(probe, { stdio: 'ignore' });
+    return true;
+  } catch (e) { return false; }
+}
+
+const USE_RSYNC = hasCommand('rsync');
+const USE_SCP   = !USE_RSYNC && hasCommand('scp');
+
+if (!USE_RSYNC && !USE_SCP) {
+  console.error('\n❌  Ni rsync ni scp détectés. Sur Windows : installe OpenSSH (Settings → Apps → Optional features) ou Git Bash (inclut rsync).');
+  process.exit(1);
+}
+
+function uploadFolder(localPath, remotePath, label) {
+  if (USE_RSYNC) {
+    console.log(`\n📦  rsync ${label} → ${server}:${remotePath}/`);
+    execSync(`rsync -avz "${localPath}/" "${server}:${remotePath}/"`, { stdio: 'inherit' });
+  } else {
+    // scp -r upload le dossier complet. Pour que le contenu arrive dans remotePath/
+    // (comme rsync trailing-slash), on envoie les fichiers individuellement.
+    console.log(`\n📦  scp ${label} → ${server}:${remotePath}/  (rsync non dispo, transfert complet)`);
+    // Crée le dossier distant
+    try {
+      execSync(`ssh "${server}" "mkdir -p '${remotePath}'"`, { stdio: 'inherit' });
+    } catch (e) { /* ignore si existe déjà */ }
+    // Transfert récursif avec scp -r, path/* pour que le contenu soit dans remotePath
+    const quoted = process.platform === 'win32' ? `"${localPath}"` : `"${localPath}"`;
+    execSync(`scp -r ${quoted}/* "${server}:${remotePath}/"`, { stdio: 'inherit' });
+  }
+}
+
 // ─── 1. Déploiement département ──────────────────────────────────────────────
 //
 // Le sitemap du site département contient UNIQUEMENT les pages du site dept
@@ -100,11 +138,10 @@ console.log('─'.repeat(58));
 
 if (!skipDep) {
   if (fs.existsSync(localDep)) {
-    console.log(`\n📦  rsync site département → ${server}:${remoteDep}/`);
     try {
-      execSync(`rsync -avz "${localDep}/" "${server}:${remoteDep}/"`, { stdio: 'inherit' });
+      uploadFolder(localDep, remoteDep, 'site département');
     } catch (e) {
-      console.error('❌  Erreur rsync département :', e.message);
+      console.error('❌  Erreur upload département :', e.message);
     }
   } else {
     console.log(`\n⚠️  Dossier local introuvable : ${localDep}`);
@@ -115,11 +152,10 @@ if (!skipDep) {
 
 if (!skipVilles) {
   if (fs.existsSync(localVilles)) {
-    console.log(`\n📦  rsync sites villes → ${server}:${remoteVilles}/`);
     try {
-      execSync(`rsync -avz "${localVilles}/" "${server}:${remoteVilles}/"`, { stdio: 'inherit' });
+      uploadFolder(localVilles, remoteVilles, 'sites villes');
     } catch (e) {
-      console.error('❌  Erreur rsync villes :', e.message);
+      console.error('❌  Erreur upload villes :', e.message);
     }
   } else {
     console.log(`\n⚠️  Dossier local introuvable : ${localVilles}`);
