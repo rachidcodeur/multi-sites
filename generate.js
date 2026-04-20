@@ -75,7 +75,16 @@ if (!depCode || !depNomArg) {
   process.exit(1);
 }
 
-const outDir = `${depCode}-${depNomArg.toLowerCase()}`;
+// Slug du département : minuscules, sans accents, sans espaces/apostrophes
+function slugifyDep(s) {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['']/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-|-$/g, '');
+}
+const outDir = `${depCode}-${slugifyDep(depNomArg)}`;
 
 // ─── Lecture des fichiers ─────────────────────────────────────────────────────
 

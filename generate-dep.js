@@ -59,7 +59,15 @@ if (!depCode || !depNom) {
   process.exit(1);
 }
 
-const outDir = `${depCode}-${depNom.toLowerCase()}`;
+function slugifyDep(s) {
+  return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['']/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-|-$/g, '');
+}
+const outDir = `${depCode}-${slugifyDep(depNom)}`;
 
 // ─── Lecture des fichiers ─────────────────────────────────────────────────────
 
