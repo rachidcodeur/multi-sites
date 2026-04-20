@@ -134,6 +134,28 @@
       font-size: .8rem;
       margin-top: 1rem;
     }
+    .os-toggle {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.2rem;
+    }
+    .os-btn {
+      padding: .5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 60, 87, 0.15);
+      background: #fff;
+      color: #007198;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .os-btn:hover { border-color: #04bbff; }
+    .os-btn.active {
+      background: linear-gradient(135deg, #04bbff, #007198);
+      color: #fff;
+      border-color: transparent;
+    }
   </style>
 </head>
 <body>
@@ -146,6 +168,10 @@
     <div class="input-row">
       <input type="text" id="dep" placeholder="Ex : 06, 33, 2A…" autocomplete="off" autofocus>
       <button class="go" id="go">Générer</button>
+    </div>
+    <div class="os-toggle">
+      <button data-os="mac" class="os-btn active">macOS / Linux</button>
+      <button data-os="win" class="os-btn">Windows (PowerShell)</button>
     </div>
     <div id="output">
       <div class="empty">Entre un code de département pour voir les commandes</div>
@@ -196,13 +222,26 @@ function generate() {
 
   const cmd1 = `node generate-dep.js --dep ${depCode} --dep-nom ${depNom}`;
   const cmd2 = `node generate.js --dep ${depCode} --dep-nom ${depNom}`;
-  const cmd3 = `node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \\
+
+  let cmd3, combo;
+  if (currentOs === 'win') {
+    // PowerShell : backtick ` pour continuation de ligne, && fonctionne en PS 7+
+    cmd3 = `node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \`
+  --local-villes output/${dirCity} \`
+  --remote-villes /var/www/peintres/${slug} \`
+  --local-dep output/${dirDep} \`
+  --remote-dep /var/www/peintre-en-batiment-${depCode} \`
+  --server root@204.168.224.81`;
+  } else {
+    // Bash/Zsh : backslash \ pour continuation
+    cmd3 = `node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \\
   --local-villes output/${dirCity} \\
   --remote-villes /var/www/peintres/${slug} \\
   --local-dep output/${dirDep} \\
   --remote-dep /var/www/peintre-en-batiment-${depCode} \\
   --server root@204.168.224.81`;
-  const combo = `${cmd1} && ${cmd2} && ${cmd3}`;
+  }
+  combo = `${cmd1} && ${cmd2} && ${cmd3}`;
 
   out.innerHTML = `
     <div class="dep-name">${depNomRaw} (${depCode})</div>
@@ -240,7 +279,26 @@ function block(label, cmd) {
 }
 
 const STORAGE_KEY = 'cmd-dep-code';
+const OS_KEY = 'cmd-os';
 const depInput = document.getElementById('dep');
+
+// OS par défaut : auto-détecté (Windows sinon mac/linux), puis persisté
+let currentOs = localStorage.getItem(OS_KEY)
+  || (/Win/i.test(navigator.platform) ? 'win' : 'mac');
+
+function setOs(os) {
+  currentOs = os;
+  localStorage.setItem(OS_KEY, os);
+  document.querySelectorAll('.os-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.os === os);
+  });
+  if (depInput.value) generate();
+}
+
+document.querySelectorAll('.os-btn').forEach(b => {
+  b.addEventListener('click', () => setOs(b.dataset.os));
+});
+setOs(currentOs);
 
 // Restaure la dernière valeur saisie
 const saved = localStorage.getItem(STORAGE_KEY);

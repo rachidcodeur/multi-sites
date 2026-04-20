@@ -131,39 +131,44 @@ if (!skipVilles) {
 let citiesAdded = []; // villes nouvellement déployées (slug)
 
 if (!skipVilles && fs.existsSync(localVilles)) {
-  const deployedPath = path.join('dashboard-peintre', 'deployed.json');
-  let deployed = {};
-  if (fs.existsSync(deployedPath)) {
-    deployed = JSON.parse(fs.readFileSync(deployedPath, 'utf8'));
-  }
+  const dashboardDir = 'dashboard-peintre';
+  const hasDashboard = fs.existsSync(dashboardDir);
 
   const cities = fs.readdirSync(localVilles).filter(f =>
     fs.statSync(path.join(localVilles, f)).isDirectory()
   ).sort();
 
-  if (!deployed[depCode]) {
-    deployed[depCode] = { nom: depNom, cities: [] };
-  }
+  if (hasDashboard) {
+    const deployedPath = path.join(dashboardDir, 'deployed.json');
+    let deployed = {};
+    if (fs.existsSync(deployedPath)) {
+      deployed = JSON.parse(fs.readFileSync(deployedPath, 'utf8'));
+    }
 
-  // Détecter les nouvelles villes (pas déjà dans deployed.json)
-  const previousSet = new Set(deployed[depCode].cities || []);
-  citiesAdded = cities.filter(c => !previousSet.has(c));
+    if (!deployed[depCode]) {
+      deployed[depCode] = { nom: depNom, cities: [] };
+    }
 
-  // Fusionner sans doublons
-  cities.forEach(c => previousSet.add(c));
-  deployed[depCode].nom = depNom;
-  deployed[depCode].cities = [...previousSet].sort();
+    const previousSet = new Set(deployed[depCode].cities || []);
+    citiesAdded = cities.filter(c => !previousSet.has(c));
 
-  fs.writeFileSync(deployedPath, JSON.stringify(deployed, null, 2), 'utf8');
-  console.log(`\n📊  deployed.json → ${deployed[depCode].cities.length} villes pour ${depNom} (${depCode}) (+${citiesAdded.length} nouvelles)`);
+    cities.forEach(c => previousSet.add(c));
+    deployed[depCode].nom = depNom;
+    deployed[depCode].cities = [...previousSet].sort();
 
-  // ─── 4. Régénération du dashboard ──────────────────────────────────────────
+    fs.writeFileSync(deployedPath, JSON.stringify(deployed, null, 2), 'utf8');
+    console.log(`\n📊  deployed.json → ${deployed[depCode].cities.length} villes pour ${depNom} (${depCode}) (+${citiesAdded.length} nouvelles)`);
 
-  console.log('');
-  try {
-    execSync('node dashboard-peintre/generate-dashboard.js', { stdio: 'inherit' });
-  } catch (e) {
-    console.warn('⚠️  Dashboard non généré :', e.message);
+    console.log('');
+    try {
+      execSync('node dashboard-peintre/generate-dashboard.js', { stdio: 'inherit' });
+    } catch (e) {
+      console.warn('⚠️  Dashboard non généré :', e.message);
+    }
+  } else {
+    // Pas de dashboard-peintre/ (submodule non initialisé) : toutes les villes sont considérées comme nouvelles
+    citiesAdded = cities;
+    console.log(`\nℹ️  dashboard-peintre/ absent (git submodule update --init pour l'activer). Le push Sheet considère ${cities.length} villes.`);
   }
 }
 

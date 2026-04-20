@@ -1,0 +1,3 @@
+[submodule "dashboard-peintre"]
+	path = dashboard-peintre
+	url = https://github.com/rachidcodeur/dashboard-peintre.git
