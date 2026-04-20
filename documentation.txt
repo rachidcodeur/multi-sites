@@ -1,0 +1,239 @@
+# DOCUMENTATION — Générateur de sites Peintres France
+# ====================================================
+
+
+node generate-dep.js --dep 07 --dep-nom Ardeche
+
+
+node generate.js --dep 07 --dep-nom Ardeche
+
+
+node deploy.js --dep 07 --dep-nom Ardeche --with-dep \
+  --local-villes output/07-ardeche \
+  --remote-villes /var/www/peintres/ardeche \
+  --local-dep output/07-ardeche-dep \
+  --remote-dep /var/www/peintre-en-batiment-07 \
+  --server root@204.168.224.81
+
+
+
+
+
+
+
+
+
+
+# ─── COMMANDES DE GÉNÉRATION ──────────────────────────────────────────────────
+
+# 1. Site département — sitemap avec ses 3 pages uniquement (home + légales)
+node generate-dep.js --dep 06 --dep-nom Alpes-Maritimes
+
+# 2. Sites villes — chaque ville a son propre sitemap (1 URL)
+#    Le sitemap du site département n'est PAS modifié.
+node generate.js --dep 06 --dep-nom Alpes-Maritimes
+
+# 3. Déploiement sur le serveur (rsync + dashboard + Google Sheet)
+#
+# Principe :
+# - Le site département change RAREMENT → on le déploie avec --with-dep
+#   uniquement la 1re fois ou après modification du template.
+# - Les sites villes changent SOUVENT (ajout de batchs) → déploiement fréquent.
+# - Le sitemap du site département reste STATIQUE (home + 2 pages légales).
+#   Les sitemaps des villes sont individuels et ne sont pas agrégés.
+
+# 3a. PREMIÈRE FOIS — déploiement complet (site dept + villes)
+#     → /var/www/peintre-en-batiment-02/   (tout le site département)
+#     → /var/www/peintres/aisne/            (sites villes)
+node deploy.js --dep 02 --dep-nom Aisne --with-dep
+
+# 3b. AJOUT DE VILLES (cas habituel)
+#     → /var/www/peintres/aisne/            (rsync villes uniquement)
+node deploy.js --dep 02 --dep-nom Aisne
+
+# 3c. REDÉPLOYER SEULEMENT LE SITE DÉPARTEMENT (après modification du template-dep)
+node deploy.js --dep 04 --dep-nom Alpes-de-Haute-Provence --with-dep --skip-villes
+
+# 3d. Avec dossiers/serveur personnalisés :
+#     ⚠️  --local-dep doit pointer vers le dossier "*-dep" (site département),
+#         PAS vers le dossier des villes — sinon les villes seront uploadées
+#         dans le dossier distant peintre-en-batiment-XX/.
+node deploy.js --dep 06 --dep-nom Alpes-Maritimes --with-dep \
+  --local-villes output/06-alpes-maritimes \
+  --remote-villes /var/www/peintres/alpes-maritimes \
+  --local-dep output/06-alpes-maritimes-dep \
+  --remote-dep /var/www/peintre-en-batiment-06 \
+  --server root@204.168.224.81
+
+# Options disponibles :
+#   --with-dep        Inclure le site département dans le déploiement
+#   --skip-villes     Ne pas déployer les sites villes
+#   --server          Serveur SSH (défaut : root@204.168.224.81)
+#   --local-dep       Dossier local site département
+#   --local-villes    Dossier local sites villes
+#   --remote-dep      Dossier distant site département
+#   --remote-villes   Dossier distant sites villes
+
+
+
+
+
+
+
+
+# ─── FORMULAIRE DE CONTACT — CONFIGURATION SUPABASE ──────────────────────────
+
+## Étape 1 : Côté Supabase (table + API)
+
+- Créer un projet Supabase et une table (ex. leads_peinture) avec les colonnes
+  attendues par le JS : name, email, phone, postal, city, message.
+- Project Settings → API : noter l'URL du projet (https://xxxx.supabase.co)
+  et la clé anon public (PAS la service_role côté navigateur).
+- Row Level Security : créer une politique qui autorise l'INSERT pour le rôle
+  anon sur cette table, sinon erreur RLS.
+
+## Étape 2 : Fichier .env (à la racine du projet)
+
+Copier .env.example vers .env et renseigner :
+
+    SUPABASE_URL=https://votre-projet.supabase.co
+    SUPABASE_ANON_KEY=eyJ... (clé anon)
+    SUPABASE_TABLE=leads_peinture
+    SUPABASE_USE_RELATIVE_API=0 ou 1 (voir étape 3)
+
+IMPORTANT : les clés sont injectées au moment de node generate.js.
+Si le site est buildé sans ces variables (.env absent ou vide),
+le HTML généré contient un JSON vide → le formulaire affiche
+"Envoi indisponible : configuration manquante."
+Vérifier dans le index.html déployé : #supabase-config-json avec anon non vide.
+
+## Étape 3 : Choisir le mode d'appel API
+
+### Option A — Appel direct (SUPABASE_USE_RELATIVE_API=0)
+
+Le navigateur envoie un POST directement vers :
+    https://votre-projet.supabase.co/rest/v1/leads_peinture
+
+- En local : le code force l'URL directe Supabase (directUrl) quand le host
+  est localhost, 127.0.0.1, réseau privé ou file:.
+- En production : le navigateur utilise aussi l'URL directe Supabase.
+- Prérequis : dans Supabase → Settings → API → Allowed origins,
+  ajouter les domaines du site (ex: https://*.peintre-en-batiment-33.com).
+  Sans ça, CORS bloque les requêtes depuis le domaine public.
+
+### Option B — Même origine + Nginx proxy (SUPABASE_USE_RELATIVE_API=1)
+
+Le navigateur appelle https://votre-site.com/rest/v1/... (même origine).
+Nginx fait le proxy vers Supabase. Pas de problème CORS.
+
+Bloc Nginx requis dans chaque vhost (ou en include partagé) :
+
+    location /rest/v1/ {
+        proxy_pass https://votre-projet.supabase.co/rest/v1/;
+        proxy_set_header Host votre-projet.supabase.co;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_ssl_server_name on;
+    }
+
+Si ce proxy n'existe pas en prod avec SUPABASE_USE_RELATIVE_API=1,
+vous obtiendrez un 404 sur /rest/v1/.
+En local le JS repasse en URL directe, donc ça marche quand même.
+
+## Étape 4 : Régénérer et déployer
+
+    # Site département → output/33-gironde-dep/
+    node generate-dep.js --dep 33 --dep-nom Gironde
+
+    # Sites villes → output/33-gironde/
+    node generate.js --dep 33 --dep-nom Gironde --depdir output/33-gironde-dep
+
+    # Déploiement (rsync + update dashboard + push Google Sheet)
+    node deploy.js --dep 33 --dep-nom Gironde
+
+Sans cette étape après avoir rempli .env, le site en ligne peut encore
+être une ancienne version sans config Supabase.
+
+## Étape 5 : Vérifications rapides en ligne
+
+- Ouvrir le site en HTTPS (pas en file://).
+- F12 → Réseau → soumettre le formulaire → regarder la requête POST.
+- Statut 200/201 : OK
+- Statut 401/403 : clé ou JWT incorrect
+- Statut 404 : mauvaise URL ou proxy Nginx manquant
+- Message RLS : politique Supabase manquante (INSERT anon non autorisé)
+
+## Synthèse rapide
+
+| # | Action                                                        |
+|---|---------------------------------------------------------------|
+| 1 | Table + RLS INSERT anon + colonnes attendues                  |
+| 2 | SUPABASE_URL + SUPABASE_ANON_KEY dans .env                    |
+| 3 | Choisir mode 0 (direct + origines Supabase) ou 1 (Nginx)     |
+| 4 | node generate.js puis déployer le HTML généré                 |
+| 5 | Si direct : origines autorisées dans Supabase pour chaque domaine |
+| 6 | Si relatif : Nginx /rest/v1/ sur le même domaine que le site  |
+
+
+# ─── VARIABLES DISPONIBLES DANS LES TEMPLATES ────────────────────────────────
+
+## Variables statiques (villes)
+
+| Variable         | Exemple                    |
+|------------------|----------------------------|
+| {{NOM}}          | Bouscat                    |
+| {{NOM_COMPLET}}  | Le Bouscat                 |
+| {{NOM_A}}        | au Bouscat                 |
+| {{NOM_DE}}       | du Bouscat                 |
+| {{NOM_MAJ}}      | LE BOUSCAT                 |
+| {{CODE_POSTAL}}  | 33110                      |
+| {{DEP_NOM}}      | Gironde                    |
+| {{DEP_NOM_A}}    | en Gironde                 |
+| {{DEP_NOM_DE}}   | de Gironde                 |
+| {{DEP_CODE}}     | 33                         |
+| {{URL}}          | le-bouscat.peintre-en-batiment-33.com |
+| {{SLUG}}         | le-bouscat                 |
+| {{MARQUE}}       | Peintre Le Bouscat         |
+| {{MARQUE_MAJ}}   | PEINTRE LE BOUSCAT         |
+| {{TEL}}          | 05 56 XX XX XX             |
+| {{TEL_HREF}}     | tel:+33556XXXXXX           |
+
+## Variables statiques (département)
+
+Mêmes variables, avec en plus :
+| {{NOM_A}}        | en Gironde (= DEP_NOM_A)   |
+| {{NOM_DE}}       | de Gironde (= DEP_NOM_DE)  |
+
+## Variables dynamiques (5 variantes par ville, depuis data/variables.json)
+
+| Variable                  | Description                          |
+|---------------------------|--------------------------------------|
+| {{VAR_TITLE_ARG}}         | Argument titre page                  |
+| {{VAR_META_DESC}}         | Meta description                     |
+| {{VAR_HERO_LEAD}}         | Accroche bannière                    |
+| {{VAR_MISSION}}           | Notre mission                        |
+| {{VAR_VISION}}            | Notre vision                         |
+| {{VAR_DEVIS}}             | Nos devis                            |
+| {{VAR_MATERIAUX}}         | Matériaux & garanties                |
+| {{VAR_SERVICES_TITLE}}    | Titre section services               |
+| {{VAR_SERVICES_INTRO}}    | Introduction services                |
+| {{VAR_SERVICE_INT}}       | Peinture intérieure                  |
+| {{VAR_SERVICE_EXT}}       | Peinture extérieure                  |
+| {{VAR_PAPIER_PEINT}}      | Pose papier peint                    |
+| {{VAR_CTA_TITLE}}         | Titre section appel                  |
+| {{VAR_CTA}}               | Texte section appel                  |
+| {{VAR_REVIEWS_INTRO}}     | Introduction témoignages             |
+| {{VAR_WHY_INTRO}}         | Introduction pourquoi nous choisir   |
+| {{VAR_WHY_LOCAL_1/2}}     | Card basé localement (2 parties)     |
+| {{VAR_WHY_MATERIALS_1/2}} | Card matériaux qualité (2 parties)   |
+| {{VAR_WHY_CLEAN_1/2}}     | Card chantier propre (2 parties)     |
+| {{VAR_FOOTER_DESC}}       | Texte footer                         |
+| {{VAR_REVIEW_1_TEXT}}     | Avis 1 texte                         |
+| {{VAR_REVIEW_1_AUTHOR}}   | Avis 1 auteur                        |
+| {{VAR_REVIEW_1_CONTEXT}}  | Avis 1 prestation                    |
+| {{VAR_REVIEW_2_TEXT}}     | Avis 2 texte                         |
+| {{VAR_REVIEW_2_AUTHOR}}   | Avis 2 auteur                        |
+| {{VAR_REVIEW_2_CONTEXT}}  | Avis 2 prestation                    |
+| {{VAR_REVIEW_3_TEXT}}     | Avis 3 texte                         |
+| {{VAR_REVIEW_3_AUTHOR}}   | Avis 3 auteur                        |
+| {{VAR_REVIEW_3_CONTEXT}}  | Avis 3 prestation                    |
+

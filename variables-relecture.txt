@@ -1,0 +1,549 @@
+TEXTES DU SITE — DOCUMENT DE RELECTURE
+=======================================
+Chaque rubrique contient 5 versions d'un même texte.
+Le site choisit automatiquement une version différente pour chaque ville.
+
+Note sur les mots entre accolades : ils sont remplacés automatiquement.
+  [VILLE]        → nom de la ville          ex : Bordeaux
+  [à/en VILLE]   → "à Bordeaux", "en Gironde"
+  [du/de VILLE]  → "des habitants de Bordeaux"
+  [MARQUE]       → "Peintre Bordeaux 33"
+  [DÉPARTEMENT]  → Gironde
+  [CODE POSTAL]  → 33000
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. ARGUMENT DU TITRE DE LA PAGE (onglet navigateur)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Exemple d'utilisation : "Peintre en Bâtiment - 33000 | [VERSION CI-DESSOUS]"
+
+Version 1 : Entreprise de peinture
+Version 2 : Professionnel de la peinture
+Version 3 : Expert de la peinture
+Version 4 : Artisan peintre qualifié
+Version 5 : Spécialiste en peinture
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. DESCRIPTION META (texte affiché dans Google)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Peintre [à/en VILLE] ([CODE POSTAL]). Peinture intérieure, extérieure, ravalement de façade et revêtements muraux. Devis gratuit par votre artisan peintre [à/en VILLE].
+
+Version 2 :
+Artisan peintre [à/en VILLE] — peinture intérieure, extérieure et ravalement de façade. Devis gratuit, intervention rapide dans tout le [DÉPARTEMENT]. Contactez [MARQUE].
+
+Version 3 :
+Entreprise de peinture [à/en VILLE] : peinture intérieure, extérieure, pose de papier peint. Devis gratuit par artisan qualifié — [MARQUE], [CODE POSTAL].
+
+Version 4 :
+[MARQUE] — spécialiste de la peinture [à/en VILLE]. Peinture intérieure et extérieure, pose de papier peint, ravalement. Devis gratuit et intervention rapide dans le [DÉPARTEMENT].
+
+Version 5 :
+Votre peintre [à/en VILLE] ([CODE POSTAL]) : peinture intérieure, extérieure, ravalement de façade. Artisan qualifié, devis gratuit, résultat garanti. [MARQUE].
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. PHRASE D'ACCROCHE — BANNIÈRE PRINCIPALE (hero lead)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+[MARQUE], nous mettons notre savoir-faire en peinture intérieure et extérieure au service des habitants [du/de VILLE] pour embellir et protéger votre habitat.
+
+Version 2 :
+Artisan peintre [à/en VILLE], nous intervenons sur tous vos travaux de peinture intérieure et extérieure pour transformer et valoriser votre habitat.
+
+Version 3 :
+Votre spécialiste de la peinture [à/en VILLE] — nous prenons en charge chaque chantier avec soin, du choix des teintes jusqu'à la dernière couche de finition.
+
+Version 4 :
+Expert en peinture [à/en VILLE], [MARQUE] réalise tous vos travaux intérieurs et extérieurs avec des matériaux professionnels et une finition impeccable.
+
+Version 5 :
+Depuis de nombreuses années, [MARQUE] accompagne les particuliers et professionnels [du/de VILLE] dans leurs projets de peinture intérieure et extérieure.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. NOTRE MISSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous répondons aux exigences de chaque client en livrant des finitions irréprochables, du sol au plafond. Nous réalisons l'ensemble de nos travaux de peinture, de la préparation des supports jusqu'à la dernière couche de finition. La conception de votre projet décoratif, le choix des teintes et l'exécution des travaux sont assurés par nos spécialistes.
+
+Version 2 :
+Notre mission est de transformer vos espaces en livrant des finitions soignées et durables, sur tous types de supports. De la préparation minutieuse des murs jusqu'à l'application des dernières couches, chaque étape est maîtrisée par notre équipe. Nous accompagnons nos clients du premier conseil jusqu'à la réception du chantier.
+
+Version 3 :
+Nous nous engageons à répondre aux attentes de chaque projet avec rigueur et professionnalisme. Peinture intérieure, extérieure ou pose de revêtements muraux — chaque intervention est réalisée selon les règles de l'art. Notre objectif : vous remettre un chantier impeccable, dans les délais convenus.
+
+Version 4 :
+Chaque chantier est pour nous l'occasion de démontrer notre exigence : supports parfaitement préparés, peintures soigneusement appliquées, finitions irréprochables. Nous ne livrons pas un chantier tant que le résultat ne répond pas pleinement à vos attentes. Votre satisfaction est notre priorité absolue.
+
+Version 5 :
+Notre mission repose sur trois engagements simples : qualité des finitions, respect des délais et transparence des prix. De la peinture intérieure au ravalement de façade, chaque intervention est réalisée avec le même soin. Nous travaillons pour vous laisser un espace dont vous serez fiers.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. NOTRE VISION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Notre passion pour le métier de peintre nous permet de proposer des prestations qui vont bien au-delà du simple coup de pinceau. L'excellence de notre travail repose sur notre attention minutieuse aux préparations de surface, aux raccords et aux finitions décoratives. Nous nous engageons à rester à l'écoute de nos clients pour traduire leurs envies en réalisations concrètes et durables.
+
+Version 2 :
+Nous croyons que la peinture est avant tout un art au service du bien-être. Chaque chantier est une occasion de révéler le potentiel d'un espace grâce à un travail soigné et des matériaux de qualité. Notre vision : des intérieurs et des façades qui vous ressemblent, conçus avec vous et réalisés avec soin.
+
+Version 3 :
+Notre approche va au-delà de l'application de peinture : nous sommes des partenaires de votre projet décoratif. Nous conseillons, préparons, réalisons et livrons avec le souci constant du détail. La satisfaction de nos clients est notre meilleure récompense, et chaque chantier terminé renforce notre engagement envers la qualité.
+
+Version 4 :
+Chez [MARQUE], nous pensons qu'un beau résultat commence par une préparation rigoureuse. C'est pourquoi nous consacrons autant de temps au traitement des supports qu'à l'application finale. Cette exigence se traduit par des finitions durables et un rendu esthétique qui dépasse vos attentes.
+
+Version 5 :
+Notre vision du métier : un artisan peintre n'est pas seulement un exécutant, il est un conseiller. Nous accompagnons chaque client dans ses choix — teintes, matières, finitions — pour que le résultat soit à la fois beau et durable. Un engagement humain autant que technique, à chaque chantier.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. NOS DEVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Chaque devis est établi après une visite sur site : nous mesurons les surfaces, évaluons les supports et sélectionnons les produits adaptés. Notre chiffrage est détaillé, poste par poste, sans ligne floue ni frais cachés. Nous nous engageons sur un prix validé avant le démarrage des travaux.
+
+Version 2 :
+Avant chaque intervention, nous réalisons une visite gratuite pour évaluer précisément l'état des surfaces et les besoins du chantier. Le devis que nous vous remettons est clair, détaillé et sans surprise : vous savez exactement ce que vous payez. Aucun travail supplémentaire n'est facturé sans votre accord préalable.
+
+Version 3 :
+Nous établissons chaque devis sur mesure après une visite technique à domicile. Chaque poste est détaillé : préparation, fournitures, main-d'œuvre et finitions. Vous bénéficiez d'un engagement ferme sur les prix et les délais, sans mauvaise surprise à la réception.
+
+Version 4 :
+Notre processus de devis est simple et transparent : visite gratuite sur site, analyse des surfaces, sélection des produits adaptés, chiffrage détaillé poste par poste. Nous vous remettons un document complet sous 48 heures. Aucun frais caché, aucune surprise en cours de chantier.
+
+Version 5 :
+Nous croyons en la transparence totale : chaque devis est précédé d'une visite sur site et d'un diagnostic complet des surfaces. Le chiffrage que nous vous proposons est ferme, détaillé et sans frais cachés. Vous signez en connaissance de cause et nous respectons l'engagement à la lettre.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. MATÉRIAUX & GARANTIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous travaillons avec des peintures et enduits professionnels à faible émission de COV, sélectionnés parmi les meilleures marques du marché. Chaque produit est choisi en fonction du support, de l'exposition et du résultat attendu pour une durabilité maximale. L'ensemble de nos travaux est couvert par une assurance décennale et une garantie de parfait achèvement.
+
+Version 2 :
+Nos chantiers sont réalisés exclusivement avec des produits professionnels certifiés, sélectionnés pour leur performance et leur respect de l'environnement. Nous travaillons avec des marques reconnues : Tollens, Zolpan, Saint-Gobain Weber, garantissant tenue dans le temps et rendu esthétique optimal. Tous nos travaux sont assurés en décennale.
+
+Version 3 :
+La qualité de nos finitions repose en grande partie sur le choix des matériaux. Nous utilisons uniquement des peintures et enduits professionnels adaptés à chaque support et condition d'exposition. Chaque chantier bénéficie de notre assurance décennale, pour votre tranquillité d'esprit sur le long terme.
+
+Version 4 :
+Choisir de bons matériaux, c'est choisir la durabilité. Nous sélectionnons rigoureusement nos peintures, enduits et primaires parmi les références professionnelles du secteur, faibles en COV et certifiées. Résultat : des chantiers qui tiennent dans le temps, sans retouche prématurée, couverts par notre garantie décennale.
+
+Version 5 :
+Nos peintures et enduits sont issus des meilleures gammes professionnelles — Tollens, Meffre, Zolpan, Weber — choisies pour leur performance technique et leur faible impact environnemental. Chaque produit est sélectionné en fonction de votre support et de vos contraintes. Nos travaux sont couverts par une assurance décennale et une garantie de parfait achèvement.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. TITRE DE LA SECTION SERVICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Exemple : "[VERSION CI-DESSOUS] à Bordeaux"
+
+Version 1 : Nos services de peinture
+Version 2 : Nos prestations de peinture
+Version 3 : Nos travaux de peinture
+Version 4 : Les prestations que nous proposons
+Version 5 : Les services que nous proposons
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. INTRODUCTION SERVICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Votre peintre [à/en VILLE] intervient sur l'ensemble de vos travaux de peinture intérieure et extérieure. Nous couvrons tout le département de [DÉPARTEMENT] avec des équipes qualifiées et du matériel professionnel. Chaque prestation est réalisée selon les règles de l'art, avec des peintures et enduits sélectionnés pour leur performance et leur longévité. Résultat garanti, délais respectés, chantier laissé propre : c'est la promesse de votre peintre [à/en VILLE].
+
+Version 2 :
+[MARQUE] propose une gamme complète de services de peinture pour particuliers et professionnels. Du simple rafraîchissement intérieur au ravalement de façade, nos équipes interviennent sur tous types de chantiers dans tout le [DÉPARTEMENT]. Matériaux premium, délais tenus et finitions impeccables : notre engagement à chaque intervention.
+
+Version 3 :
+Spécialiste de la peinture [à/en VILLE], nous intervenons sur tous vos projets intérieurs et extérieurs. Nos peintres qualifiés couvrent l'ensemble du département de [DÉPARTEMENT] avec réactivité et professionnalisme. Chaque prestation est accompagnée d'un suivi personnalisé pour un résultat à la hauteur de vos attentes.
+
+Version 4 :
+De la peinture intérieure au ravalement de façade, [MARQUE] couvre l'ensemble de vos besoins en travaux de peinture. Nos équipes interviennent rapidement dans tout le [DÉPARTEMENT], avec des produits de qualité professionnelle et une organisation sans faille. Chaque chantier est suivi de bout en bout par un artisan référent.
+
+Version 5 :
+[MARQUE] met son expertise au service de tous vos chantiers de peinture [à/en VILLE] et dans tout le [DÉPARTEMENT]. Peinture intérieure, extérieure ou revêtements muraux — nous intervenons avec les mêmes exigences de qualité, quels que soient la surface et le budget. Devis gratuit, délais respectés, résultat garanti.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. PEINTURE INTÉRIEURE — DESCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nos peintres interviennent sur tous vos supports intérieurs — placo, plâtre, béton, bois — avec des peintures professionnelles à faible émission de COV, disponibles en finition mate, satinée ou brillante selon l'usage de chaque pièce.
+
+Version 2 :
+De la préparation des murs à la couche de finition, nous traitons tous vos supports intérieurs avec des produits professionnels adaptés. Plâtre, béton, bois ou placo : chaque surface reçoit le traitement et la peinture qui lui convient, pour un résultat durable et esthétique.
+
+Version 3 :
+Nos équipes prennent en charge vos travaux de peinture intérieure de A à Z : rebouchage, enduit, sous-couche et finition. Nous utilisons des peintures professionnelles faible COV, disponibles dans toutes les finitions, pour des intérieurs sains et lumineux.
+
+Version 4 :
+Rénovation complète ou simple rafraîchissement, nous adaptons notre intervention à vos besoins. Préparation soignée des supports, application en plusieurs couches, finition mate, satinée ou brillante : chaque pièce est traitée avec le même soin et les mêmes matériaux professionnels.
+
+Version 5 :
+Nous maîtrisons l'ensemble des techniques de peinture intérieure : enduit lissé, peinture décorative, badigeon, lazure sur bois. Chaque support est préparé et traité selon sa nature pour garantir une adhérence parfaite et une finition durable, dans toutes les gammes de teintes.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11. PEINTURE EXTÉRIEURE — DESCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous traitons vos façades de A à Z : nettoyage haute pression, reprise des fissures, primaire fixateur, puis application de peintures hydrofuges, minérales ou acryliques sélectionnées pour leur résistance au climat.
+
+Version 2 :
+Votre façade mérite une protection durable contre les intempéries. Nous intervenons sur tout type de support extérieur — enduit, béton, pierre, bardage — avec des peintures et revêtements sélectionnés pour leur résistance et leur longévité. Diagnostic, traitement des fissures et application soignée font partie de chaque intervention.
+
+Version 3 :
+Du nettoyage haute pression au ravalement complet, nous assurons la rénovation et la protection de vos façades. Chaque chantier extérieur débute par un diagnostic précis des supports pour sélectionner les produits les plus adaptés : peintures minérales, acryliques ou hydrofuges selon la nature du mur.
+
+Version 4 :
+La peinture extérieure est bien plus qu'un embellissement : c'est une protection essentielle contre l'humidité, les UV et les variations de température. Nous réalisons chaque ravalement avec rigueur, du décapage au dernier enduit de finition, avec des produits certifiés adaptés au bâti local.
+
+Version 5 :
+Façades en pierre, en béton, en enduit ou en bardage : nous adaptons notre méthode et nos produits à chaque support. Nettoyage, traitement des fissures, primaire d'accrochage, peinture de finition — chaque étape est réalisée par nos équipes avec soin et précision pour un résultat durable.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+12. POSE DE PAPIER PEINT — DESCRIPTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous assurons la mise en œuvre de tous vos revêtements muraux — intissé, vinyle, panoramique, toile de verre — avec une préparation rigoureuse du support et des raccords de motifs soignés jusqu'au dernier centimètre.
+
+Version 2 :
+La pose de papier peint demande précision et expérience. Nos poseurs maîtrisent tous les types de revêtements : intissé, vinyle, panoramique, toile de verre. Préparation du support, application de la colle adaptée et raccords parfaits — un travail minutieux pour un résultat impeccable.
+
+Version 3 :
+Experts en revêtements muraux, nous posons tous types de papiers peints et revêtements décoratifs. Du classique intissé au papier panoramique, chaque pose est réalisée avec soin : support préparé, motifs raccordés, finitions propres. Un résultat décoratif à la hauteur de vos envies.
+
+Version 4 :
+Du papier peint intissé au revêtement panoramique grand format, nos poseurs maîtrisent toutes les techniques de mise en œuvre. Nous préparons soigneusement chaque support pour garantir une adhérence parfaite, des raccords impeccables et une pose sans bulles ni plis.
+
+Version 5 :
+La pose de revêtements muraux est un art que nous pratiquons avec exigence. Intissé, vinyle, toile de verre ou papier panoramique — chaque type de revêtement nécessite une technique spécifique que nos poseurs maîtrisent parfaitement. Résultat : une finition décorative durable et soignée jusqu'au moindre détail.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+13. TITRE SECTION APPEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Exemple : "[VERSION CI-DESSOUS] à Bordeaux"
+
+Version 1 : Appelez votre peintre professionnel
+Version 2 : Contactez votre artisan peintre
+Version 3 : Votre peintre à votre service
+Version 4 : Obtenez votre devis peinture gratuit
+Version 5 : Parlons de votre projet de peinture
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+14. TEXTE SECTION APPEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nos peintres répondent à vos appels du lundi au samedi, de 8 h à 19 h, pour tout renseignement ou demande de devis. Un simple coup de fil suffit pour convenir d'un rendez-vous sur site, dans les communes avoisinantes. Nous sommes à l'écoute sans engagement : appelez-nous, nous trouvons ensemble la meilleure solution pour votre projet.
+
+Version 2 :
+Vous avez un projet de peinture intérieure, extérieure ou de pose de papier peint ? Appelez-nous directement pour un premier échange sans engagement. Nos conseillers sont disponibles du lundi au samedi pour répondre à toutes vos questions et planifier une visite gratuite.
+
+Version 3 :
+Un projet, une question, une urgence ? Notre équipe est joignable du lundi au samedi, de 8 h à 19 h. Nous vous rappelons rapidement pour faire le point sur votre chantier et vous proposer un rendez-vous sur site dans les meilleurs délais.
+
+Version 4 :
+Ne laissez pas votre projet en attente. Un appel suffit pour obtenir un premier conseil, estimer votre chantier et fixer un rendez-vous de visite gratuite. Nos artisans sont disponibles du lundi au samedi — réactifs, à l'écoute et sans engagement de votre part.
+
+Version 5 :
+Vous souhaitez rénover, rafraîchir ou embellir votre intérieur ou votre façade ? Notre équipe vous répond du lundi au samedi, de 8 h à 19 h. En quelques minutes, nous évaluons votre besoin et planifions une visite pour vous remettre un devis précis et sans surprise.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+15. INTRODUCTION TÉMOIGNAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Des particuliers et professionnels nous font confiance depuis plus de 20 ans pour leurs travaux de peinture intérieure et extérieure.
+
+Version 2 :
+Chaque année, des dizaines de clients nous confient la rénovation et l'embellissement de leur habitat. Voici quelques témoignages.
+
+Version 3 :
+La qualité de notre travail se reflète dans la satisfaction de nos clients. Découvrez leurs retours d'expérience.
+
+Version 4 :
+Nos clients sont nos meilleurs ambassadeurs. Voici ce qu'ils disent de nos interventions de peinture intérieure et extérieure.
+
+Version 5 :
+Depuis plus de 20 ans, particuliers et professionnels nous font confiance. Quelques témoignages parmi nos chantiers récents.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+16. INTRODUCTION "POURQUOI NOUS CHOISIR"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Expérience, qualité des matériaux et respect de votre cadre de vie : trois piliers qui font la différence sur chaque chantier.
+
+Version 2 :
+Ce qui nous distingue, c'est notre engagement constant envers la qualité, la transparence et le respect de votre espace de vie.
+
+Version 3 :
+Réactivité, savoir-faire et honnêteté : les valeurs qui guident chacune de nos interventions, du premier contact à la réception.
+
+Version 4 :
+Choisir [MARQUE], c'est choisir un artisan local, des matériaux premium et un engagement sans faille sur la qualité et les délais.
+
+Version 5 :
+Trois raisons de nous faire confiance : notre ancrage local, notre exigence sur les matériaux et notre respect total de votre espace de vie.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+17. CARD "BASÉ [à/en VILLE]" — PARTIE 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Ancrés localement, nous connaissons parfaitement les spécificités du bâti [à/en VILLE] et les contraintes techniques de chaque quartier.
+
+Version 2 :
+Présents [à/en VILLE] depuis de nombreuses années, nous maîtrisons le tissu local et les spécificités architecturales du secteur.
+
+Version 3 :
+Notre ancrage local [à/en VILLE] est un véritable atout pour nos clients : connaissance du bâti, des contraintes climatiques et des attentes des habitants.
+
+Version 4 :
+Travailler avec un artisan local, c'est bénéficier d'une réactivité que les grandes enseignes ne peuvent pas offrir.
+
+Version 5 :
+Notre implantation [à/en VILLE] nous permet d'intervenir vite et d'anticiper les contraintes propres au bâti du secteur.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18. CARD "BASÉ [à/en VILLE]" — PARTIE 2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Cette proximité nous permet d'intervenir rapidement et d'adapter nos méthodes à chaque situation. Artisan disponible sous 48 heures, sans surcoût de déplacement.
+
+Version 2 :
+Cette connaissance du terrain nous permet d'anticiper les contraintes et de proposer les solutions les plus adaptées — sans frais de déplacement supplémentaires.
+
+Version 3 :
+Une réactivité garantie, un déplacement sans surcoût, pour un service de proximité au quotidien.
+
+Version 4 :
+Nous intervenons rapidement, connaissons les spécificités des constructions du secteur et nous déplaçons sans frais supplémentaires. Un vrai service de proximité.
+
+Version 5 :
+Artisan indépendant, nous privilégions la relation directe, la transparence sur les travaux et la disponibilité à chaque étape du chantier.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+19. CARD "MATÉRIAUX DE QUALITÉ" — PARTIE 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous sélectionnons nos peintures et enduits parmi les meilleures marques professionnelles : Tollens, Zolpan, Meffre, Saint-Gobain Weber.
+
+Version 2 :
+La qualité de nos finitions repose d'abord sur le choix des matériaux. Nous travaillons exclusivement avec des produits professionnels certifiés.
+
+Version 3 :
+Chaque produit que nous utilisons est soigneusement sélectionné pour ses performances techniques et sa durabilité.
+
+Version 4 :
+Utiliser de bons matériaux, c'est la condition d'une belle finition qui dure. Nous travaillons avec les meilleures marques professionnelles du marché.
+
+Version 5 :
+Nos approvisionnements sont exclusivement professionnels : peintures haut de gamme, enduits certifiés, primaires d'accrochage de qualité.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+20. CARD "MATÉRIAUX DE QUALITÉ" — PARTIE 2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Chaque produit est choisi selon le support, l'exposition et le résultat attendu pour une durabilité maximale. Des matériaux premium, une finition qui résiste dans le temps.
+
+Version 2 :
+Ce choix rigoureux garantit des chantiers durables, esthétiques et nécessitant peu d'entretien.
+
+Version 3 :
+Peintures faible COV, enduits de qualité professionnelle, primaires adaptés : rien n'est laissé au hasard. Vos travaux sont protégés dans la durée, sans entretien prématuré.
+
+Version 4 :
+Nous adaptons systématiquement le produit au support, à l'exposition et au résultat souhaité. La qualité se voit dès la pose et se confirme dans la durée.
+
+Version 5 :
+Ces choix rigoureux se traduisent par des rendus plus beaux, plus durables et plus faciles à entretenir. Un investissement qui se justifie chantier après chantier.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+21. CARD "CHANTIER PROPRE" — PARTIE 1
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Avant chaque intervention, nous protégeons l'intégralité de vos sols, meubles et équipements avec des bâches et films de protection renforcés.
+
+Version 2 :
+Le respect de votre espace de vie fait partie intégrante de notre prestation. Bâchage complet avant chaque intervention et nettoyage quotidien du chantier.
+
+Version 3 :
+Nous prenons soin de votre intérieur comme du nôtre. Protections de sols et meubles systématiques, nettoyage en fin de journée.
+
+Version 4 :
+Le bâchage complet de vos sols, meubles et équipements est systématique avant toute intervention. En cours de chantier, nous maintenons un espace de travail propre et rangé.
+
+Version 5 :
+Nous considérons que le respect de votre espace est aussi important que la qualité de nos finitions. Films de protection, bâches renforcées et nettoyage quotidien.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+22. CARD "CHANTIER PROPRE" — PARTIE 2
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous assurons un nettoyage complet du chantier en fin de journée et à la réception. Vous retrouvez votre espace impeccable dès la livraison, sans aucune trace de peinture.
+
+Version 2 :
+Votre intérieur ou extérieur est rendu dans un état irréprochable à la réception. Un chantier propre est une promesse que nous tenons à chaque mission.
+
+Version 3 :
+Chantier rendu propre à la réception : vous ne devez pas avoir à nettoyer après notre passage.
+
+Version 4 :
+À la livraison, votre logement est rendu sans aucune trace de notre passage — propre, net et impeccable.
+
+Version 5 :
+Chaque chantier est conduit avec la même discipline : évacuation rigoureuse des déchets, espace de travail tenu propre. Votre quotidien est perturbé au minimum.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23. TEXTE DU FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Faites appel à [MARQUE] pour des services de peinture de confiance dans tout le [DÉPARTEMENT]. Pour un service rapide, soigné et efficace, contactez-nous dès maintenant.
+
+Version 2 :
+[MARQUE] — votre artisan peintre de confiance [à/en VILLE]. Peinture intérieure, extérieure, pose de revêtements muraux. Devis gratuit, intervention rapide.
+
+Version 3 :
+Spécialiste de la peinture depuis plus de 20 ans, [MARQUE] intervient sur tous vos chantiers dans le [DÉPARTEMENT]. Qualité, réactivité et transparence à chaque prestation.
+
+Version 4 :
+[MARQUE] — artisan peintre local, au service des particuliers et professionnels du [DÉPARTEMENT]. Peinture intérieure, extérieure, ravalement. Devis gratuit sans engagement.
+
+Version 5 :
+Votre projet de peinture mérite un artisan de confiance. [MARQUE] intervient [à/en VILLE] et dans tout le [DÉPARTEMENT] avec rigueur, ponctualité et le souci constant du détail.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+24. TÉMOIGNAGES CLIENTS — 5 GROUPES DE 3 AVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Chaque groupe contient 3 avis. Le site choisit un groupe entier pour chaque ville.
+
+─────────────────────────────────────────
+GROUPE 1
+─────────────────────────────────────────
+Avis 1
+Texte : Nous avons fait appel à [MARQUE] pour la rénovation complète de notre appartement et nous sommes pleinement satisfaits du résultat. L'équipe est sérieuse, soignée dans son travail et très respectueuse des délais annoncés. Finitions impeccables, chantier rendu propre. Je les recommande sans hésitation.
+Auteur : Séverin PARMENTIER
+Prestation : Peinture intérieure
+
+Avis 2
+Texte : Les prestations de [MARQUE] ont largement dépassé mes attentes. Ils ont réalisé le ravalement de ma façade avec un soin remarquable et m'ont conseillé sur le choix des teintes et des enduits adaptés à mon mur en pierre. Un service professionnel de bout en bout, du devis à la réception.
+Auteur : Ninon MEYER
+Prestation : Peinture extérieure
+
+Avis 3
+Texte : Nous avons confié la peinture complète de notre maison à cette équipe et nous ne regrettons absolument pas ce choix. Travail réalisé rapidement, proprement, avec une finition impeccable sur les boiseries et les murs. Prix honnête, équipe sympathique et professionnelle.
+Auteur : Matthieu NICOLAS
+Prestation : Peinture intérieure & extérieure
+
+─────────────────────────────────────────
+GROUPE 2
+─────────────────────────────────────────
+Avis 1
+Texte : Excellent travail de la part de [MARQUE]. La pose du papier peint dans notre salon a été réalisée avec un soin exceptionnel, les raccords sont parfaits et le résultat est exactement ce que nous espérions. Équipe ponctuelle, propre et très professionnelle.
+Auteur : Isabelle RENAUD
+Prestation : Pose de papier peint
+
+Avis 2
+Texte : Très satisfaite de la prestation de [MARQUE] pour la peinture de notre façade. Devis rapide, travaux soignés, respect total des délais. La façade est magnifique et la propriété a retrouvé tout son éclat. Je recommande vivement cet artisan sérieux et compétent.
+Auteur : Christine DUPUIS
+Prestation : Peinture extérieure
+
+Avis 3
+Texte : Nous avons fait refaire la totalité de notre appartement par [MARQUE]. Du premier contact jusqu'à la livraison, tout s'est passé de façon fluide et professionnelle. Les finitions sont d'une qualité remarquable et le chantier était impeccable à chaque fin de journée.
+Auteur : Laurent FISCHER
+Prestation : Peinture intérieure complète
+
+─────────────────────────────────────────
+GROUPE 3
+─────────────────────────────────────────
+Avis 1
+Texte : J'ai fait appel à [MARQUE] pour repeindre l'ensemble de mes pièces de vie. Le résultat est bluffant : les murs sont parfaitement lisses, les couleurs sont exactement celles que j'avais choisies. L'équipe est rapide, propre et très agréable. Je ferai encore appel à eux sans hésitation.
+Auteur : Camille BERTRAND
+Prestation : Peinture intérieure
+
+Avis 2
+Texte : Service exceptionnel de [MARQUE] pour notre ravalement de façade. Diagnostic complet, traitement des fissures, peinture hydrofuge de qualité : tout a été fait dans les règles de l'art. Notre maison a retrouvé une belle apparence et est maintenant parfaitement protégée.
+Auteur : Thomas LEROY
+Prestation : Ravalement de façade
+
+Avis 3
+Texte : Une équipe sérieuse et efficace qui a su respecter nos contraintes de planning. Les travaux de peinture intérieure et extérieure ont été réalisés en une semaine, sans débordement. La qualité des finitions est au rendez-vous et le rapport qualité-prix est excellent.
+Auteur : Mélanie SIMON
+Prestation : Peinture intérieure & extérieure
+
+─────────────────────────────────────────
+GROUPE 4
+─────────────────────────────────────────
+Avis 1
+Texte : Chantier de peinture intérieure réalisé dans les délais et avec un soin remarquable. [MARQUE] a su s'adapter à nos contraintes d'occupation du logement et a livré un résultat impeccable. Les murs sont parfaitement lisses, les plinthes nettes. Équipe sérieuse et à l'écoute.
+Auteur : Audrey LAMBERT
+Prestation : Peinture intérieure
+
+Avis 2
+Texte : Nous avons demandé plusieurs devis pour notre ravalement et c'est [MARQUE] qui nous a convaincus par leur sérieux et leur réactivité. Les travaux ont été réalisés dans les délais, avec un résultat vraiment soigné. Façade belle et protégée pour de nombreuses années.
+Auteur : François BONNET
+Prestation : Ravalement de façade
+
+Avis 3
+Texte : Pose de papier peint panoramique dans notre entrée — un travail délicat que [MARQUE] a réalisé avec une précision remarquable. Les raccords sont parfaits, le rendu est exactement ce que nous voulions. Une équipe professionnelle et soignée, que je recommande sans hésitation.
+Auteur : Valérie MOREAU
+Prestation : Pose de papier peint panoramique
+
+─────────────────────────────────────────
+GROUPE 5
+─────────────────────────────────────────
+Avis 1
+Texte : Très bonne expérience avec [MARQUE] pour la peinture complète de notre villa. Du premier rendez-vous au bilan final, tout a été clair, carré et professionnel. Les finitions sont d'une qualité irréprochable et le chantier a toujours été rendu propre en fin de journée.
+Auteur : Nathalie ROUSSEAU
+Prestation : Peinture intérieure & extérieure
+
+Avis 2
+Texte : Intervention rapide et efficace de [MARQUE] pour un rafraîchissement de nos bureaux professionnels. Travaux réalisés le week-end pour ne pas gêner notre activité, résultat impeccable et chantier rendu net. Tarif honnête et équipe très agréable. Je recommande.
+Auteur : Olivier MARTIN
+Prestation : Peinture professionnelle
+
+Avis 3
+Texte : [MARQUE] est intervenu sur notre maison pour la peinture intérieure après des travaux de rénovation. Le résultat est magnifique : enduits lisses, peintures bien couvrantes, finitions soignées. L'équipe est ponctuelle, propre et professionnelle. Je les recommande à tous ceux qui cherchent un artisan de confiance.
+Auteur : Julie PETIT
+Prestation : Peinture intérieure post-rénovation
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FIN DU DOCUMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

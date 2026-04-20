@@ -1,0 +1,253 @@
+{
+  "_note": "Chaque clé est un tableau de 5 variantes. Le générateur sélectionne une variante de façon déterministe selon le slug de la commune. Placeholders : {{NOM}}, {{NOM_COMPLET}}, {{NOM_A}}, {{NOM_DE}}, {{MARQUE}}, {{DEP_NOM}}, {{DEP_NOM_LE}} (la Gironde), {{DEP_NOM_DE}} (de Gironde), {{DEP_NOM_A}} (en Gironde), {{CODE_POSTAL}}.",
+
+  "var_title_arg": [
+    "Entreprise de peinture",
+    "Professionnel de la peinture",
+    "Expert de la peinture",
+    "Artisan peintre qualifié",
+    "Spécialiste en peinture"
+  ],
+
+  "var_meta_desc": [
+    "Peintre {{NOM_A}} ({{CODE_POSTAL}}). Peinture intérieure, extérieure, ravalement de façade et revêtements muraux. Devis gratuit par votre artisan peintre {{NOM_A}}.",
+    "Artisan peintre {{NOM_A}} — peinture intérieure, extérieure et ravalement de façade. Devis gratuit, intervention rapide dans toute {{DEP_NOM_LE}}. Contactez {{MARQUE}}.",
+    "Entreprise de peinture {{NOM_A}} : peinture intérieure, extérieure, pose de papier peint. Devis gratuit par artisan qualifié — {{MARQUE}}, {{CODE_POSTAL}}.",
+    "{{MARQUE}} — spécialiste de la peinture {{NOM_A}}. Peinture intérieure et extérieure, pose de papier peint, ravalement. Devis gratuit et intervention rapide dans toute {{DEP_NOM_LE}}.",
+    "Votre peintre {{NOM_A}} ({{CODE_POSTAL}}) : peinture intérieure, extérieure, ravalement de façade. Artisan qualifié, devis gratuit, résultat garanti. {{MARQUE}}."
+  ],
+
+  "var_hero_lead": [
+    "{{MARQUE}}, nous mettons notre savoir-faire en peinture intérieure et extérieure au service des habitants {{NOM_DE}} pour embellir et protéger votre habitat.",
+    "Artisan peintre {{NOM_A}}, nous intervenons sur tous vos travaux de peinture intérieure et extérieure pour transformer et valoriser votre habitat.",
+    "Votre spécialiste de la peinture {{NOM_A}} — nous prenons en charge chaque chantier avec soin, du choix des teintes jusqu'à la dernière couche de finition.",
+    "Expert en peinture {{NOM_A}}, {{MARQUE}} réalise tous vos travaux intérieurs et extérieurs avec des matériaux professionnels et une finition impeccable.",
+    "Depuis de nombreuses années, {{MARQUE}} accompagne les particuliers et professionnels {{NOM_DE}} dans leurs projets de peinture intérieure et extérieure."
+  ],
+
+  "var_mission": [
+    "Nous répondons aux exigences de chaque client en livrant des finitions irréprochables, du sol au plafond. Nous réalisons l'ensemble de nos travaux de peinture, de la préparation des supports jusqu'à la dernière couche de finition. La conception de votre projet décoratif, le choix des teintes et l'exécution des travaux sont assurés par nos spécialistes.",
+    "Notre mission est de transformer vos espaces en livrant des finitions soignées et durables, sur tous types de supports. De la préparation minutieuse des murs jusqu'à l'application des dernières couches, chaque étape est maîtrisée par notre équipe. Nous accompagnons nos clients du premier conseil jusqu'à la réception du chantier.",
+    "Nous nous engageons à répondre aux attentes de chaque projet avec rigueur et professionnalisme. Peinture intérieure, extérieure ou pose de revêtements muraux — chaque intervention est réalisée selon les règles de l'art. Notre objectif : vous remettre un chantier impeccable, dans les délais convenus.",
+    "Chaque chantier est pour nous l'occasion de démontrer notre exigence : supports parfaitement préparés, peintures soigneusement appliquées, finitions irréprochables. Nous ne livrons pas un chantier tant que le résultat ne répond pas pleinement à vos attentes. Votre satisfaction est notre priorité absolue.",
+    "Notre mission repose sur trois engagements simples : qualité des finitions, respect des délais et transparence des prix. De la peinture intérieure au ravalement de façade, chaque intervention est réalisée avec le même soin. Nous travaillons pour vous laisser un espace dont vous serez fiers."
+  ],
+
+  "var_vision": [
+    "Notre passion pour le métier de peintre nous permet de proposer des prestations qui vont bien au-delà du simple coup de pinceau. L'excellence de notre travail repose sur notre attention minutieuse aux préparations de surface, aux raccords et aux finitions décoratives. Nous nous engageons à rester à l'écoute de nos clients pour traduire leurs envies en réalisations concrètes et durables.",
+    "Nous croyons que la peinture est avant tout un art au service du bien-être. Chaque chantier est une occasion de révéler le potentiel d'un espace grâce à un travail soigné et des matériaux de qualité. Notre vision : des intérieurs et des façades qui vous ressemblent, conçus avec vous et réalisés avec soin.",
+    "Notre approche va au-delà de l'application de peinture : nous sommes des partenaires de votre projet décoratif. Nous conseillons, préparons, réalisons et livrons avec le souci constant du détail. La satisfaction de nos clients est notre meilleure récompense, et chaque chantier terminé renforce notre engagement envers la qualité.",
+    "Chez {{MARQUE}}, nous pensons qu'un beau résultat commence par une préparation rigoureuse. C'est pourquoi nous consacrons autant de temps au traitement des supports qu'à l'application finale. Cette exigence se traduit par des finitions durables et un rendu esthétique qui dépasse vos attentes.",
+    "Notre vision du métier : un artisan peintre n'est pas seulement un exécutant, il est un conseiller. Nous accompagnons chaque client dans ses choix — teintes, matières, finitions — pour que le résultat soit à la fois beau et durable. Un engagement humain autant que technique, à chaque chantier."
+  ],
+
+  "var_devis": [
+    "Chaque devis est établi après une visite sur site : nous mesurons les surfaces, évaluons les supports et sélectionnons les produits adaptés. Notre chiffrage est détaillé, poste par poste, sans ligne floue ni frais cachés. Nous nous engageons sur un prix validé avant le démarrage des travaux.",
+    "Avant chaque intervention, nous réalisons une visite gratuite pour évaluer précisément l'état des surfaces et les besoins du chantier. Le devis que nous vous remettons est clair, détaillé et sans surprise : vous savez exactement ce que vous payez. Aucun travail supplémentaire n'est facturé sans votre accord préalable.",
+    "Nous établissons chaque devis sur mesure après une visite technique à domicile. Chaque poste est détaillé : préparation, fournitures, main-d'œuvre et finitions. Vous bénéficiez d'un engagement ferme sur les prix et les délais, sans mauvaise surprise à la réception.",
+    "Notre processus de devis est simple et transparent : visite gratuite sur site, analyse des surfaces, sélection des produits adaptés, chiffrage détaillé poste par poste. Nous vous remettons un document complet sous 48 heures. Aucun frais caché, aucune surprise en cours de chantier.",
+    "Nous croyons en la transparence totale : chaque devis est précédé d'une visite sur site et d'un diagnostic complet des surfaces. Le chiffrage que nous vous proposons est ferme, détaillé et sans frais cachés. Vous signez en connaissance de cause et nous respectons l'engagement à la lettre."
+  ],
+
+  "var_materiaux": [
+    "Nous travaillons avec des peintures et enduits professionnels à faible émission de COV, sélectionnés parmi les meilleures marques du marché. Chaque produit est choisi en fonction du support, de l'exposition et du résultat attendu pour une durabilité maximale. L'ensemble de nos travaux est couvert par une assurance décennale et une garantie de parfait achèvement.",
+    "Nos chantiers sont réalisés exclusivement avec des produits professionnels certifiés, sélectionnés pour leur performance et leur respect de l'environnement. Nous travaillons avec des marques reconnues : Tollens, Zolpan, Saint-Gobain Weber, garantissant tenue dans le temps et rendu esthétique optimal. Tous nos travaux sont assurés en décennale.",
+    "La qualité de nos finitions repose en grande partie sur le choix des matériaux. Nous utilisons uniquement des peintures et enduits professionnels adaptés à chaque support et condition d'exposition. Chaque chantier bénéficie de notre assurance décennale, pour votre tranquillité d'esprit sur le long terme.",
+    "Choisir de bons matériaux, c'est choisir la durabilité. Nous sélectionnons rigoureusement nos peintures, enduits et primaires parmi les références professionnelles du secteur, faibles en COV et certifiées. Résultat : des chantiers qui tiennent dans le temps, sans retouche prématurée, couverts par notre garantie décennale.",
+    "Nos peintures et enduits sont issus des meilleures gammes professionnelles — Tollens, Meffre, Zolpan, Weber — choisies pour leur performance technique et leur faible impact environnemental. Chaque produit est sélectionné en fonction de votre support et de vos contraintes. Nos travaux sont couverts par une assurance décennale et une garantie de parfait achèvement."
+  ],
+
+  "var_services_title": [
+    "Nos services de peinture",
+    "Nos prestations de peinture",
+    "Nos travaux de peinture",
+    "Les prestations que nous proposons",
+    "Les services que nous proposons"
+  ],
+
+  "var_services_intro": [
+    "Votre peintre {{NOM_A}} intervient sur l'ensemble de vos travaux de peinture intérieure et extérieure. Nous couvrons tout le département {{DEP_NOM_DE}} avec des équipes qualifiées et du matériel professionnel. Chaque prestation est réalisée selon les règles de l'art, avec des peintures et enduits sélectionnés pour leur performance et leur longévité. Résultat garanti, délais respectés, chantier laissé propre : c'est la promesse de votre peintre {{NOM_A}}.",
+    "{{MARQUE}} propose une gamme complète de services de peinture pour particuliers et professionnels. Du simple rafraîchissement intérieur au ravalement de façade, nos équipes interviennent sur tous types de chantiers dans toute {{DEP_NOM_LE}}. Matériaux premium, délais tenus et finitions impeccables : notre engagement à chaque intervention.",
+    "Spécialiste de la peinture {{NOM_A}}, nous intervenons sur tous vos projets intérieurs et extérieurs. Nos peintres qualifiés couvrent l'ensemble du département {{DEP_NOM_DE}} avec réactivité et professionnalisme. Chaque prestation est accompagnée d'un suivi personnalisé pour un résultat à la hauteur de vos attentes.",
+    "De la peinture intérieure au ravalement de façade, {{MARQUE}} couvre l'ensemble de vos besoins en travaux de peinture. Nos équipes interviennent rapidement dans toute {{DEP_NOM_LE}}, avec des produits de qualité professionnelle et une organisation sans faille. Chaque chantier est suivi de bout en bout par un artisan référent.",
+    "{{MARQUE}} met son expertise au service de tous vos chantiers de peinture {{NOM_A}} et dans toute {{DEP_NOM_LE}}. Peinture intérieure, extérieure ou revêtements muraux — nous intervenons avec les mêmes exigences de qualité, quels que soient la surface et le budget. Devis gratuit, délais respectés, résultat garanti."
+  ],
+
+  "var_service_int": [
+    "Nos peintres interviennent sur tous vos supports intérieurs — placo, plâtre, béton, bois — avec des peintures professionnelles à faible émission de COV, disponibles en finition mate, satinée ou brillante selon l'usage de chaque pièce.",
+    "De la préparation des murs à la couche de finition, nous traitons tous vos supports intérieurs avec des produits professionnels adaptés. Plâtre, béton, bois ou placo : chaque surface reçoit le traitement et la peinture qui lui convient, pour un résultat durable et esthétique.",
+    "Nos équipes prennent en charge vos travaux de peinture intérieure de A à Z : rebouchage, enduit, sous-couche et finition. Nous utilisons des peintures professionnelles faible COV, disponibles dans toutes les finitions, pour des intérieurs sains et lumineux.",
+    "Rénovation complète ou simple rafraîchissement, nous adaptons notre intervention à vos besoins. Préparation soignée des supports, application en plusieurs couches, finition mate, satinée ou brillante : chaque pièce est traitée avec le même soin et les mêmes matériaux professionnels.",
+    "Nous maîtrisons l'ensemble des techniques de peinture intérieure : enduit lissé, peinture décorative, badigeon, lazure sur bois. Chaque support est préparé et traité selon sa nature pour garantir une adhérence parfaite et une finition durable, dans toutes les gammes de teintes."
+  ],
+
+  "var_service_ext": [
+    "Nous traitons vos façades de A à Z : nettoyage haute pression, reprise des fissures, primaire fixateur, puis application de peintures hydrofuges, minérales ou acryliques sélectionnées pour leur résistance au climat.",
+    "Votre façade mérite une protection durable contre les intempéries. Nous intervenons sur tout type de support extérieur — enduit, béton, pierre, bardage — avec des peintures et revêtements sélectionnés pour leur résistance et leur longévité. Diagnostic, traitement des fissures et application soignée font partie de chaque intervention.",
+    "Du nettoyage haute pression au ravalement complet, nous assurons la rénovation et la protection de vos façades. Chaque chantier extérieur débute par un diagnostic précis des supports pour sélectionner les produits les plus adaptés : peintures minérales, acryliques ou hydrofuges selon la nature du mur.",
+    "La peinture extérieure est bien plus qu'un embellissement : c'est une protection essentielle contre l'humidité, les UV et les variations de température. Nous réalisons chaque ravalement avec rigueur, du décapage au dernier enduit de finition, avec des produits certifiés adaptés au bâti local.",
+    "Façades en pierre, en béton, en enduit ou en bardage : nous adaptons notre méthode et nos produits à chaque support. Nettoyage, traitement des fissures, primaire d'accrochage, peinture de finition — chaque étape est réalisée par nos équipes avec soin et précision pour un résultat durable."
+  ],
+
+  "var_papier_peint": [
+    "Nous assurons la mise en œuvre de tous vos revêtements muraux — intissé, vinyle, panoramique, toile de verre — avec une préparation rigoureuse du support et des raccords de motifs soignés jusqu'au dernier centimètre.",
+    "La pose de papier peint demande précision et expérience. Nos poseurs maîtrisent tous les types de revêtements : intissé, vinyle, panoramique, toile de verre. Préparation du support, application de la colle adaptée et raccords parfaits — un travail minutieux pour un résultat impeccable.",
+    "Experts en revêtements muraux, nous posons tous types de papiers peints et revêtements décoratifs. Du classique intissé au papier panoramique, chaque pose est réalisée avec soin : support préparé, motifs raccordés, finitions propres. Un résultat décoratif à la hauteur de vos envies.",
+    "Du papier peint intissé au revêtement panoramique grand format, nos poseurs maîtrisent toutes les techniques de mise en œuvre. Nous préparons soigneusement chaque support pour garantir une adhérence parfaite, des raccords impeccables et une pose sans bulles ni plis.",
+    "La pose de revêtements muraux est un art que nous pratiquons avec exigence. Intissé, vinyle, toile de verre ou papier panoramique — chaque type de revêtement nécessite une technique spécifique que nos poseurs maîtrisent parfaitement. Résultat : une finition décorative durable et soignée jusqu'au moindre détail."
+  ],
+
+  "var_cta_title": [
+    "Appelez votre peintre professionnel",
+    "Contactez votre artisan peintre",
+    "Votre peintre à votre service",
+    "Obtenez votre devis peinture gratuit",
+    "Parlons de votre projet de peinture"
+  ],
+
+  "var_cta": [
+    "Nos peintres répondent à vos appels du lundi au samedi, de 8 h à 19 h, pour tout renseignement ou demande de devis. Un simple coup de fil suffit pour convenir d'un rendez-vous sur site, dans les communes avoisinantes. Nous sommes à l'écoute sans engagement : appelez-nous, nous trouvons ensemble la meilleure solution pour votre projet.",
+    "Vous avez un projet de peinture intérieure, extérieure ou de pose de papier peint ? Appelez-nous directement pour un premier échange sans engagement. Nos conseillers sont disponibles du lundi au samedi pour répondre à toutes vos questions et planifier une visite gratuite.",
+    "Un projet, une question, une urgence ? Notre équipe est joignable du lundi au samedi, de 8 h à 19 h. Nous vous rappelons rapidement pour faire le point sur votre chantier et vous proposer un rendez-vous sur site dans les meilleurs délais.",
+    "Ne laissez pas votre projet en attente. Un appel suffit pour obtenir un premier conseil, estimer votre chantier et fixer un rendez-vous de visite gratuite. Nos artisans sont disponibles du lundi au samedi — réactifs, à l'écoute et sans engagement de votre part.",
+    "Vous souhaitez rénover, rafraîchir ou embellir votre intérieur ou votre façade ? Notre équipe vous répond du lundi au samedi, de 8 h à 19 h. En quelques minutes, nous évaluons votre besoin et planifions une visite pour vous remettre un devis précis et sans surprise."
+  ],
+
+  "var_reviews_intro": [
+    "Des particuliers et professionnels nous font confiance depuis plus de 20 ans pour leurs travaux de peinture intérieure et extérieure.",
+    "Chaque année, des dizaines de clients nous confient la rénovation et l'embellissement de leur habitat. Voici quelques témoignages.",
+    "La qualité de notre travail se reflète dans la satisfaction de nos clients. Découvrez leurs retours d'expérience.",
+    "Nos clients sont nos meilleurs ambassadeurs. Voici ce qu'ils disent de nos interventions de peinture intérieure et extérieure.",
+    "Depuis plus de 20 ans, particuliers et professionnels nous font confiance. Quelques témoignages parmi nos chantiers récents."
+  ],
+
+  "var_why_intro": [
+    "Expérience, qualité des matériaux et respect de votre cadre de vie : trois piliers qui font la différence sur chaque chantier.",
+    "Ce qui nous distingue, c'est notre engagement constant envers la qualité, la transparence et le respect de votre espace de vie.",
+    "Réactivité, savoir-faire et honnêteté : les valeurs qui guident chacune de nos interventions, du premier contact à la réception.",
+    "Choisir {{MARQUE}}, c'est choisir un artisan local, des matériaux premium et un engagement sans faille sur la qualité et les délais.",
+    "Trois raisons de nous faire confiance : notre ancrage local, notre exigence sur les matériaux et notre respect total de votre espace de vie."
+  ],
+
+  "var_why_local_1": [
+    "Ancrés localement, nous connaissons parfaitement les spécificités du bâti {{NOM_A}} et les contraintes techniques de chaque quartier.",
+    "Présents {{NOM_A}} depuis de nombreuses années, nous maîtrisons le tissu local et les spécificités architecturales du secteur.",
+    "Notre ancrage local {{NOM_A}} est un véritable atout pour nos clients : connaissance du bâti, des contraintes climatiques et des attentes des habitants.",
+    "Travailler avec un artisan local, c'est bénéficier d'une réactivité que les grandes enseignes ne peuvent pas offrir.",
+    "Notre implantation {{NOM_A}} nous permet d'intervenir vite et d'anticiper les contraintes propres au bâti du secteur."
+  ],
+
+  "var_why_local_2": [
+    "Cette proximité nous permet d'intervenir rapidement et d'adapter nos méthodes à chaque situation. Artisan disponible sous 48 heures, sans surcoût de déplacement.",
+    "Cette connaissance du terrain nous permet d'anticiper les contraintes et de proposer les solutions les plus adaptées — sans frais de déplacement supplémentaires.",
+    "Une réactivité garantie, un déplacement sans surcoût, pour un service de proximité au quotidien.",
+    "Nous intervenons rapidement, connaissons les spécificités des constructions du secteur et nous déplaçons sans frais supplémentaires. Un vrai service de proximité.",
+    "Artisan indépendant, nous privilégions la relation directe, la transparence sur les travaux et la disponibilité à chaque étape du chantier."
+  ],
+
+  "var_why_materials_1": [
+    "Nous sélectionnons nos peintures et enduits parmi les meilleures marques professionnelles : Tollens, Zolpan, Meffre, Saint-Gobain Weber.",
+    "La qualité de nos finitions repose d'abord sur le choix des matériaux. Nous travaillons exclusivement avec des produits professionnels certifiés.",
+    "Chaque produit que nous utilisons est soigneusement sélectionné pour ses performances techniques et sa durabilité.",
+    "Utiliser de bons matériaux, c'est la condition d'une belle finition qui dure. Nous travaillons avec les meilleures marques professionnelles du marché.",
+    "Nos approvisionnements sont exclusivement professionnels : peintures haut de gamme, enduits certifiés, primaires d'accrochage de qualité."
+  ],
+
+  "var_why_materials_2": [
+    "Chaque produit est choisi selon le support, l'exposition et le résultat attendu pour une durabilité maximale. Des matériaux premium, une finition qui résiste dans le temps.",
+    "Ce choix rigoureux garantit des chantiers durables, esthétiques et nécessitant peu d'entretien.",
+    "Peintures faible COV, enduits de qualité professionnelle, primaires adaptés : rien n'est laissé au hasard. Vos travaux sont protégés dans la durée, sans entretien prématuré.",
+    "Nous adaptons systématiquement le produit au support, à l'exposition et au résultat souhaité. La qualité se voit dès la pose et se confirme dans la durée.",
+    "Ces choix rigoureux se traduisent par des rendus plus beaux, plus durables et plus faciles à entretenir. Un investissement qui se justifie chantier après chantier."
+  ],
+
+  "var_why_clean_1": [
+    "Avant chaque intervention, nous protégeons l'intégralité de vos sols, meubles et équipements avec des bâches et films de protection renforcés.",
+    "Le respect de votre espace de vie fait partie intégrante de notre prestation. Bâchage complet avant chaque intervention et nettoyage quotidien du chantier.",
+    "Nous prenons soin de votre intérieur comme du nôtre. Protections de sols et meubles systématiques, nettoyage en fin de journée.",
+    "Le bâchage complet de vos sols, meubles et équipements est systématique avant toute intervention. En cours de chantier, nous maintenons un espace de travail propre et rangé.",
+    "Nous considérons que le respect de votre espace est aussi important que la qualité de nos finitions. Films de protection, bâches renforcées et nettoyage quotidien."
+  ],
+
+  "var_why_clean_2": [
+    "Nous assurons un nettoyage complet du chantier en fin de journée et à la réception. Vous retrouvez votre espace impeccable dès la livraison, sans aucune trace de peinture.",
+    "Votre intérieur ou extérieur est rendu dans un état irréprochable à la réception. Un chantier propre est une promesse que nous tenons à chaque mission.",
+    "Chantier rendu propre à la réception : vous ne devez pas avoir à nettoyer après notre passage.",
+    "À la livraison, votre logement est rendu sans aucune trace de notre passage — propre, net et impeccable.",
+    "Chaque chantier est conduit avec la même discipline : évacuation rigoureuse des déchets, espace de travail tenu propre. Votre quotidien est perturbé au minimum."
+  ],
+
+  "var_footer_desc": [
+    "Faites appel à {{MARQUE}} pour des services de peinture de confiance dans toute {{DEP_NOM_LE}}. Pour un service rapide, soigné et efficace, contactez-nous dès maintenant.",
+    "{{MARQUE}} — votre artisan peintre de confiance {{NOM_A}}. Peinture intérieure, extérieure, pose de revêtements muraux. Devis gratuit, intervention rapide.",
+    "Spécialiste de la peinture depuis plus de 20 ans, {{MARQUE}} intervient sur tous vos chantiers dans toute {{DEP_NOM_LE}}. Qualité, réactivité et transparence à chaque prestation.",
+    "{{MARQUE}} — artisan peintre local, au service des particuliers et professionnels {{DEP_NOM_DE}}. Peinture intérieure, extérieure, ravalement. Devis gratuit sans engagement.",
+    "Votre projet de peinture mérite un artisan de confiance. {{MARQUE}} intervient {{NOM_A}} et dans toute {{DEP_NOM_LE}} avec rigueur, ponctualité et le souci constant du détail."
+  ],
+
+  "var_review_1_text": [
+    "Nous avons fait appel à {{MARQUE}} pour la rénovation complète de notre appartement et nous sommes pleinement satisfaits du résultat. L'équipe est sérieuse, soignée dans son travail et très respectueuse des délais annoncés. Finitions impeccables, chantier rendu propre. Je les recommande sans hésitation.",
+    "Excellent travail de la part de {{MARQUE}}. La pose du papier peint dans notre salon a été réalisée avec un soin exceptionnel, les raccords sont parfaits et le résultat est exactement ce que nous espérions. Équipe ponctuelle, propre et très professionnelle.",
+    "J'ai fait appel à {{MARQUE}} pour repeindre l'ensemble de mes pièces de vie. Le résultat est bluffant : les murs sont parfaitement lisses, les couleurs sont exactement celles que j'avais choisies. L'équipe est rapide, propre et très agréable. Je ferai encore appel à eux sans hésitation.",
+    "Chantier de peinture intérieure réalisé dans les délais et avec un soin remarquable. {{MARQUE}} a su s'adapter à nos contraintes d'occupation du logement et a livré un résultat impeccable. Les murs sont parfaitement lisses, les plinthes nettes. Équipe sérieuse et à l'écoute.",
+    "Très bonne expérience avec {{MARQUE}} pour la peinture complète de notre villa. Du premier rendez-vous au bilan final, tout a été clair, carré et professionnel. Les finitions sont d'une qualité irréprochable et le chantier a toujours été rendu propre en fin de journée."
+  ],
+  "var_review_1_author": [
+    "Séverin PARMENTIER",
+    "Isabelle RENAUD",
+    "Camille BERTRAND",
+    "Audrey LAMBERT",
+    "Nathalie ROUSSEAU"
+  ],
+  "var_review_1_context": [
+    "Peinture intérieure",
+    "Pose de papier peint",
+    "Peinture intérieure complète",
+    "Rénovation appartement",
+    "Peinture intérieure & extérieure"
+  ],
+
+  "var_review_2_text": [
+    "Les prestations de {{MARQUE}} ont largement dépassé mes attentes. Ils ont réalisé le ravalement de ma façade avec un soin remarquable et m'ont conseillé sur le choix des teintes et des enduits adaptés à mon mur en pierre. Un service professionnel de bout en bout, du devis à la réception.",
+    "Très satisfaite de la prestation de {{MARQUE}} pour la peinture de notre façade. Devis rapide, travaux soignés, respect total des délais. La façade est magnifique et la propriété a retrouvé tout son éclat. Je recommande vivement cet artisan sérieux et compétent.",
+    "Service exceptionnel de {{MARQUE}} pour notre ravalement de façade. Diagnostic complet, traitement des fissures, peinture hydrofuge de qualité : tout a été fait dans les règles de l'art. Notre maison a retrouvé une belle apparence et est maintenant parfaitement protégée.",
+    "Nous avons demandé plusieurs devis pour notre ravalement et c'est {{MARQUE}} qui nous a convaincus par leur sérieux et leur réactivité. Les travaux ont été réalisés dans les délais, avec un résultat vraiment soigné. Façade belle et protégée pour de nombreuses années.",
+    "Intervention rapide et efficace de {{MARQUE}} pour un rafraîchissement de nos bureaux professionnels. Travaux réalisés le week-end pour ne pas gêner notre activité, résultat impeccable et chantier rendu net. Tarif honnête et équipe très agréable. Je recommande."
+  ],
+  "var_review_2_author": [
+    "Ninon MEYER",
+    "Christine DUPUIS",
+    "Thomas LEROY",
+    "François BONNET",
+    "Olivier MARTIN"
+  ],
+  "var_review_2_context": [
+    "Peinture extérieure",
+    "Ravalement de façade",
+    "Peinture extérieure complète",
+    "Ravalement façade pierre",
+    "Peinture professionnelle"
+  ],
+
+  "var_review_3_text": [
+    "Nous avons confié la peinture complète de notre maison à cette équipe et nous ne regrettons absolument pas ce choix. Travail réalisé rapidement, proprement, avec une finition impeccable sur les boiseries et les murs. Prix honnête, équipe sympathique et professionnelle.",
+    "Nous avons fait refaire la totalité de notre appartement par {{MARQUE}}. Du premier contact jusqu'à la livraison, tout s'est passé de façon fluide et professionnelle. Les finitions sont d'une qualité remarquable et le chantier était impeccable à chaque fin de journée.",
+    "Une équipe sérieuse et efficace qui a su respecter nos contraintes de planning. Les travaux de peinture intérieure et extérieure ont été réalisés en une semaine, sans débordement. La qualité des finitions est au rendez-vous et le rapport qualité-prix est excellent.",
+    "Pose de papier peint panoramique dans notre entrée — un travail délicat que {{MARQUE}} a réalisé avec une précision remarquable. Les raccords sont parfaits, le rendu est exactement ce que nous voulions. Une équipe professionnelle et soignée, que je recommande sans hésitation.",
+    "{{MARQUE}} est intervenu sur notre maison pour la peinture intérieure après des travaux de rénovation. Le résultat est magnifique : enduits lisses, peintures bien couvrantes, finitions soignées. L'équipe est ponctuelle, propre et professionnelle. Je les recommande à tous ceux qui cherchent un artisan de confiance."
+  ],
+  "var_review_3_author": [
+    "Matthieu NICOLAS",
+    "Laurent FISCHER",
+    "Mélanie SIMON",
+    "Valérie MOREAU",
+    "Julie PETIT"
+  ],
+  "var_review_3_context": [
+    "Peinture intérieure & extérieure",
+    "Peinture intérieure complète",
+    "Rénovation complète",
+    "Pose de papier peint panoramique",
+    "Peinture intérieure post-rénovation"
+  ]
+}

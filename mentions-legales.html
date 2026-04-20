@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Mentions légales | {{MARQUE}}</title>
+  <link rel="icon" href="public/images/favicon.webp" type="image/webp">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-main { flex: 1; display: block; width: 100%; box-sizing: border-box; }
+    .legal-page { padding: 2rem 0 4rem; color: var(--color-text-strong); }
+    .legal-page h1 { font-family: var(--font); font-size: 1.75rem; color: var(--color-text-dark); margin-bottom: 0.75rem; }
+    .legal-page h2 { font-family: var(--font); font-size: 1.15rem; color: var(--color-text-dark); margin: 2rem 0 0.75rem; }
+    .legal-page p, .legal-page li { line-height: 1.65; margin-bottom: 0.65rem; }
+    .legal-page ul { margin: 0 0 1rem 1.25rem; padding: 0; }
+    .legal-site-brand { font-size: 1rem; margin-bottom: 1.75rem; color: var(--color-text-strong); }
+    .legal-site-brand strong { color: var(--color-text-dark); }
+    .legal-page .muted { font-size: 0.95rem; color: var(--color-text-muted, #5c6570); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="{{MARQUE}} — accueil">{{MARQUE}}</a>
+      <nav class="nav nav-desktop" aria-label="Navigation principale">
+        <a href="index.html#services">Nos prestations</a>
+        <a href="index.html#avis">Avis clients</a>
+        <a href="index.html#contact">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn btn-primary header-call header-call-desktop" aria-label="{{TEL}}">{{TEL}}</a>
+      <button type="button" class="header-menu-toggle" id="header-menu-toggle"
+              aria-expanded="false" aria-controls="header-menu" aria-label="Ouvrir le menu">
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="header-menu" id="header-menu" hidden>
+    <div class="header-menu-backdrop" tabindex="-1"></div>
+    <div class="header-menu-panel" role="dialog" aria-modal="true" aria-labelledby="header-menu-title">
+      <div class="header-menu-panel-header">
+        <p id="header-menu-title" class="visually-hidden">Menu</p>
+        <button type="button" class="header-menu-close" id="header-menu-close" aria-label="Fermer le menu">
+          <svg class="header-menu-close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav nav-mobile" aria-label="Navigation principale">
+        <a href="index.html#services">Nos prestations</a>
+        <a href="index.html#avis">Avis clients</a>
+        <a href="index.html#contact">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn header-call header-call-mobile" aria-label="{{TEL}}">{{TEL}}</a>
+    </div>
+  </div>
+
+  <main class="legal-main">
+    <div class="container legal-page">
+      <h1>Mentions légales</h1>
+      <p class="legal-site-brand">Nom du site : <strong>{{MARQUE}}</strong></p>
+      <p><strong>URL de ce site :</strong> <a href="https://{{URL}}">https://{{URL}}</a></p>
+
+      <h2>Éditeur du site</h2>
+      <p>Le présent site est édité par :</p>
+      <ul>
+        <li><strong>Nom de l'entreprise :</strong> Home Service</li>
+        <li><strong>Forme juridique :</strong> SAS</li>
+        <li><strong>Adresse du siège social :</strong> 34 Boulevard des Italiens</li>
+        <li><strong>Code postal :</strong> 75009</li>
+        <li><strong>Ville :</strong> Paris</li>
+        <li><strong>Téléphone :</strong> <a href="tel:{{TEL_HREF}}">{{TEL}}</a></li>
+        <li><strong>Email :</strong> <a href="mailto:info@home-service.io">info@home-service.io</a></li>
+        <li><strong>Numéro RCS :</strong> 992 122 168 R.C.S Paris</li>
+      </ul>
+
+      <h2>Activité</h2>
+      <p>L'entreprise propose des prestations de :</p>
+      <ul>
+        <li>Travaux de peinture intérieure et extérieure</li>
+        <li>Peinture murale, boiseries et façades</li>
+        <li>Ravalement de façades</li>
+        <li>Pose de revêtements muraux</li>
+        <li>Pose de parquet et sols en bois</li>
+        <li>Pose de papier peint et décoration intérieure</li>
+      </ul>
+      <p>Les services s'adressent aux particuliers et professionnels {{NOM_A}} et dans les communes environnantes.</p>
+
+      <h2>Hébergement</h2>
+      <p>Le site est hébergé par :</p>
+      <ul>
+        <li><strong>Nom de l'hébergeur :</strong> Hetzner Online GmbH</li>
+        <li><strong>Adresse :</strong> Industriestr. 25, 91710 Gunzenhausen, Allemagne</li>
+        <li><strong>Téléphone :</strong> +49 (0)9831 505-0 (tarification ligne fixe habituelle, sans surtaxe)</li>
+        <li><strong>Site web :</strong> <a href="https://www.hetzner.com/" rel="noopener noreferrer" target="_blank">https://www.hetzner.com/</a></li>
+        <li><strong>Courriel :</strong> <a href="mailto:info@hetzner.com">info@hetzner.com</a></li>
+      </ul>
+      <p class="muted">Greffe : Ansbach, HRB 6089 · TVA : DE 812871812 · Dirigeants : Martin Hetzner, Stephan Konvickova, Günther Müller.</p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>L'ensemble du contenu du site (textes, images, graphismes, logo, structure, etc.) est la propriété exclusive de l'éditeur, sauf mention contraire.</p>
+      <p>Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation préalable est strictement interdite.</p>
+
+      <h2>Responsabilité</h2>
+      <p>L'éditeur s'efforce de fournir des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, inexactitudes ou défauts de mise à jour.</p>
+      <p>Les informations présentes sur le site sont données à titre indicatif et peuvent évoluer à tout moment.</p>
+
+      <h2>Devis et prestations</h2>
+      <p>Les devis sont gratuits et sans engagement.</p>
+      <p>Les informations transmises par le client (surface, état des supports, contraintes) permettent d'établir une estimation. Un ajustement peut être effectué après visite ou en cours de chantier, avec validation écrite préalable.</p>
+
+      <h2>Données personnelles</h2>
+      <p>Les données collectées via le formulaire de contact (nom, email, téléphone, message) sont utilisées uniquement pour répondre aux demandes des utilisateurs.</p>
+      <p>Elles ne sont ni vendues ni cédées à des tiers.</p>
+      <p>Conformément au RGPD, vous disposez des droits suivants : accès à vos données, rectification, suppression, opposition.</p>
+      <p>Pour exercer ces droits, vous pouvez contacter : <a href="mailto:info@home-service.io">info@home-service.io</a> ou le <a href="tel:{{TEL_HREF}}">{{TEL}}</a>.</p>
+
+      <h2>Cookies</h2>
+      <p>Le site peut utiliser des cookies pour améliorer l'expérience utilisateur et analyser le trafic.</p>
+      <p>L'utilisateur peut accepter ou refuser l'utilisation des cookies via les paramètres de son navigateur.</p>
+
+      <h2>Droit applicable</h2>
+      <p>Le présent site est soumis au droit français.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-col footer-col--brand">
+        <strong class="footer-logo">{{MARQUE}}</strong>
+        <p class="footer-desc">{{VAR_FOOTER_DESC}}</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Nos services</h3>
+        <ul class="footer-list">
+          <li><a href="index.html#services">Peinture intérieure</a></li>
+          <li><a href="index.html#services">Peinture extérieure</a></li>
+          <li><a href="index.html#services">Pose de papier peint</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Informations</h3>
+        <ul class="footer-list">
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Contact</h3>
+        <p class="footer-contact-line">{{CODE_POSTAL}} {{NOM_MAJ}}</p>
+        <p class="footer-contact-line">
+          <a href="tel:{{TEL_HREF}}">{{TEL}}</a>
+        </p>
+        <p class="footer-contact-line">
+          <a href="index.html#contact">Demande de devis gratuit</a>
+        </p>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="year"></span> {{MARQUE}}. Tous droits réservés.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var toggle = document.getElementById('header-menu-toggle');
+      var menu   = document.getElementById('header-menu');
+      if (!toggle || !menu) return;
+
+      var backdrop = menu.querySelector('.header-menu-backdrop');
+
+      function openMenu() {
+        menu.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.classList.add('is-open');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      }
+
+      function isOpen() { return !menu.hasAttribute('hidden'); }
+
+      toggle.addEventListener('click', function () {
+        if (isOpen()) closeMenu(); else openMenu();
+      });
+
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+      var closeBtn = document.getElementById('header-menu-close');
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen()) closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

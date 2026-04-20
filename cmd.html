@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de commandes — Peintres France</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f7f9;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: #003c57;
+      margin-bottom: .5rem;
+    }
+    .subtitle {
+      color: #007198;
+      font-size: .95rem;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+    }
+    .input-row {
+      display: flex;
+      gap: .6rem;
+      margin-bottom: 1.5rem;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: .85rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 60, 87, 0.15);
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    input[type="text"]:focus {
+      border-color: #04bbff;
+      box-shadow: 0 0 0 3px rgba(4, 187, 255, 0.18);
+    }
+    button.go {
+      padding: 0 1.6rem;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, #04bbff, #007198);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+    }
+    button.go:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(0, 113, 152, 0.3);
+    }
+    .dep-name {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #003c57;
+      margin-bottom: 1rem;
+    }
+    .cmd-block {
+      background: #fff;
+      border: 1px solid rgba(0, 60, 87, 0.1);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 24px rgba(0, 60, 87, 0.06);
+      position: relative;
+    }
+    .cmd-label {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #007198;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    pre.cmd {
+      font-family: 'SF Mono', Menlo, Monaco, Consolas, monospace;
+      font-size: .88rem;
+      color: #1a1a1a;
+      background: #f4f7f9;
+      padding: .9rem 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.45;
+    }
+    button.copy {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: linear-gradient(135deg, #04bbff, #007198);
+      color: #fff;
+      border: none;
+      padding: .35rem .8rem;
+      border-radius: 6px;
+      font-size: .8rem;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+    }
+    button.copy:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 12px rgba(0, 113, 152, 0.3);
+    }
+    button.copy.ok { background: #16a34a; }
+    .empty {
+      text-align: center;
+      color: #777;
+      font-size: .9rem;
+      padding: 2rem 0;
+    }
+    .hint {
+      text-align: center;
+      color: #666;
+      font-size: .8rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Générateur de commandes</h1>
+    <div class="subtitle">Peintres France — entre un code département</div>
+  </div>
+
+  <div class="container">
+    <div class="input-row">
+      <input type="text" id="dep" placeholder="Ex : 06, 33, 2A…" autocomplete="off" autofocus>
+      <button class="go" id="go">Générer</button>
+    </div>
+    <div id="output">
+      <div class="empty">Entre un code de département pour voir les commandes</div>
+    </div>
+    <div class="hint">Astuce : Entrée pour générer · les codes 1-9 acceptent 01 ou 1</div>
+  </div>
+
+<script>
+const DEPS = {"1":"Ain","2":"Aisne","3":"Allier","4":"Alpes-de-Haute-Provence","5":"Hautes-Alpes","6":"Alpes-Maritimes","7":"Ardèche","8":"Ardennes","9":"Ariège","10":"Aube","11":"Aude","12":"Aveyron","13":"Bouches-du-Rhône","14":"Calvados","15":"Cantal","16":"Charente","17":"Charente-Maritime","18":"Cher","19":"Corrèze","21":"Côte-d'Or","22":"Côtes-d'Armor","23":"Creuse","24":"Dordogne","25":"Doubs","26":"Drôme","27":"Eure","28":"Eure-et-Loir","29":"Finistère","30":"Gard","31":"Haute-Garonne","32":"Gers","33":"Gironde","34":"Hérault","35":"Ille-et-Vilaine","36":"Indre","37":"Indre-et-Loire","38":"Isère","39":"Jura","40":"Landes","41":"Loir-et-Cher","42":"Loire","43":"Haute-Loire","44":"Loire-Atlantique","45":"Loiret","46":"Lot","47":"Lot-et-Garonne","48":"Lozère","49":"Maine-et-Loire","50":"Manche","51":"Marne","52":"Haute-Marne","53":"Mayenne","54":"Meurthe-et-Moselle","55":"Meuse","56":"Morbihan","57":"Moselle","58":"Nièvre","59":"Nord","60":"Oise","61":"Orne","62":"Pas-de-Calais","63":"Puy-de-Dôme","64":"Pyrénées-Atlantiques","65":"Hautes-Pyrénées","66":"Pyrénées-Orientales","67":"Bas-Rhin","68":"Haut-Rhin","69":"Rhône","70":"Haute-Saône","71":"Saône-et-Loire","72":"Sarthe","73":"Savoie","74":"Haute-Savoie","75":"Paris","76":"Seine-Maritime","77":"Seine-et-Marne","78":"Yvelines","79":"Deux-Sèvres","80":"Somme","81":"Tarn","82":"Tarn-et-Garonne","83":"Var","84":"Vaucluse","85":"Vendée","86":"Vienne","87":"Haute-Vienne","88":"Vosges","89":"Yonne","90":"Territoire de Belfort","91":"Essonne","92":"Hauts-de-Seine","93":"Seine-Saint-Denis","94":"Val-de-Marne","95":"Val-d'Oise","971":"Guadeloupe","972":"Martinique","973":"Guyane","974":"La Réunion","976":"Mayotte","2A":"Corse-du-Sud","2B":"Haute-Corse"};
+
+function stripAccents(str) {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['']/g, '-');
+}
+
+function slugify(str) {
+  return stripAccents(str).toLowerCase()
+    .replace(/['']/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function generate() {
+  const raw = document.getElementById('dep').value.trim().toUpperCase();
+  const out = document.getElementById('output');
+  if (!raw) {
+    out.innerHTML = '<div class="empty">Entre un code de département pour voir les commandes</div>';
+    return;
+  }
+
+  // Tente avec/sans zéro de tête
+  const candidates = [raw, raw.replace(/^0+/, ''), '0' + raw];
+  let depCode = null;
+  let depNomRaw = null;
+  for (const c of candidates) {
+    if (DEPS[c]) { depCode = raw; depNomRaw = DEPS[c]; break; }
+  }
+
+  if (!depNomRaw) {
+    out.innerHTML = '<div class="empty">❌ Département "' + raw + '" introuvable</div>';
+    return;
+  }
+
+  const depNom  = stripAccents(depNomRaw);
+  const slug    = slugify(depNomRaw);
+  const dirCity = depCode + '-' + slug;
+  const dirDep  = dirCity + '-dep';
+
+  const cmd1 = `node generate-dep.js --dep ${depCode} --dep-nom ${depNom}`;
+  const cmd2 = `node generate.js --dep ${depCode} --dep-nom ${depNom}`;
+  const cmd3 = `node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \\
+  --local-villes output/${dirCity} \\
+  --remote-villes /var/www/peintres/${slug} \\
+  --local-dep output/${dirDep} \\
+  --remote-dep /var/www/peintre-en-batiment-${depCode} \\
+  --server root@204.168.224.81`;
+  const combo = `${cmd1} && ${cmd2} && ${cmd3}`;
+
+  out.innerHTML = `
+    <div class="dep-name">${depNomRaw} (${depCode})</div>
+    ${block('Tout en une commande', combo)}
+    ${block('1. Site département', cmd1)}
+    ${block('2. Sites villes', cmd2)}
+    ${block('3. Déploiement (avec site dept)', cmd3)}
+  `;
+
+  document.querySelectorAll('button.copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const txt = btn.parentElement.querySelector('pre').textContent;
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ Copié';
+        btn.classList.add('ok');
+        setTimeout(() => { btn.textContent = old; btn.classList.remove('ok'); }, 1200);
+      });
+    });
+  });
+}
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function block(label, cmd) {
+  return `
+    <div class="cmd-block">
+      <button class="copy">Copier</button>
+      <div class="cmd-label">${label}</div>
+      <pre class="cmd">${escapeHtml(cmd)}</pre>
+    </div>
+  `;
+}
+
+const STORAGE_KEY = 'cmd-dep-code';
+const depInput = document.getElementById('dep');
+
+// Restaure la dernière valeur saisie
+const saved = localStorage.getItem(STORAGE_KEY);
+if (saved) {
+  depInput.value = saved;
+  generate();
+}
+
+// Sauvegarde à chaque frappe
+depInput.addEventListener('input', () => {
+  localStorage.setItem(STORAGE_KEY, depInput.value);
+});
+
+document.getElementById('go').addEventListener('click', generate);
+depInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') generate();
+});
+</script>
+</body>
+</html>
