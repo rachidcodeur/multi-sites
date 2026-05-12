@@ -122,6 +122,7 @@ const DEP_FORMES = {
   '27': { a: "dans l'Eure",         de: "de l'Eure",         le: "l'Eure" },
   '28': { a: "en Eure-et-Loir",     de: "d'Eure-et-Loir",    le: "l'Eure-et-Loir" },
   '29': { a: "dans le Finistère",    de: "du Finistère",      le: "le Finistère" },
+  '20': { a: "en Corse",            de: "de Corse",           le: "la Corse" },
   '2A': { a: "en Corse-du-Sud",     de: "de Corse-du-Sud",    le: "la Corse-du-Sud" },
   '2B': { a: "en Haute-Corse",      de: "de Haute-Corse",     le: "la Haute-Corse" },
   '30': { a: "dans le Gard",         de: "du Gard",           le: "le Gard" },

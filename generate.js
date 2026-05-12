@@ -90,7 +90,24 @@ const outDir = `${depCode}-${slugifyDep(depNomArg)}`;
 
 const communes        = JSON.parse(fs.readFileSync('data/communes.json',  'utf8'));
 const variables       = JSON.parse(fs.readFileSync('data/variables.json', 'utf8'));
-const batch           = JSON.parse(fs.readFileSync('data/batch.json',     'utf8'));
+
+// Charge la liste des villes : prioritairement depuis json-communes/communes_XX.json
+const depPad = (() => {
+  const s = String(depCode).toUpperCase();
+  if (s === '2A' || s === '2B') return '20'; // Corse fusionnée en dept 20
+  if (s.length >= 3) return s;
+  return s.padStart(2, '0');
+})();
+const communesFile = path.join(__dirname, 'json-communes', `communes_${depPad}.json`);
+let batch;
+if (fs.existsSync(communesFile)) {
+  batch = JSON.parse(fs.readFileSync(communesFile, 'utf8'));
+  console.log(`📂 ${batch.villes.length} communes chargées depuis json-communes/communes_${depPad}.json`);
+} else {
+  console.warn(`⚠️   json-communes/communes_${depPad}.json introuvable — fallback sur data/batch.json`);
+  batch = JSON.parse(fs.readFileSync('data/batch.json', 'utf8'));
+}
+
 const template        = fs.readFileSync('index.html',                      'utf8');
 
 // ─── Index des communes ───────────────────────────────────────────────────────
@@ -98,14 +115,16 @@ const template        = fs.readFileSync('index.html',                      'utf8
 // Chaque clé pointe vers un tableau (plusieurs communes peuvent partager un même nom)
 const communeIndex = {};
 communes.forEach(c => {
-  [normalise(c.nom_standard), normalise(c.nom_sans_pronom)].forEach(key => {
+  [normalise(c.nom_standard), normalise(c.nom_sans_pronom), normalise(c.nom_sans_accent)].forEach(key => {
+    if (!key) return;
     if (!communeIndex[key]) communeIndex[key] = [];
-    communeIndex[key].push(c);
+    if (!communeIndex[key].includes(c)) communeIndex[key].push(c);
   });
 });
 
+// Normalise : minuscules, sans accents, trim — match quelle que soit l'orthographe saisie
 function normalise(str) {
-  return str.toLowerCase().trim();
+  return String(str).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
 }
 
 // ─── Utilitaires ─────────────────────────────────────────────────────────────
@@ -167,6 +186,7 @@ const DEP_FORMES = {
   '27': { a: "dans l'Eure",         de: "de l'Eure",         le: "l'Eure" },
   '28': { a: "en Eure-et-Loir",     de: "d'Eure-et-Loir",    le: "l'Eure-et-Loir" },
   '29': { a: "dans le Finistère",    de: "du Finistère",      le: "le Finistère" },
+  '20': { a: "en Corse",            de: "de Corse",           le: "la Corse" },
   '2A': { a: "en Corse-du-Sud",     de: "de Corse-du-Sud",    le: "la Corse-du-Sud" },
   '2B': { a: "en Haute-Corse",      de: "de Haute-Corse",     le: "la Haute-Corse" },
   '30': { a: "dans le Gard",         de: "du Gard",           le: "le Gard" },
@@ -429,6 +449,11 @@ batch.villes.forEach(villeNom => {
   </url>
 </urlset>`;
   fs.writeFileSync(path.join(outPath, 'sitemap.xml'), sitemap, 'utf8');
+  fs.writeFileSync(
+    path.join(outPath, 'robots.txt'),
+    `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`,
+    'utf8'
+  );
   fs.copyFileSync('style.css', path.join(outPath, 'style.css'));
 
   // Assets (images ville + partagés + JS)

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Générateur de commandes — Peintre Intérieur</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f5f7;
+      color: #1a1a1a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    .header { text-align: center; margin-bottom: 2rem; }
+    h1 {
+      font-size: 1.8rem;
+      color: #010122;
+      margin-bottom: .5rem;
+    }
+    .subtitle {
+      color: #BD5722;
+      font-size: .95rem;
+    }
+    .container { width: 100%; max-width: 800px; }
+
+    /* Onglets */
+    .tabs {
+      display: flex;
+      gap: .4rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(1, 1, 34, 0.1);
+      padding-bottom: 0;
+    }
+    .tab {
+      flex: 1;
+      padding: .7rem 1rem;
+      border: none;
+      background: transparent;
+      color: #6b6b80;
+      font-size: .92rem;
+      font-weight: 500;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all .15s;
+    }
+    .tab:hover { color: #BD5722; }
+    .tab.active {
+      color: #BD5722;
+      border-bottom-color: #BD5722;
+      font-weight: 700;
+    }
+
+    .pane { display: none; }
+    .pane.active { display: block; }
+
+    .input-row {
+      display: flex;
+      gap: .6rem;
+      margin-bottom: 1.5rem;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: .85rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(1, 1, 34, 0.15);
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    input[type="text"]:focus {
+      border-color: #BD5722;
+      box-shadow: 0 0 0 3px rgba(189, 87, 34, 0.18);
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: .85rem 1.2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(1, 1, 34, 0.15);
+      background: #fff;
+      color: #1a1a1a;
+      font-size: 1rem;
+      outline: none;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 1rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    textarea:focus {
+      border-color: #BD5722;
+      box-shadow: 0 0 0 3px rgba(189, 87, 34, 0.18);
+    }
+    .btn-primary {
+      padding: .85rem 1.5rem;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, #FD9D4E, #BD5722);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(189, 87, 34, 0.3);
+    }
+    .pane-info {
+      background: #fff;
+      border: 1px solid rgba(1, 1, 34, 0.08);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      color: #555;
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .os-toggle {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.2rem;
+    }
+    .os-btn {
+      padding: .5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(1, 1, 34, 0.15);
+      background: #fff;
+      color: #BD5722;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .os-btn:hover { border-color: #FD9D4E; }
+    .os-btn.active {
+      background: linear-gradient(135deg, #FD9D4E, #BD5722);
+      color: #fff;
+      border-color: transparent;
+    }
+    .dep-name {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #010122;
+      margin-bottom: 1rem;
+    }
+    .cmd-block {
+      background: #fff;
+      border: 1px solid rgba(1, 1, 34, 0.1);
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 24px rgba(1, 1, 34, 0.06);
+      position: relative;
+    }
+    .cmd-label {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #BD5722;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+    pre.cmd {
+      font-family: 'SF Mono', Menlo, Monaco, Consolas, monospace;
+      font-size: .85rem;
+      color: #1a1a1a;
+      background: #f4f5f7;
+      padding: .9rem 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.5;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    button.copy {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: linear-gradient(135deg, #FD9D4E, #BD5722);
+      color: #fff;
+      border: none;
+      padding: .35rem .8rem;
+      border-radius: 6px;
+      font-size: .8rem;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+    }
+    button.copy:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 12px rgba(189, 87, 34, 0.3);
+    }
+    button.copy.ok { background: #16a34a; }
+    .empty {
+      text-align: center;
+      color: #777;
+      font-size: .9rem;
+      padding: 2rem 0;
+    }
+    .hint {
+      text-align: center;
+      color: #666;
+      font-size: .8rem;
+      margin-top: 1rem;
+    }
+    .warn {
+      background: #fff3e0;
+      border: 1px solid #fbcfa8;
+      color: #9b4a00;
+      padding: .8rem 1rem;
+      border-radius: 10px;
+      font-size: .88rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Générateur de commandes</h1>
+    <div class="subtitle">Peintre Intérieur</div>
+  </div>
+
+  <div class="container">
+
+    <div class="tabs">
+      <button class="tab active" data-pane="single">Un département</button>
+      <button class="tab" data-pane="multi">Plusieurs départements</button>
+      <button class="tab" data-pane="all">Toute la France</button>
+      <button class="tab" data-pane="missing">Communes manquantes</button>
+    </div>
+
+    <!-- Pane : un département -->
+    <div class="pane active" data-pane="single">
+      <div class="input-row">
+        <input type="text" id="dep" placeholder="Ex : 06, 33, 20…" autocomplete="off" autofocus>
+      </div>
+    </div>
+
+    <!-- Pane : plusieurs départements -->
+    <div class="pane" data-pane="multi">
+      <div class="pane-info">
+        Saisis plusieurs codes département (séparés par virgule, espace ou retour à la ligne).
+        Exemples : <code>33, 06, 13</code> ou un par ligne.
+      </div>
+      <textarea id="dep-multi" placeholder="33&#10;06&#10;13"></textarea>
+      <button class="btn-primary" id="gen-multi">Générer la commande groupée</button>
+    </div>
+
+    <!-- Pane : communes manquantes (mode delta) -->
+    <div class="pane" data-pane="missing">
+      <div class="pane-info">
+        Génère uniquement les communes que tu listes — utile quand tu remarques des villes oubliées
+        dans un département déjà déployé. Les communes seront aussi ajoutées automatiquement
+        à <code>json-communes/communes_XX.json</code> pour les futures regénérations complètes.
+      </div>
+      <div class="input-row">
+        <input type="text" id="dep-missing" placeholder="Code département (ex : 33)" autocomplete="off">
+      </div>
+      <textarea id="villes-missing" placeholder="Mérignac&#10;Lacanau&#10;Saint-Émilion&#10;..."></textarea>
+      <button class="btn-primary" id="gen-missing">Générer la commande delta</button>
+    </div>
+
+    <!-- Pane : toute la France -->
+    <div class="pane" data-pane="all">
+      <div class="pane-info">
+        Génère une seule commande qui produit et déploie <strong>tous les départements
+        métropolitains sauf le 75 (Paris)</strong> — Corse traitée en code 20.
+      </div>
+      <div class="warn">
+        ⚠️ Cette commande peut prendre plusieurs heures et déploie ~94 sites départementaux
+        et plusieurs milliers de sites villes. Vérifie ta connexion et la place disque
+        avant de lancer.
+      </div>
+      <button class="btn-primary" id="gen-all">Générer la commande toute la France</button>
+    </div>
+
+    <div class="os-toggle">
+      <button data-os="mac" class="os-btn active">macOS / Linux</button>
+      <button data-os="win" class="os-btn">Windows (PowerShell)</button>
+    </div>
+
+    <div id="output">
+      <div class="empty">Choisis un onglet et entre tes données pour voir les commandes</div>
+    </div>
+    <div class="hint">Les codes 1-9 acceptent 01 ou 1 · Corse = code 20</div>
+  </div>
+
+<script>
+const DEPS = {"1":"Ain","2":"Aisne","3":"Allier","4":"Alpes-de-Haute-Provence","5":"Hautes-Alpes","6":"Alpes-Maritimes","7":"Ardèche","8":"Ardennes","9":"Ariège","10":"Aube","11":"Aude","12":"Aveyron","13":"Bouches-du-Rhône","14":"Calvados","15":"Cantal","16":"Charente","17":"Charente-Maritime","18":"Cher","19":"Corrèze","20":"Corse","21":"Côte-d'Or","22":"Côtes-d'Armor","23":"Creuse","24":"Dordogne","25":"Doubs","26":"Drôme","27":"Eure","28":"Eure-et-Loir","29":"Finistère","30":"Gard","31":"Haute-Garonne","32":"Gers","33":"Gironde","34":"Hérault","35":"Ille-et-Vilaine","36":"Indre","37":"Indre-et-Loire","38":"Isère","39":"Jura","40":"Landes","41":"Loir-et-Cher","42":"Loire","43":"Haute-Loire","44":"Loire-Atlantique","45":"Loiret","46":"Lot","47":"Lot-et-Garonne","48":"Lozère","49":"Maine-et-Loire","50":"Manche","51":"Marne","52":"Haute-Marne","53":"Mayenne","54":"Meurthe-et-Moselle","55":"Meuse","56":"Morbihan","57":"Moselle","58":"Nièvre","59":"Nord","60":"Oise","61":"Orne","62":"Pas-de-Calais","63":"Puy-de-Dôme","64":"Pyrénées-Atlantiques","65":"Hautes-Pyrénées","66":"Pyrénées-Orientales","67":"Bas-Rhin","68":"Haut-Rhin","69":"Rhône","70":"Haute-Saône","71":"Saône-et-Loire","72":"Sarthe","73":"Savoie","74":"Haute-Savoie","75":"Paris","76":"Seine-Maritime","77":"Seine-et-Marne","78":"Yvelines","79":"Deux-Sèvres","80":"Somme","81":"Tarn","82":"Tarn-et-Garonne","83":"Var","84":"Vaucluse","85":"Vendée","86":"Vienne","87":"Haute-Vienne","88":"Vosges","89":"Yonne","90":"Territoire de Belfort","91":"Essonne","92":"Hauts-de-Seine","93":"Seine-Saint-Denis","94":"Val-de-Marne","95":"Val-d'Oise","971":"Guadeloupe","972":"Martinique","973":"Guyane","974":"La Réunion","976":"Mayotte","2A":"Corse-du-Sud","2B":"Haute-Corse"};
+
+// Liste « toute la France » : 01-95 sauf 75 (Paris) — Corse fusionnée en 20
+const ALL_FRANCE_CODES = (() => {
+  const out = [];
+  for (let i = 1; i <= 95; i++) {
+    if (i === 75) continue;          // Paris exclu
+    out.push(String(i).padStart(2, '0'));
+  }
+  return out;
+})();
+
+function stripAccents(str) {
+  return str.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['']/g, '-');
+}
+function slugify(str) {
+  return stripAccents(str).toLowerCase()
+    .replace(/['']/g, '-').replace(/\s+/g, '-')
+    .replace(/-{2,}/g, '-').replace(/^-|-$/g, '');
+}
+function depCode2(dep) {
+  const s = String(dep);
+  if (s === '2A' || s === '2B') return s;
+  if (s.length >= 3) return s;
+  return s.padStart(2, '0');
+}
+
+// Résout un code utilisateur en {depCode, depNomRaw} ou null
+function resolveDep(raw) {
+  raw = String(raw).trim().toUpperCase();
+  if (!raw) return null;
+  const candidates = [raw, raw.replace(/^0+/, ''), '0' + raw, raw.padStart(2, '0')];
+  for (const c of candidates) {
+    if (DEPS[c]) return { depCode: raw, depNomRaw: DEPS[c] };
+  }
+  return null;
+}
+
+// ─── Génération d'un bloc de commandes pour UN département ───────────────────
+
+function buildSingle(depCode, depNomRaw) {
+  const depNom  = stripAccents(depNomRaw);
+  const slug    = slugify(depNomRaw);
+  const dep2    = depCode2(depCode);
+  const dirCity = depCode + '-' + slug;
+  const dirDep  = dirCity + '-dep';
+
+  const cmd1 = `cd template-peintre-interieur && node generate-dep.js --dep ${depCode} --dep-nom "${depNom}"`;
+  const cmd2 = `cd template-peintre-interieur && node generate.js --dep ${depCode} --dep-nom "${depNom}"`;
+
+  let cmd3, combo;
+  if (currentOs === 'win') {
+    cmd3 = `cd template-peintre-interieur ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \`
+  --local-villes output/${dirCity} \`
+  --remote-villes /var/www/peintres/${slug} \`
+  --local-dep output/${dirDep} \`
+  --remote-dep /var/www/peintre-interieur-${dep2} \`
+  --server ubuntu@137.74.112.253`;
+    combo = `cd template-peintre-interieur ; node generate-dep.js --dep ${depCode} --dep-nom "${depNom}" ; node generate.js --dep ${depCode} --dep-nom "${depNom}" ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \`
+  --local-villes output/${dirCity} \`
+  --remote-villes /var/www/peintres/${slug} \`
+  --local-dep output/${dirDep} \`
+  --remote-dep /var/www/peintre-interieur-${dep2} \`
+  --server ubuntu@137.74.112.253`;
+  } else {
+    cmd3 = `cd template-peintre-interieur && node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \\
+  --local-villes output/${dirCity} \\
+  --remote-villes /var/www/peintres/${slug} \\
+  --local-dep output/${dirDep} \\
+  --remote-dep /var/www/peintre-interieur-${dep2} \\
+  --server ubuntu@137.74.112.253`;
+    combo = `cd template-peintre-interieur && node generate-dep.js --dep ${depCode} --dep-nom "${depNom}" && node generate.js --dep ${depCode} --dep-nom "${depNom}" && node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \\
+  --local-villes output/${dirCity} \\
+  --remote-villes /var/www/peintres/${slug} \\
+  --local-dep output/${dirDep} \\
+  --remote-dep /var/www/peintre-interieur-${dep2} \\
+  --server ubuntu@137.74.112.253`;
+  }
+
+  return { depCode, depNomRaw, cmd1, cmd2, cmd3, combo };
+}
+
+// ─── Génération d'une ligne « tout-en-un » SANS le cd (pour batch) ──────────
+
+function buildBatchLine(depCode, depNomRaw) {
+  const depNom  = stripAccents(depNomRaw);
+  const slug    = slugify(depNomRaw);
+  const dep2    = depCode2(depCode);
+  const dirCity = depCode + '-' + slug;
+  const dirDep  = dirCity + '-dep';
+  const sep = currentOs === 'win' ? ' ; ' : ' && ';
+
+  return [
+    `node generate-dep.js --dep ${depCode} --dep-nom "${depNom}"`,
+    `node generate.js --dep ${depCode} --dep-nom "${depNom}"`,
+    `node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep --local-villes output/${dirCity} --remote-villes /var/www/peintres/${slug} --local-dep output/${dirDep} --remote-dep /var/www/peintre-interieur-${dep2} --server ubuntu@137.74.112.253`
+  ].join(sep);
+}
+
+function buildBatch(depList) {
+  const cont = currentOs === 'win' ? '`' : '\\';
+  const sep  = currentOs === 'win' ? ';'  : '&&';
+  const cdCmd = currentOs === 'win' ? 'cd template-peintre-interieur' : 'cd template-peintre-interieur';
+
+  const lines = [`${cdCmd} ${sep} ${cont}`];
+  depList.forEach((d, i) => {
+    const isLast = i === depList.length - 1;
+    const line = buildBatchLine(d.depCode, d.depNomRaw);
+    lines.push(isLast ? line : `${line} ${sep} ${cont}`);
+  });
+  return lines.join('\n');
+}
+
+// ─── Génération du bloc HTML pour la sortie ──────────────────────────────────
+
+function escapeHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function block(label, cmd) {
+  return `
+    <div class="cmd-block">
+      <button class="copy">Copier</button>
+      <div class="cmd-label">${label}</div>
+      <pre class="cmd">${escapeHtml(cmd)}</pre>
+    </div>
+  `;
+}
+function attachCopy() {
+  document.querySelectorAll('button.copy').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const txt = btn.parentElement.querySelector('pre').textContent;
+      navigator.clipboard.writeText(txt).then(() => {
+        const old = btn.textContent;
+        btn.textContent = '✓ Copié';
+        btn.classList.add('ok');
+        setTimeout(() => { btn.textContent = old; btn.classList.remove('ok'); }, 1200);
+      });
+    });
+  });
+}
+
+// ─── Onglets + OS — état global initialisé en premier ────────────────────────
+
+const out = document.getElementById('output');
+let currentPane = localStorage.getItem('cmd-int-pane') || 'single';
+let currentOs = localStorage.getItem('cmd-int-os')
+  || (/Win/i.test(navigator.platform) ? 'win' : 'mac');
+
+// Applique l'état des onglets sans déclencher de rendu (pas encore prêt)
+document.querySelectorAll('.tab').forEach(x => {
+  x.classList.toggle('active', x.dataset.pane === currentPane);
+});
+document.querySelectorAll('.pane').forEach(x => {
+  x.classList.toggle('active', x.dataset.pane === currentPane);
+});
+document.querySelectorAll('.os-btn').forEach(b => {
+  b.classList.toggle('active', b.dataset.os === currentOs);
+});
+
+// Handlers (déclenchent refreshOutput, qui sera défini avant la fin du script)
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.pane').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelector(`.pane[data-pane="${t.dataset.pane}"]`).classList.add('active');
+    currentPane = t.dataset.pane;
+    localStorage.setItem('cmd-int-pane', currentPane);
+    refreshOutput();
+  });
+});
+function setOs(os) {
+  currentOs = os;
+  localStorage.setItem('cmd-int-os', os);
+  document.querySelectorAll('.os-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.os === os);
+  });
+  refreshOutput();
+}
+document.querySelectorAll('.os-btn').forEach(b => {
+  b.addEventListener('click', () => setOs(b.dataset.os));
+});
+
+// ─── Pane « single » ─────────────────────────────────────────────────────────
+
+const depInput = document.getElementById('dep');
+const STORAGE_KEY_SINGLE = 'cmd-int-dep-code';
+const saved = localStorage.getItem(STORAGE_KEY_SINGLE);
+if (saved) depInput.value = saved;
+
+depInput.addEventListener('input', () => {
+  localStorage.setItem(STORAGE_KEY_SINGLE, depInput.value);
+  if (currentPane === 'single') renderSingle();
+});
+
+function renderSingle() {
+  const r = resolveDep(depInput.value);
+  if (!r) {
+    if (depInput.value.trim()) {
+      out.innerHTML = '<div class="empty">❌ Département "' + escapeHtml(depInput.value) + '" introuvable</div>';
+    } else {
+      out.innerHTML = '<div class="empty">Entre un code de département pour voir les commandes</div>';
+    }
+    return;
+  }
+  const s = buildSingle(r.depCode, r.depNomRaw);
+  out.innerHTML = `
+    <div class="dep-name">${s.depNomRaw} (${s.depCode})</div>
+    ${block('Tout en une commande', s.combo)}
+    ${block('1. Site département', s.cmd1)}
+    ${block('2. Sites villes', s.cmd2)}
+    ${block('3. Déploiement (avec site dept)', s.cmd3)}
+  `;
+  attachCopy();
+}
+
+// ─── Pane « multi » ──────────────────────────────────────────────────────────
+
+const depMulti = document.getElementById('dep-multi');
+const STORAGE_KEY_MULTI = 'cmd-int-dep-multi';
+const savedMulti = localStorage.getItem(STORAGE_KEY_MULTI);
+if (savedMulti) depMulti.value = savedMulti;
+depMulti.addEventListener('input', () => {
+  localStorage.setItem(STORAGE_KEY_MULTI, depMulti.value);
+});
+document.getElementById('gen-multi').addEventListener('click', renderMulti);
+
+function parseMultiInput(text) {
+  return text
+    .split(/[\s,;\n]+/)
+    .map(s => s.trim())
+    .filter(Boolean);
+}
+
+function renderMulti() {
+  const codes = parseMultiInput(depMulti.value);
+  if (codes.length === 0) {
+    out.innerHTML = '<div class="empty">Entre au moins un code département</div>';
+    return;
+  }
+  const resolved = [];
+  const unknown = [];
+  for (const c of codes) {
+    const r = resolveDep(c);
+    if (r) resolved.push(r); else unknown.push(c);
+  }
+  if (resolved.length === 0) {
+    out.innerHTML = `<div class="empty">❌ Aucun département valide. Inconnus : ${unknown.join(', ')}</div>`;
+    return;
+  }
+  const cmd = buildBatch(resolved);
+  const summary = resolved.map(r => `${r.depNomRaw} (${r.depCode})`).join(', ');
+  let warn = '';
+  if (unknown.length) {
+    warn = `<div class="warn">⚠️ Codes ignorés (inconnus) : ${unknown.join(', ')}</div>`;
+  }
+  out.innerHTML = `
+    <div class="dep-name">${resolved.length} départements</div>
+    <div class="pane-info">${summary}</div>
+    ${warn}
+    ${block(`Tout en une commande (${resolved.length} départements)`, cmd)}
+  `;
+  attachCopy();
+}
+
+// ─── Pane « all France » ─────────────────────────────────────────────────────
+
+document.getElementById('gen-all').addEventListener('click', renderAll);
+
+function renderAll() {
+  const resolved = ALL_FRANCE_CODES
+    .map(c => resolveDep(c))
+    .filter(Boolean);
+  const cmd = buildBatch(resolved);
+  out.innerHTML = `
+    <div class="dep-name">Toute la France — ${resolved.length} départements (sans le 75)</div>
+    ${block(`Tout en une commande (${resolved.length} départements)`, cmd)}
+  `;
+  attachCopy();
+}
+
+// ─── Pane « missing » (communes manquantes — mode delta) ────────────────────
+
+const depMissing    = document.getElementById('dep-missing');
+const villesMissing = document.getElementById('villes-missing');
+const STORAGE_KEY_MISSING_DEP    = 'cmd-int-missing-dep';
+const STORAGE_KEY_MISSING_VILLES = 'cmd-int-missing-villes';
+const savedMissingDep    = localStorage.getItem(STORAGE_KEY_MISSING_DEP);
+const savedMissingVilles = localStorage.getItem(STORAGE_KEY_MISSING_VILLES);
+if (savedMissingDep)    depMissing.value    = savedMissingDep;
+if (savedMissingVilles) villesMissing.value = savedMissingVilles;
+depMissing.addEventListener('input', () => localStorage.setItem(STORAGE_KEY_MISSING_DEP, depMissing.value));
+villesMissing.addEventListener('input', () => localStorage.setItem(STORAGE_KEY_MISSING_VILLES, villesMissing.value));
+document.getElementById('gen-missing').addEventListener('click', renderMissing);
+
+function renderMissing() {
+  const r = resolveDep(depMissing.value);
+  if (!r) {
+    out.innerHTML = '<div class="empty">❌ Département invalide. Entre un code (ex : 33)</div>';
+    return;
+  }
+  const villes = villesMissing.value
+    .split(/[\n,;]+/)
+    .map(s => s.trim())
+    .filter(Boolean);
+  if (villes.length === 0) {
+    out.innerHTML = '<div class="empty">Entre au moins une commune dans le textarea</div>';
+    return;
+  }
+  const { depCode, depNomRaw } = r;
+  const depNom  = stripAccents(depNomRaw);
+  const slug    = slugify(depNomRaw);
+  const dep2    = depCode2(depCode);
+  const dirCity = depCode + '-' + slug;
+  const villesCsv = villes.join(',');
+
+  const cmd = currentOs === 'win'
+    ? `cd template-peintre-interieur ; node generate.js --dep ${depCode} --dep-nom "${depNom}" --villes "${villesCsv}" ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" \`
+  --local-villes output/${dirCity} \`
+  --remote-villes /var/www/peintres/${slug} \`
+  --server ubuntu@137.74.112.253`
+    : `cd template-peintre-interieur && node generate.js --dep ${depCode} --dep-nom "${depNom}" --villes "${villesCsv}" && node deploy.js --dep ${depCode} --dep-nom "${depNom}" \\
+  --local-villes output/${dirCity} \\
+  --remote-villes /var/www/peintres/${slug} \\
+  --server ubuntu@137.74.112.253`;
+
+  out.innerHTML = `
+    <div class="dep-name">${depNomRaw} (${depCode}) — ${villes.length} commune(s)</div>
+    <div class="pane-info">${villes.join(', ')}</div>
+    ${block(`Génération + déploiement des communes manquantes`, cmd)}
+  `;
+  attachCopy();
+}
+
+// ─── Refresh selon le pane actif ─────────────────────────────────────────────
+
+function refreshOutput() {
+  if (currentPane === 'single') {
+    renderSingle();
+  } else {
+    if (out.querySelector('.cmd-block')) {
+      if (currentPane === 'multi')   renderMulti();
+      else if (currentPane === 'all') renderAll();
+      else if (currentPane === 'missing') renderMissing();
+    } else {
+      const msg = {
+        multi:   'Saisis tes codes département puis clique sur « Générer »',
+        all:     'Clique sur « Générer la commande toute la France »',
+        missing: 'Entre un code département et la liste des communes manquantes',
+      }[currentPane] || '';
+      out.innerHTML = `<div class="empty">${msg}</div>`;
+    }
+  }
+}
+
+// Render initial
+refreshOutput();
+</script>
+</body>
+</html>

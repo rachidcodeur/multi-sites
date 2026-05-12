@@ -1,0 +1,868 @@
+TEXTES DU SITE PEINTRE INTÉRIEUR — DOCUMENT DE RELECTURE
+=========================================================
+Chaque rubrique contient 5 versions d'un même texte.
+Le site choisit automatiquement une version différente pour chaque ville,
+de manière déterministe (la même ville aura toujours les mêmes textes).
+
+Note sur les mots entre crochets : ils sont remplacés automatiquement.
+  [VILLE]        → nom de la ville          ex : Bordeaux
+  [à VILLE]      → "à Bordeaux", "dans le 1er arrondissement de Paris"
+  [de VILLE]     → "de Bordeaux", "du Bouscat"
+  [DÉPARTEMENT]  → Gironde
+  [MARQUE]       → "Peintre intérieur Bordeaux"
+  [CODE POSTAL]  → 33000
+
+Certains paragraphes sont SCINDÉS en 2 ou 3 parties indépendantes.
+À la génération, chaque partie pioche une variante au hasard et le texte
+final est la concaténation des parties. Cela multiplie les combinaisons
+possibles : 5 × 5 = 25 versions par paragraphe en 2 parties, et
+5 × 5 × 5 = 125 versions pour les paragraphes en 3 parties.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. ARGUMENT DU TITRE DE LA PAGE (onglet navigateur)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Exemple d'utilisation : "Peintre intérieur Bordeaux - 33000 - [VERSION CI-DESSOUS]"
+
+Version 1 : Artisan peinture intérieure
+Version 2 : Spécialiste peinture intérieure
+Version 3 : Expert peinture d'intérieur
+Version 4 : Peintre décorateur d'intérieur
+Version 5 : Artisan peintre qualifié
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. DESCRIPTION META (texte affiché dans Google)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+[MARQUE] — artisan spécialisé en peinture intérieure, rénovation peinture et pose de papier peint. Devis gratuit sous 24 h, finitions soignées, assurance décennale.
+
+Version 2 :
+Peintre intérieur [à VILLE] ([CODE POSTAL]) : peinture, rénovation, papier peint. Devis gratuit sous 24 h, travail propre et garanti.
+
+Version 3 :
+Votre artisan peinture intérieure [à VILLE]. Murs, plafonds, boiseries, papier peint. Finitions soignées, prix justes, devis gratuit.
+
+Version 4 :
+[MARQUE] — peintre intérieur passionné. Finitions impeccables, peintures faible COV, devis gratuit sous 24 h, garantie décennale.
+
+Version 5 :
+Peinture intérieure [à VILLE] : artisan peintre qualifié, finitions soignées, assurance décennale. Devis gratuit sous 24 h.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. PHRASE D'ACCROCHE — BANNIÈRE PRINCIPALE (hero lead)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ce paragraphe est composé de 2 parties (3-A puis 3-B).
+Le texte affiché = une variante de 3-A + une variante de 3-B.
+
+──── PARTIE 3-A (introduction) ────
+
+Version 1 :
+Artisan peintre intérieur passionné par les beaux intérieurs, nous transformons vos murs, plafonds et boiseries avec précision et un vrai souci du détail.
+
+Version 2 :
+[MARQUE], artisan dédié à la peinture intérieure : rénovation, mise en couleur, papier peint pour sublimer vos pièces de vie.
+
+Version 3 :
+Votre intérieur mérite mieux qu'un coup de peinture, et notre équipe d'artisans peintres [à VILLE] prend le temps de bien préparer chaque support.
+
+Version 4 :
+Spécialiste de la peinture d'intérieur [à VILLE], nous accompagnons particuliers et professionnels dans la rénovation de leurs espaces.
+
+Version 5 :
+Peintre intérieur depuis plus de 15 ans [à VILLE], nous mettons notre savoir faire au service de votre projet de peinture, papier peint ou enduits.
+
+──── PARTIE 3-B (engagement / promesse) ────
+
+Version 1 :
+Profitez d'un travail soigné, propre et livré dans les délais, [à VILLE] et dans toute la métropole.
+
+Version 2 :
+Finitions impeccables, sans poussière ni mauvaise surprise — c'est notre signature à chaque chantier.
+
+Version 3 :
+Conseil sur les teintes, préparation rigoureuse, application maîtrisée et nettoyage du chantier inclus dans chaque prestation.
+
+Version 4 :
+Devis transparent, prix justes et travail garanti par notre assurance décennale.
+
+Version 5 :
+Un seul interlocuteur du devis à la livraison, des conseils personnalisés et un chantier rendu propre.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. INTRODUCTION SECTION SERVICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 4-A ────
+
+Version 1 :
+De la simple retouche à la rénovation complète, votre [MARQUE] met son savoir faire à votre disposition pour transformer votre intérieur.
+
+Version 2 :
+[MARQUE] couvre tous vos besoins en peinture intérieure : préparation, peinture des murs et plafonds, pose de papier peint, finitions décoratives.
+
+Version 3 :
+Que ce soit pour un studio, un appartement ou une maison entière, notre équipe [à VILLE] adapte son intervention à votre budget et à vos délais.
+
+Version 4 :
+Notre artisan peintre [à VILLE] prend en charge l'ensemble de votre projet : conseil, préparation des supports, peinture, finitions et nettoyage du chantier.
+
+Version 5 :
+Spécialiste de l'intérieur, [MARQUE] maîtrise toutes les techniques modernes : peintures dépolluantes, finitions mates ou velours, papiers peints intissés.
+
+──── PARTIE 4-B ────
+
+Version 1 :
+Découvrez ci-dessous nos prestations principales, toutes réalisées par nos soins et adaptées aussi bien aux logements anciens qu'aux constructions récentes.
+
+Version 2 :
+Chaque chantier est étudié sur mesure pour s'adapter à vos espaces, votre budget et vos contraintes de planning.
+
+Version 3 :
+Nous prenons en charge la préparation, l'application et les finitions avec le même niveau d'exigence sur chaque chantier.
+
+Version 4 :
+Trois prestations principales pour transformer durablement votre logement, avec des produits professionnels et des finitions soignées.
+
+Version 5 :
+Visite gratuite à domicile, devis sous 24 h et travail garanti par notre assurance décennale — sans engagement.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. SERVICE 1 — PEINTURE INTÉRIEURE (description)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 3 parties.
+
+──── PARTIE 5-A (présentation) ────
+
+Version 1 :
+Notre cœur de métier, c'est la peinture intérieure dans toutes ses dimensions : murs, plafonds, boiseries, portes, plinthes et radiateurs.
+
+Version 2 :
+La peinture intérieure est notre spécialité au quotidien : murs, plafonds, boiseries, portes ou radiateurs, nous traitons chaque support avec la même rigueur.
+
+Version 3 :
+Quand on parle de peinture intérieure, la qualité du résultat se joue d'abord dans la préparation.
+
+Version 4 :
+Notre prestation de peinture intérieure couvre l'ensemble des supports d'un logement : murs, plafonds, boiseries, portes, fenêtres, plinthes et radiateurs.
+
+Version 5 :
+Peindre un intérieur ne se résume pas à passer un rouleau : notre équipe vous accompagne du conseil sur les teintes jusqu'à la finition.
+
+──── PARTIE 5-B (méthode) ────
+
+Version 1 :
+Nous commençons toujours par une visite technique pour évaluer l'état des supports et vous conseiller sur les teintes et finitions les mieux adaptées à chaque pièce — un mat profond pour un salon chaleureux, un satiné lessivable pour une cuisine, un velours pour une chambre.
+
+Version 2 :
+Tout commence par un diagnostic précis sur place — état de la peinture existante, fissures, traces d'humidité, choix de finition adapté à chaque pièce.
+
+Version 3 :
+C'est pourquoi nous prenons toujours le temps de diagnostiquer chaque support : présence d'anciennes peintures, fissures, traces, supports gras ou poreux.
+
+Version 4 :
+Pour chaque chantier, nous démarrons par un conseil personnalisé sur les teintes et les finitions, puis nous préparons soigneusement les supports — lessivage, ponçage, rebouchage des défauts, sous-couche adaptée.
+
+Version 5 :
+Choix de la peinture la mieux adaptée à chaque pièce (mat profond pour les salons, satinée lessivable pour les pièces humides, velours pour les chambres), préparation soignée des supports.
+
+──── PARTIE 5-C (exécution / produits) ────
+
+Version 1 :
+Vient ensuite la préparation, étape souvent négligée et pourtant déterminante : nettoyage, ponçage, rebouchage des fissures et application d'une sous-couche quand le support l'exige. La mise en peinture est réalisée en deux couches minimum, avec des produits sélectionnés pour leur tenue, leur rendu et leur faible taux de COV.
+
+Version 2 :
+Nous préparons ensuite le support en profondeur (lessivage, ponçage, rebouchage, sous-couche) avant d'appliquer deux couches de peinture professionnelle, choisie pour son rendu et son respect de la qualité de l'air.
+
+Version 3 :
+Nous appliquons les traitements adaptés (rebouchage, ponçage, sous-couche d'accroche) avant de poser deux couches de peinture professionnelle dans la finition de votre choix — mat, velours, satin ou laqué.
+
+Version 4 :
+La peinture est ensuite appliquée en deux couches minimum, avec des produits professionnels faible COV, pour un rendu uniforme, durable et fidèle à vos attentes.
+
+Version 5 :
+Préparation soignée des supports, application en deux couches avec des peintures professionnelles à faible émission de COV pour préserver la qualité de l'air intérieur.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. SERVICE 2 — RÉNOVATION DE PEINTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 3 parties.
+
+──── PARTIE 6-A (accroche) ────
+
+Version 1 :
+Vos murs ont jauni, votre plafond porte des traces d'humidité, votre cuisine a souffert au fil des années ou la peinture s'écaille dans les angles ?
+
+Version 2 :
+La rénovation peinture, c'est savoir redonner une seconde vie à un intérieur fatigué.
+
+Version 3 :
+Refaire la peinture d'un logement existant demande plus qu'un simple coup de rouleau.
+
+Version 4 :
+Notre service rénovation s'adresse aux propriétaires qui veulent transformer un intérieur abîmé en espace impeccable.
+
+Version 5 :
+La rénovation peinture, c'est la spécialité qui demande le plus d'expérience.
+
+──── PARTIE 6-B (étapes / méthode) ────
+
+Version 1 :
+Nous prenons en charge la rénovation complète de vos peintures intérieures : décollage des anciens revêtements abîmés, traitement des fissures et défauts du support, lessivage, ponçage, application d'un fixateur si nécessaire, puis pose de nouvelles couches dans la teinte de votre choix.
+
+Version 2 :
+Murs jaunis, plafonds tachés, peinture qui s'écaille, vieux papier peint à enlever, fissures à reprendre — nous gérons toutes les étapes : dépose de l'existant, nettoyage en profondeur, traitement des supports abîmés, sous-couche d'accroche puis peinture finale.
+
+Version 3 :
+Nous prenons en charge la rénovation complète : décollage des anciennes couches qui ne tiennent plus, traitement des fissures, des trous, des supports gras ou écaillés, application d'un fixateur quand le support est friable, ponçage, sous-couche puis peinture finale.
+
+Version 4 :
+Nous traitons tous les défauts : fissures, traces d'humidité, peinture cloquée, ancien papier peint, sous-supports en mauvais état. Chaque cas est diagnostiqué pour appliquer le traitement adapté.
+
+Version 5 :
+Diagnostic des supports, dépose de l'ancien revêtement quand il faut, traitement des fissures et trous, lessivage en profondeur, application d'un fixateur ou d'une sous-couche selon les cas, puis peinture finale.
+
+──── PARTIE 6-C (typologie de logements) ────
+
+Version 1 :
+Nous intervenons dans tous types de logements, anciens comme récents, en adaptant nos techniques et nos produits à chaque support pour garantir un résultat soigné et durable.
+
+Version 2 :
+Nos techniques s'adaptent à chaque type de logement, de l'ancien rénové à l'appartement neuf.
+
+Version 3 :
+Que ce soit pour un appartement après un dégât des eaux, une maison rachetée à rénover ou simplement un rafraîchissement complet, le résultat est durable et soigné.
+
+Version 4 :
+Nous intervenons aussi bien sur des logements anciens que sur des bâtiments récents nécessitant une remise à neuf.
+
+Version 5 :
+Nos techniques sont adaptées à chaque type de support : plâtre ancien, placo récent, béton brut, bois ou métal — pour récupérer un intérieur comme neuf.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+7. SERVICE 3 — POSE DE PAPIER PEINT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 3 parties.
+
+──── PARTIE 7-A (introduction) ────
+
+Version 1 :
+La pose de papier peint exige précision, patience et un vrai coup d'œil.
+
+Version 2 :
+Poser un papier peint dans les règles de l'art, c'est l'affaire de quelques dixièmes de millimètres.
+
+Version 3 :
+Le papier peint, c'est la touche de caractère qui transforme une pièce.
+
+Version 4 :
+Pose de papier peint sur mesure pour valoriser vos pièces.
+
+Version 5 :
+La pose de papier peint, c'est un travail de précision qui fait la différence entre un mur correct et une pièce vraiment soignée.
+
+──── PARTIE 7-B (typologie / techniques) ────
+
+Version 1 :
+Que vous ayez choisi un intissé classique, un vinyle expansé, un panoramique grand format ou un papier à motifs à raccord, nous le posons dans les règles de l'art.
+
+Version 2 :
+Notre équipe maîtrise tous les types de revêtements : intissé, vinyle, papier traditionnel, panoramique grand format, fibre de verre, peints à motifs.
+
+Version 3 :
+Sa pose demande un vrai savoir faire : alignement parfait, raccords millimétrés, traitement des angles, découpes propres autour des prises et plinthes.
+
+Version 4 :
+Nous prenons en charge la dépose de l'ancien revêtement, la préparation rigoureuse du support et la pose proprement dite avec un soin particulier sur les raccords.
+
+Version 5 :
+Notre artisan maîtrise toutes les techniques : encollage du mur pour les intissés, encollage du papier pour les classiques, manipulation délicate des panoramiques.
+
+──── PARTIE 7-C (étapes pose) ────
+
+Version 1 :
+Cela commence par une préparation soignée du mur — rebouchage, ponçage, primaire d'accrochage — pour garantir une adhérence parfaite. Suivent le calcul précis des lés, l'encollage à l'aide d'une encolleuse professionnelle puis la pose.
+
+Version 2 :
+Tout commence par la préparation du mur — rebouchage, ponçage, primaire — puis vient le travail de précision : calcul des lés, encollage, pose et raccords parfaits.
+
+Version 3 :
+Le support est toujours préparé en amont — ponçage, rebouchage, primaire d'accrochage — pour une adhérence optimale et un résultat durable.
+
+Version 4 :
+Que vous ayez choisi un intissé uni, un papier à motifs, un panoramique ou un revêtement plus technique (vinyle, fibre de verre), nous le posons dans les règles : encollage adapté, lés calculés au millimètre, finitions nettes.
+
+Version 5 :
+Préparation soignée du support, calcul précis des lés, raccords parfaits, finitions nettes aux découpes autour des prises et interrupteurs.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+8. NOTRE MISSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 8-A ────
+
+Version 1 :
+Notre mission de peintre intérieur est de redonner vie à vos pièces grâce à une peinture intérieure de qualité, exécutée dans les règles de l'art.
+
+Version 2 :
+Notre mission est claire : livrer des intérieurs dont nos clients sont vraiment fiers.
+
+Version 3 :
+Notre mission, c'est d'être l'artisan peintre intérieur de confiance que vous recommanderez à vos proches.
+
+Version 4 :
+Donner à chaque intérieur le soin qu'il mérite — voilà notre mission au quotidien.
+
+Version 5 :
+Notre mission, c'est de remettre l'artisanat au cœur du métier de peintre.
+
+──── PARTIE 8-B ────
+
+Version 1 :
+Nous accompagnons les particuliers comme les professionnels [à VILLE] à chaque étape du projet : conseil sur les teintes et les finitions, préparation minutieuse des supports, application de produits adaptés et reprise des moindres détails. L'objectif est simple : que vous retrouviez un intérieur à la hauteur de vos envies.
+
+Version 2 :
+Cela passe par un travail rigoureux à chaque étape — diagnostic précis du support, préparation soignée, choix des produits adaptés à la pièce, application maîtrisée, finitions impeccables. Nous accompagnons chaque client de la première visite jusqu'à la livraison.
+
+Version 3 :
+Pour cela, nous nous engageons sur trois points : la qualité de la préparation, la rigueur de l'application et la propreté du chantier. Chaque projet est traité avec la même attention.
+
+Version 4 :
+Nous intervenons aussi bien chez des particuliers que dans des locaux professionnels, en adaptant notre approche : type de support, contraintes d'occupation, budget, délais. Conseil sur les couleurs, préparation soignée, peintures professionnelles, finitions nettes — c'est ce que vous obtenez à chaque intervention.
+
+Version 5 :
+Pas de raccourcis, pas de produits low-cost, pas de finitions bâclées. Nous prenons le temps de bien préparer chaque support, d'appliquer la peinture en deux couches minimum, de soigner chaque raccord et de rendre le chantier propre.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+9. NOTRE VISION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 9-A ────
+
+Version 1 :
+Pour un peintre intérieur exigeant, un beau chantier de peinture commence bien avant le premier coup de rouleau.
+
+Version 2 :
+Notre vision du métier va au-delà de la simple application de peinture.
+
+Version 3 :
+Notre conviction : un intérieur réussi se construit par étapes.
+
+Version 4 :
+Nous voyons la peinture intérieure comme un métier d'artisan à part entière.
+
+Version 5 :
+Notre vision, c'est un métier exercé avec exigence du début à la fin.
+
+──── PARTIE 9-B ────
+
+Version 1 :
+Le diagnostic des supports, la qualité de la préparation, le choix d'une peinture adaptée à chaque pièce et l'attention portée à chaque raccord font toute la différence entre un travail simplement correct et un résultat dont on reste fier dix ans plus tard.
+
+Version 2 :
+Un beau chantier, c'est avant tout une bonne préparation, un produit adapté, une exécution rigoureuse et des finitions soignées. Nous croyons que chaque intérieur mérite ce niveau d'exigence.
+
+Version 3 :
+D'abord une bonne préparation du support — c'est elle qui détermine la durabilité du résultat. Puis le choix de la peinture la mieux adaptée à chaque pièce et à son usage. Enfin l'exécution, où chaque détail compte.
+
+Version 4 :
+Cela signifie prendre le temps : diagnostiquer chaque support, choisir la finition la mieux adaptée, préparer méticuleusement, appliquer avec rigueur, soigner chaque raccord. Cette approche prend un peu plus de temps, mais elle livre des chantiers durables.
+
+Version 5 :
+Pas seulement la peinture finale — c'est la partie la plus visible — mais aussi tout ce qu'on ne voit pas : le diagnostic du support, la sous-couche adaptée, le ponçage soigné des fissures rebouchées. Ce sont ces étapes invisibles qui font qu'un intérieur tient dix ans.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+10. NOTRE SAVOIR FAIRE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 10-A ────
+
+Version 1 :
+Fort de plusieurs années d'expérience sur les chantiers [de VILLE], nous maîtrisons l'ensemble des techniques de peinture intérieure.
+
+Version 2 :
+Plus de 15 ans d'expérience nous ont permis de maîtriser toutes les techniques de peinture intérieure.
+
+Version 3 :
+Notre savoir faire couvre l'ensemble des prestations de peinture intérieure.
+
+Version 4 :
+Notre équipe maîtrise toutes les techniques modernes de peinture intérieure.
+
+Version 5 :
+Le savoir faire, c'est ce qui sépare un travail correct d'un résultat vraiment durable.
+
+──── PARTIE 10-B ────
+
+Version 1 :
+Application au rouleau, à la brosse ou au pistolet, peinture mate, satinée ou velours, laque tendue sur boiseries, peintures acryliques ou glycéro selon les supports et l'usage de la pièce. Nous savons également traiter les difficultés propres au bâti local — fissures, traces d'humidité, murs irréguliers et anciennes peintures écaillées.
+
+Version 2 :
+Finitions mates, velours, satinées, laquées ou décoratives, application au rouleau, à la brosse ou au pistolet pour les grandes surfaces. Nous savons travailler sur tous les supports — plâtre, placo, bois, métal — et adapter nos produits à chaque pièce.
+
+Version 3 :
+Préparation des supports (enduits, ponçage, fixateurs), application en deux couches minimum, finitions au rouleau, à la brosse ou au pistolet selon les surfaces. Nous maîtrisons aussi les techniques plus pointues : laques tendues sur boiseries, finitions décoratives, application sur supports anciens difficiles.
+
+Version 4 :
+Application traditionnelle au rouleau et à la brosse, mais aussi pistolet airless pour les grandes surfaces et certains supports techniques. Nous travaillons régulièrement sur des supports variés — plâtre, placo, béton, bois, métal — avec les produits les plus adaptés à chaque cas.
+
+Version 5 :
+Notre équipe maîtrise toutes les techniques d'application — rouleau, brosse, pistolet — toutes les finitions — mate, velours, satin, laque tendue, décorative — et tous les supports — plâtre, placo, bois, métal, supports anciens.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+11. PARAGRAPHE INTRO FORMULAIRE DEVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 11-A (question / ouverture) ────
+
+Version 1 :
+Vous avez un projet de peinture intérieure, une rénovation à prévoir ou un papier peint à poser ?
+
+Version 2 :
+Un projet de mise en peinture, une rénovation complète ou la pose d'un papier peint dans votre salon ?
+
+Version 3 :
+Vous voulez rafraîchir vos pièces, refaire votre intérieur ou poser un papier peint qui change tout ?
+
+Version 4 :
+Travaux de peinture intérieure, rénovation après dégât des eaux, pose de papier peint panoramique ?
+
+Version 5 :
+Une pièce à repeindre, un appartement entier à rénover ou un papier peint à poser parfaitement ?
+
+──── PARTIE 11-B (call-to-action) ────
+
+Version 1 :
+Demandez votre devis gratuit et sans engagement. Votre peintre intérieur se déplace chez vous pour une proposition chiffrée claire, détaillée et sans surprise.
+
+Version 2 :
+Décrivez-nous votre projet et recevez un devis détaillé sous 24 h. Visite gratuite à domicile pour les chantiers de plus de 30 m².
+
+Version 3 :
+Notre artisan vous rappelle dans la journée pour fixer un rendez-vous gratuit. Conseils sur les teintes, planning détaillé et chiffrage transparent inclus.
+
+Version 4 :
+Remplissez le formulaire ci-dessous et nous vous répondons sous 24 h. Devis sur mesure, sans engagement, après une visite à domicile.
+
+Version 5 :
+Un coup de fil ou un message suffit pour démarrer votre projet. Visite gratuite, devis transparent sous 24 h, prix justes et travail garanti.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+12. ENGAGEMENT DEVIS 24 H
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous garantissons une réponse à votre demande sous 24 h, du lundi au samedi.
+
+Version 2 :
+Une réponse rapide est notre priorité : nous revenons vers vous sous 24 h ouvrées maximum.
+
+Version 3 :
+Du lundi au samedi, votre artisan peintre vous recontacte dans les 24 h pour étudier votre projet.
+
+Version 4 :
+Demande envoyée avant 18 h ? Vous recevez un retour le jour même ou au plus tard sous 24 h.
+
+Version 5 :
+Pas de longue attente : nos artisans s'engagent à répondre à chaque demande sous 24 h ouvrées.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+13. TITRE BANNIÈRE D'APPEL (CTA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 : Vous souhaitez refaire votre peinture intérieure [à VILLE] ?
+Version 2 : Un projet de peinture intérieure [à VILLE] ?
+Version 3 : Besoin d'un artisan peintre intérieur [à VILLE] ?
+Version 4 : Envie de rafraîchir votre intérieur [à VILLE] ?
+Version 5 : Une rénovation peinture en tête [à VILLE] ?
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+14. TEXTE BANNIÈRE D'APPEL (CTA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 14-A (accroche) ────
+
+Version 1 :
+Recevez votre devis personnalisé sous 24 h.
+
+Version 2 :
+Notre équipe vous rappelle dans la journée pour fixer une visite gratuite.
+
+Version 3 :
+Un coup de fil suffit pour démarrer votre projet.
+
+Version 4 :
+Décrivez-nous votre projet — pièce, surface, budget — et nous vous proposons une solution adaptée.
+
+Version 5 :
+Une question, un devis, un conseil ? Nous sommes joignables du lundi au samedi de 8 h à 19 h.
+
+──── PARTIE 14-B (engagement) ────
+
+Version 1 :
+Visite gratuite à domicile, conseil sur les teintes, planning détaillé — sans engagement.
+
+Version 2 :
+Sans engagement, devis transparent et conseils personnalisés sur les teintes et les finitions.
+
+Version 3 :
+Nous étudions votre demande et vous remettons un devis détaillé sous 24 h.
+
+Version 4 :
+Chiffrage clair sous 24 h et planning précis pour vos travaux.
+
+Version 5 :
+Nous répondons à toutes vos demandes avec un devis honnête et transparent.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+15. INTRODUCTION SECTION COMMUNES PROCHES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 15-A ────
+
+Version 1 :
+Notre équipe se déplace dans toute la métropole [de VILLE] et au-delà.
+
+Version 2 :
+Au-delà [de VILLE], nous intervenons aussi dans toutes les communes alentour.
+
+Version 3 :
+Notre rayon d'action couvre [VILLE] et l'ensemble des communes de la métropole.
+
+Version 4 :
+Pour les chantiers proches [de VILLE], nous nous déplaçons sans frais supplémentaires.
+
+Version 5 :
+Nos artisans peintres rayonnent autour [de VILLE] et interviennent dans toutes les communes voisines.
+
+──── PARTIE 15-B ────
+
+Version 1 :
+Retrouvez ci-dessous les villes où nous intervenons régulièrement pour des chantiers de peinture intérieure.
+
+Version 2 :
+Voici les villes où nos artisans peintres se déplacent régulièrement pour des chantiers résidentiels et professionnels.
+
+Version 3 :
+Voici quelques-unes des villes où nous sommes intervenus ces derniers mois pour des projets de peinture intérieure.
+
+Version 4 :
+Découvrez les communes où nos équipes interviennent régulièrement pour des prestations de peinture et de rénovation.
+
+Version 5 :
+Voici une sélection des villes où nous avons réalisé des chantiers récents.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+16. INTRODUCTION SECTION "POURQUOI NOUS CHOISIR"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 16-A ────
+
+Version 1 :
+Choisir un peintre intérieur, ce n'est pas seulement comparer des prix : c'est s'assurer d'un travail durable.
+
+Version 2 :
+Pourquoi confier votre projet de peinture à notre équipe plutôt qu'à un autre ?
+
+Version 3 :
+Choisir le bon peintre intérieur, c'est éviter bien des déconvenues.
+
+Version 4 :
+Quatre raisons concrètes de nous faire confiance pour votre projet de peinture intérieure.
+
+Version 5 :
+Nos clients [à VILLE] nous recommandent pour quatre raisons principales.
+
+──── PARTIE 16-B ────
+
+Version 1 :
+Voici les raisons concrètes pour lesquelles nos clients [à VILLE] nous font confiance, et continuent de nous recommander à leur entourage.
+
+Version 2 :
+Parce que nous avons fait de la qualité, de la transparence et du respect de votre logement nos trois engagements quotidiens.
+
+Version 3 :
+Voici les engagements qui font notre différence et qui rassurent nos clients dès le premier rendez-vous.
+
+Version 4 :
+Notre approche se distingue par la qualité des matériaux, la rigueur des préparations, le respect des délais et la garantie décennale.
+
+Version 5 :
+Un ancrage local, des peintures professionnelles, le respect strict des délais et la sécurité d'une assurance décennale incluse.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+17. CARD "ARTISAN LOCAL"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Implantés [à VILLE], nous connaissons parfaitement le bâti local : maisons anciennes, échoppes, pavillons ou appartements neufs.
+
+Version 2 :
+Artisan local [à VILLE], nous nous déplaçons rapidement et sans frais supplémentaires sur l'ensemble du secteur.
+
+Version 3 :
+Notre ancrage [à VILLE] nous donne une vraie connaissance du bâti local : nous savons identifier rapidement les défauts typiques.
+
+Version 4 :
+Travailler avec un artisan local, c'est l'assurance d'un suivi de proximité et d'une intervention rapide.
+
+Version 5 :
+Notre implantation [à VILLE] nous permet d'intervenir vite, de bien connaître les caractéristiques du bâti local et de nous déplacer sans frais supplémentaires.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+18. CARD "PEINTURES DE QUALITÉ"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Nous travaillons exclusivement avec des marques pro (Tollens, Seigneurie, Zolpan) et privilégions les peintures à faible émission de COV.
+
+Version 2 :
+Les peintures que nous appliquons sont issues des grandes marques professionnelles, sélectionnées pour leur tenue, leur rendu et leur faible impact sur la qualité de l'air.
+
+Version 3 :
+Nous n'utilisons que des peintures professionnelles certifiées : faible taux de COV, labels NF Environnement ou Écolabel européen.
+
+Version 4 :
+La qualité des matériaux fait toute la différence. Nous travaillons exclusivement avec des peintures pro et des sous-couches adaptées.
+
+Version 5 :
+Peintures pro à faible émission de COV, sous-couches d'accroche adaptées, enduits de qualité : aucun compromis sur les matériaux.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+19. CARD "RESPECT DES DÉLAIS"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Quand nous annonçons une date de fin de chantier, nous nous y tenons. Au moindre imprévu, nous vous prévenons immédiatement.
+
+Version 2 :
+Le respect des délais est une de nos priorités. Chaque chantier fait l'objet d'un planning détaillé partagé avec vous dès la signature.
+
+Version 3 :
+Délais annoncés = délais tenus. Nous établissons un planning précis dès le devis et le partageons avec vous.
+
+Version 4 :
+Vos délais comptent autant que les nôtres. Nous chiffrons précisément la durée et nous nous y tenons.
+
+Version 5 :
+Nous prenons le temps de bien estimer la durée de chaque chantier avant de signer. Une fois engagés, nous tenons les délais.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+20. CARD "GARANTIE DÉCENNALE"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version 1 :
+Notre activité est couverte par une assurance décennale : vous êtes protégé dix ans contre tout défaut de la prestation.
+
+Version 2 :
+Chaque prestation est couverte par notre assurance décennale, qui vous protège pendant dix ans contre les éventuels défauts.
+
+Version 3 :
+L'assurance décennale est un gage de sérieux. Notre entreprise est couverte pour l'ensemble de ses interventions.
+
+Version 4 :
+Sécurité juridique incluse : nos prestations sont garanties dix ans par notre assurance décennale.
+
+Version 5 :
+Notre garantie décennale couvre l'ensemble des travaux que nous réalisons. L'attestation est fournie d'office avec le devis.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+21. AVIS CLIENT — AVIS PRINCIPAL (mis en avant)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Composé indépendamment : Texte + Auteur + Initiales + Contexte.
+Chaque champ pioche sa propre variante (donc 5 × 5 × 5 = 125 combinaisons).
+
+──── TEXTE DE L'AVIS ────
+
+Version 1 :
+Le résultat est au-delà de ce que j'imaginais. L'équipe a choisi un blanc cassé que je n'aurais jamais osé — et c'est exactement ce que la pièce attendait. Trois jours, zéro poussière, et un salon que je redécouvre chaque matin.
+
+Version 2 :
+Travail impeccable du début à la fin. L'équipe a parfaitement préparé les murs avant l'application, le rendu est parfait. Chantier rendu propre, conseil sur les teintes très juste. Je recommande sans hésiter.
+
+Version 3 :
+[MARQUE] a refait notre salon avec un soin remarquable. Peinture mate de qualité, raccords invisibles, finitions impeccables. On nous demande toujours le nom de l'artisan quand des amis viennent à la maison.
+
+Version 4 :
+Très satisfaite de la peinture du salon et du couloir. Conseil sur les teintes vraiment précieux, équipe ponctuelle et soignée. Aucune trace, finitions nettes, chantier rendu impeccable.
+
+Version 5 :
+Excellente prestation. Peintres très professionnels, à l'écoute des envies. Le rendu est magnifique et le chantier a été rendu propre comme on n'osait l'espérer.
+
+──── AUTEUR ────
+
+Version 1 : Camille R.
+Version 2 : Sophie L.
+Version 3 : Marc D.
+Version 4 : Christine R.
+Version 5 : Émilie B.
+
+──── CONTEXTE (sous le nom) ────
+
+Version 1 : Salon & couloir · [VILLE] Centre · Mars 2026
+Version 2 : Pièce de vie · [VILLE] · Avril 2026
+Version 3 : Rénovation salon · [VILLE] · Février 2026
+Version 4 : Salon décoratif · [VILLE] · Janvier 2026
+Version 5 : Peinture pièces principales · [VILLE] · Mars 2026
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+22. AVIS CLIENT — DEUXIÈME AVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+──── TEXTE DE L'AVIS ────
+
+Version 1 :
+Trois jours de chantier, zéro poussière, des bâches partout. Et un devis tenu au centime près. C'est ça, le vrai luxe.
+
+Version 2 :
+Pose de papier peint panoramique dans l'entrée — un travail délicat fait à la perfection. Raccords invisibles, équipe minutieuse.
+
+Version 3 :
+Refonte complète de la chambre : peinture mate et papier peint sur un mur. Très joli résultat, conseils précieux sur les teintes.
+
+Version 4 :
+Travail soigné, équipe ponctuelle. Peinture des plafonds parfaitement appliquée, aucune trace ni reprise. Très professionnel.
+
+Version 5 :
+[MARQUE] a entièrement repeint nos chambres. Préparation impeccable, deux couches de qualité, aucun désordre laissé sur place.
+
+──── AUTEUR ────
+
+Version 1 : Famille Lemoine
+Version 2 : Julie P.
+Version 3 : Olivier T.
+Version 4 : Nathalie V.
+Version 5 : Camille L.
+
+──── CONTEXTE ────
+
+Version 1 : Maison de ville · [VILLE] · Janvier 2026
+Version 2 : Papier peint panoramique · [VILLE] · Mars 2026
+Version 3 : Peinture chambres · [VILLE] · Février 2026
+Version 4 : Plafonds appartement · [VILLE] · Avril 2026
+Version 5 : Rafraîchissement avant emménagement · [VILLE] · Mars 2026
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+23. AVIS CLIENT — TROISIÈME AVIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+──── TEXTE DE L'AVIS ────
+
+Version 1 :
+On a fait poser un papier panoramique sur trois murs. Les raccords sont invisibles. Tout simplement parfait.
+
+Version 2 :
+Rénovation après dégâts des eaux. [MARQUE] a tout repris : enduits, sous-couches, peinture finale. Travail invisible, comme neuf.
+
+Version 3 :
+Très bon contact dès le premier appel. Équipe sérieuse, respectueuse du logement. Le résultat parle de lui-même.
+
+Version 4 :
+Réfection peinture suite à des fissures sur les murs. Diagnostic précis, traitement adapté, peinture finale magnifique.
+
+Version 5 :
+Tout l'appartement repeint en cinq jours sans le moindre accroc. Équipe efficace, propre et de bon conseil sur les teintes.
+
+──── AUTEUR ────
+
+Version 1 : Studio Mélo
+Version 2 : Patrick M.
+Version 3 : Valérie S.
+Version 4 : Thomas C.
+Version 5 : Sébastien R.
+
+──── CONTEXTE ────
+
+Version 1 : Boutique · [VILLE] · Novembre 2025
+Version 2 : Rénovation après dégât des eaux · [VILLE] · Avril 2026
+Version 3 : Réfection complète T2 · [VILLE] · Mars 2026
+Version 4 : Traitement fissures + peinture · [VILLE] · Février 2026
+Version 5 : Peinture intégrale appartement · [VILLE] · Mars 2026
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+24. DESCRIPTION FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Paragraphe en 2 parties.
+
+──── PARTIE 24-A ────
+
+Version 1 :
+Entreprise artisanale spécialisée dans la peinture intérieure, la rénovation et la pose de papier peint.
+
+Version 2 :
+[MARQUE] — artisan peintre intérieur dédié à la qualité et au détail.
+
+Version 3 :
+Votre artisan peinture intérieure [à VILLE], au service des particuliers et professionnels.
+
+Version 4 :
+Spécialiste peinture d'intérieur depuis plus de 15 ans, [MARQUE] accompagne votre projet.
+
+Version 5 :
+Peintre intérieur [à VILLE] : finitions soignées, peintures professionnelles, conseil personnalisé.
+
+──── PARTIE 24-B ────
+
+Version 1 :
+Nous intervenons [à VILLE] et dans toute la métropole. Devis gratuit, garantie décennale.
+
+Version 2 :
+Devis sous 24 h, garantie décennale, chantier rendu propre — c'est notre engagement à chaque intervention.
+
+Version 3 :
+Travail soigné, finitions impeccables, devis transparent et assurance décennale incluse dans chaque prestation.
+
+Version 4 :
+De la simple retouche à la rénovation complète, nous vous proposons un devis clair et transparent.
+
+Version 5 :
+Devis gratuit sous 24 h, prix justes et travail garanti par notre assurance décennale.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FIN DU DOCUMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NOTES POUR LE RÉDACTEUR :
+- Vous pouvez modifier directement les variantes ci-dessus.
+- Le sens général de chaque variante doit rester cohérent avec son emplacement
+  (par exemple, une variante de "Notre mission" doit toujours parler de la mission).
+- Évitez les phrases trop longues ou trop techniques pour les variantes courtes
+  (ex: dans les paragraphes en 3 parties, l'introduction de la partie 1 doit être brève).
+- Les paragraphes scindés sont volontairement modulables : chaque variante doit
+  pouvoir s'enchaîner naturellement avec n'importe quelle autre variante de la
+  partie suivante (un sens grammatical et logique préservé).
+- Les avis clients sont des textes fictifs servant de témoignage : restez dans
+  l'esprit "client satisfait" et les longueurs habituelles d'un avis Google.
+- Les noms d'auteurs et contextes peuvent être modifiés librement (faux clients).

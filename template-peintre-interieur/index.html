@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#010122">
+  <meta name="description" content="{{VAR_META_DESC}}">
+  <meta name="keywords" content="{{MARQUE}}, peinture intérieure, rénovation peinture, pose papier peint, artisan peintre {{CODE_POSTAL}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="{{MARQUE}} — {{VAR_TITLE_ARG}} | Devis gratuit 24 h">
+  <meta property="og:description" content="{{VAR_META_DESC}}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://{{URL}}">
+  <title>Peintre intérieur {{NOM_COMPLET}} - {{CODE_POSTAL}} - {{VAR_TITLE_ARG}}</title>
+
+  <link rel="icon" href="public/images/favicon.webp" type="image/webp">
+  <link rel="canonical" href="https://{{URL}}">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" title="Plan du site">
+  <link rel="preload" as="image" href="public/images/fond-peintre-interieur.webp" fetchpriority="high">
+
+  <!-- Critical CSS inline pour above-the-fold (header + hero) -->
+  <style>:root{--primary:#010122;--accent:#BD5722;--accent-bright:#FD9D4E;--accent-hover:#9D4818;--text:#010122;--text-soft:#4d4d66;--border:#ECECEF;--radius:12px;--radius-sm:8px;--transition:all .25s ease;--container:1200px}*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI Variable","Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}img{max-width:100%;height:auto;display:block}a{color:var(--accent);text-decoration:none;transition:var(--transition)}h1,h2,h3,h4{margin:0 0 16px;color:var(--primary);letter-spacing:-.5px;font-weight:600}h1{font-size:48px;line-height:1.2}.container{max-width:var(--container);margin:0 auto;padding:0 24px}.site-header{position:sticky;top:0;z-index:100;background:transparent;border:0}.header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:86px;width:min(1200px,calc(100% - 48px));max-width:none;margin:0 auto;padding:7px 24px;background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:0 2px 6px rgba(1,1,34,.04),0 12px 28px rgba(1,1,34,.10),0 24px 48px rgba(1,1,34,.10)}.brand{display:inline-flex;align-items:center;gap:12px;color:var(--primary)}.brand-logo{height:44px;width:auto;max-width:160px;display:block}.brand-text{display:flex;flex-direction:column;line-height:1.1}.brand-name{font-weight:600;font-size:16px}.brand-city{font-size:13px;color:var(--text-soft)}.nav-desktop{display:flex;gap:32px}.nav-desktop a{color:var(--primary);font-size:15px;font-weight:500;padding:4px 0}.menu-toggle{display:none;background:0;border:0;width:40px;height:40px;cursor:pointer;padding:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-family:inherit;font-size:15px;font-weight:500;line-height:1;cursor:pointer;border:1.5px solid transparent;transition:var(--transition);text-align:center;white-space:nowrap}.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 4px rgba(189,87,34,.10)}.btn-light{background:#fff;color:var(--primary);border-color:var(--border)}.btn-lg{padding:16px 32px;font-size:16px}.hero{position:relative;width:min(1200px,calc(100% - 48px));margin:56px auto 0;padding:80px 25px 90px;background-image:url('public/images/fond-peintre-interieur.webp');background-size:cover;background-position:center;background-repeat:no-repeat;border-radius:16px;color:#fff;overflow:hidden;isolation:isolate;box-shadow:0 6px 14px rgba(1,1,34,.08),0 32px 70px rgba(1,1,34,.22)}.hero-overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(1,1,34,.78) 0%,rgba(1,1,34,.55) 55%,rgba(1,1,34,.72) 100%);z-index:0}.hero-content{position:relative;z-index:1;max-width:620px;margin-left:0;text-align:left}.hero h1{color:#fff;font-size:48px;margin:0 0 20px}.hero h1 .accent-italic{color:var(--accent-bright);font-style:italic;font-weight:800}.hero-lead{font-size:16px;color:rgba(255,255,255,.88);margin-bottom:32px;max-width:580px;line-height:1.6}.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}.hero-ctas .btn-primary{border:0;box-shadow:none}.hero-trust{display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.85)}.hero-trust span{display:inline-flex;align-items:center;gap:8px}.hero-trust svg{width:18px;height:18px;color:var(--accent-bright);fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}@media(max-width:768px){.nav-desktop{display:none}.menu-toggle{display:block}.hero{padding:60px 0 70px;margin-top:38px}.hero h1{font-size:30px}.hero-lead{font-size:14px}.header-inner{width:calc(100% - 16px);padding:7px 16px}}</style>
+
+  <!-- Style complet : chargé en async pour ne pas bloquer le rendu -->
+  <link rel="preload" as="style" href="style.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PaintingContractor",
+    "name": "{{MARQUE}}",
+    "url": "https://{{URL}}",
+    "logo": "https://{{URL}}/public/images/logo-{{SLUG}}.webp",
+    "telephone": "{{TEL}}",
+    "description": "{{VAR_META_DESC}}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{NOM_COMPLET}}",
+      "postalCode": "{{CODE_POSTAL}}",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "{{NOM_COMPLET}}"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de peinture intérieure",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peinture intérieure murs et plafonds" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rénovation peinture complète" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pose de papier peint et revêtements muraux" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Préparation des supports et enduits" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pose de toile de verre et fibres murales" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mise en peinture décorative et finitions" } }
+      ]
+    }
+  }
+  </script>
+  <!-- Supabase config — injecté à la génération depuis .env -->
+  <script type="application/json" id="supabase-config-json">{"directUrl":"","url":"","relative":false,"anon":"","table":"leads_peinture"}</script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="{{MARQUE}} — accueil">
+        <img src="public/images/logo.webp" alt="" width="160" height="44" loading="eager" decoding="async" class="brand-logo">
+        <span class="brand-text">
+          <span class="brand-name">Peintre intérieur</span>
+          <span class="brand-city">{{NOM_COMPLET}}</span>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="#services">Nos prestations</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#contact-bas">Devis gratuit</a>
+      </nav>
+
+      <a href="tel:{{TEL_HREF}}" class="btn btn-primary btn-header">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        {{TEL}}
+      </a>
+
+      <button type="button" class="menu-toggle" id="menu-toggle"
+              aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="mobile-menu-backdrop" tabindex="-1"></div>
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+      <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="nav-mobile" aria-label="Navigation principale">
+        <a href="#services">Nos prestations</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#contact-bas">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn btn-primary btn-block">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        {{TEL}}
+      </a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO / BANNIÈRE
+    ============================================================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-title">
+            Peintre intérieur <span class="accent-italic">{{NOM_COMPLET}}</span>
+          </h1>
+          <p class="hero-lead">{{VAR_HERO_LEAD_1}} {{VAR_HERO_LEAD_2}}</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary btn-lg">Demander un devis</a>
+            <a href="tel:{{TEL_HREF}}" class="btn btn-light btn-lg">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              {{TEL}}
+            </a>
+          </div>
+          <div class="hero-trust">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> Devis sous 24 h</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> Assurance décennale</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg> +15 ans d'expérience</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT — formulaire de devis
+    ============================================================ -->
+    <section class="section section-alt contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+
+        <div class="contact-intro">
+          <h2 id="contact-title">Demande de <span class="accent-italic">devis</span></h2>
+          <p class="contact-lead">{{VAR_CONTACT_LEAD_1}} {{VAR_CONTACT_LEAD_2}}</p>
+
+          <ul class="contact-perks">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+              Réponse sous 24 h ouvrées
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+              Visite gratuite à domicile
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+              Devis détaillé, sans engagement
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>
+              Réponse humaine, par un artisan peintre
+            </li>
+          </ul>
+
+          <div class="contact-trust">
+            <span class="contact-trust-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <div>
+              <strong>Devis en 24 h</strong>
+              <p>{{VAR_DEVIS_24H}}</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post" name="contact">
+          <div class="hp-field" aria-hidden="true">
+            <label for="cf-hp">Ne pas remplir ce champ</label>
+            <input type="text" id="cf-hp" name="field_hp" tabindex="-1"
+                   autocomplete="off" value="" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
+          </div>
+
+          <div class="form-field">
+            <label for="cf-name">Nom &amp; Prénom</label>
+            <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Votre nom et prénom">
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-email">Adresse e-mail</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="Votre email">
+            </div>
+            <div class="form-field">
+              <label for="cf-phone">Téléphone</label>
+              <input type="tel" id="cf-phone" name="phone" required autocomplete="tel" placeholder="06 XX XX XX XX">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-postal">Code postal</label>
+              <input type="text" id="cf-postal" name="postal" required inputmode="numeric"
+                     autocomplete="postal-code" maxlength="5" placeholder="{{CODE_POSTAL}}">
+            </div>
+            <div class="form-field">
+              <label for="cf-city">Ville</label>
+              <input type="text" id="cf-city" name="city" required autocomplete="address-level2" placeholder="{{NOM_COMPLET}}">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="cf-message">Décrivez votre besoin</label>
+            <textarea id="cf-message" name="message" rows="4" required
+                      placeholder="Ex : peinture de mon salon 40 m², murs et plafond, en Gironde…"></textarea>
+          </div>
+
+          <p class="contact-form-feedback" hidden aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Envoyer ma demande</button>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES — layout éditorial alterné
+    ============================================================ -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title" class="section-heading">Nos <span class="accent">services</span></h2>
+          <p class="section-sub">{{VAR_SERVICES_INTRO_1}} {{VAR_SERVICES_INTRO_2}}</p>
+        </div>
+
+        <div class="services-editorial">
+
+          <article class="service-row">
+            <div class="service-row-media">
+              <img src="public/images/service-peinture-interieur.webp" width="800" height="600"
+                   alt="Peinture intérieure de murs et plafonds dans un appartement bordelais"
+                   loading="lazy" decoding="async">
+              <span class="service-row-num">01</span>
+            </div>
+            <div class="service-row-content">
+              <p class="service-row-tag">Service 01</p>
+              <h3>Peinture intérieur</h3>
+              <p>{{VAR_SERVICE_PEINTURE_1}} {{VAR_SERVICE_PEINTURE_2}} {{VAR_SERVICE_PEINTURE_3}}</p>
+              <a href="#contact-bas" class="btn btn-primary">
+                Demander un devis
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <div class="service-divider"></div>
+
+          <article class="service-row service-row--reverse">
+            <div class="service-row-media">
+              <img src="public/images/service-renovation-peinture.webp" width="800" height="600"
+                   alt="Rénovation peinture complète d'un intérieur ancien"
+                   loading="lazy" decoding="async">
+              <span class="service-row-num">02</span>
+            </div>
+            <div class="service-row-content">
+              <p class="service-row-tag">Service 02</p>
+              <h3>Rénovation de peinture</h3>
+              <p>{{VAR_SERVICE_RENOVATION_1}} {{VAR_SERVICE_RENOVATION_2}} {{VAR_SERVICE_RENOVATION_3}}</p>
+              <a href="#contact-bas" class="btn btn-primary">
+                Demander un devis
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <div class="service-divider"></div>
+
+          <article class="service-row">
+            <div class="service-row-media">
+              <img src="public/images/service-pose-papier-peint.webp" width="800" height="600"
+                   alt="Pose de papier peint panoramique dans un salon bordelais"
+                   loading="lazy" decoding="async">
+              <span class="service-row-num">03</span>
+            </div>
+            <div class="service-row-content">
+              <p class="service-row-tag">Service 03</p>
+              <h3>Pose de papier peint</h3>
+              <p>{{VAR_SERVICE_PAPIER_PEINT_1}} {{VAR_SERVICE_PAPIER_PEINT_2}} {{VAR_SERVICE_PAPIER_PEINT_3}}</p>
+              <a href="#contact-bas" class="btn btn-primary">
+                Demander un devis
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         VALEURS — Mission, Vision, savoir faire
+    ============================================================ -->
+    <section class="section section-alt" id="valeurs">
+      <div class="container">
+        <div class="values-grid">
+
+          <article class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2v20M2 12h20"/>
+                <circle cx="12" cy="12" r="9"/>
+              </svg>
+            </div>
+            <h3>Notre mission</h3>
+            <p>{{VAR_MISSION_1}} {{VAR_MISSION_2}}</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <h3>Notre vision</h3>
+            <p>{{VAR_VISION_1}} {{VAR_VISION_2}}</p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/>
+                <path d="M12 8v8"/>
+                <path d="M8 12h8"/>
+              </svg>
+            </div>
+            <h3>Notre savoir faire</h3>
+            <p>{{VAR_SAVOIR_FAIRE_1}} {{VAR_SAVOIR_FAIRE_2}}</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA SECTION
+    ============================================================ -->
+    <section class="section section-alt section-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner-inner">
+            <div>
+              <h2 id="cta-title">{{VAR_CTA_TITLE}}</h2>
+              <p>{{VAR_CTA_1}} {{VAR_CTA_2}}</p>
+            </div>
+            <div class="cta-banner-actions">
+              <a href="#contact-bas" class="btn btn-primary btn-lg">Demander un devis</a>
+              <a href="tel:{{TEL_HREF}}" class="btn btn-light btn-lg">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                {{TEL}}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         AVIS CLIENTS — 3
+    ============================================================ -->
+    <section class="section" id="avis" aria-labelledby="avis-title">
+      <div class="container">
+
+        <div class="reviews-head">
+          <div class="reviews-head-text">
+            <h2 id="avis-title">{{VAR_REVIEWS_TITLE}}</h2>
+          </div>
+          <div class="reviews-rating">
+            <span class="reviews-rating-num">5<span class="reviews-rating-denom">/5</span></span>
+            <div class="reviews-rating-info">
+              <div class="reviews-rating-stars" aria-label="Note moyenne : 5 sur 5">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-divider"></div>
+
+        <div class="reviews-layout">
+
+          <div class="review-featured-col">
+            <article class="review-featured">
+              <div class="review-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+              <span class="review-quotemark" aria-hidden="true">”</span>
+              <blockquote>{{VAR_REVIEW_1_TEXT}}</blockquote>
+              <div class="review-featured-meta">
+                <div class="review-author">
+                  <div class="review-avatar" aria-hidden="true">{{VAR_REVIEW_1_INITIALS}}</div>
+                  <div>
+                    <strong>{{VAR_REVIEW_1_AUTHOR}}</strong>
+                    <span>{{VAR_REVIEW_1_CONTEXT}}</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div class="review-cta-actions">
+              <a href="#contact-bas" class="btn btn-primary review-cta">
+                Demander un devis
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              </a>
+              <a href="tel:{{TEL_HREF}}" class="btn btn-outline review-cta">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                {{TEL}}
+              </a>
+            </div>
+          </div>
+
+          <div class="reviews-secondary">
+
+            <article class="review-card-small">
+              <div class="review-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+              <span class="review-quotemark" aria-hidden="true">”</span>
+              <blockquote>{{VAR_REVIEW_2_TEXT}}</blockquote>
+              <div class="review-author-row">
+                <div class="review-avatar" aria-hidden="true">{{VAR_REVIEW_2_INITIALS}}</div>
+                <div>
+                  <strong>{{VAR_REVIEW_2_AUTHOR}}</strong>
+                  <span>{{VAR_REVIEW_2_CONTEXT}}</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="review-card-small">
+              <div class="review-stars" aria-label="Note : 5 sur 5">★★★★★</div>
+              <span class="review-quotemark" aria-hidden="true">”</span>
+              <blockquote>{{VAR_REVIEW_3_TEXT}}</blockquote>
+              <div class="review-author-row">
+                <div class="review-avatar" aria-hidden="true">{{VAR_REVIEW_3_INITIALS}}</div>
+                <div>
+                  <strong>{{VAR_REVIEW_3_AUTHOR}}</strong>
+                  <span>{{VAR_REVIEW_3_CONTEXT}}</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COMMUNES PROCHES — 4 par ligne x 3 lignes
+    ============================================================ -->
+    <section class="section section-dark" id="zones" aria-labelledby="zones-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="zones-title" class="section-heading section-heading--light">Découvrez nos communes proches</h2>
+          <p class="section-sub section-sub--light">{{VAR_ZONES_INTRO_1}} {{VAR_ZONES_INTRO_2}}</p>
+        </div>
+
+        <div class="communes-grid">
+{{COMMUNES_PROCHES}}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         POURQUOI NOUS CHOISIR
+    ============================================================ -->
+    <section class="section" id="pourquoi" aria-labelledby="pourquoi-title">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-intro">
+            <h2 id="pourquoi-title" class="section-heading">Pourquoi nous <span class="accent">choisir</span></h2>
+            <p>{{VAR_WHY_INTRO_1}} {{VAR_WHY_INTRO_2}}</p>
+            <a href="#contact-bas" class="btn btn-primary btn-lg">Demander un devis</a>
+          </div>
+
+          <ul class="why-list">
+            <li class="why-item">
+              <span class="why-check"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
+              <div>
+                <strong>Artisan local</strong>
+                <p>{{VAR_WHY_LOCAL}}</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <span class="why-check"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
+              <div>
+                <strong>Peintures de qualité</strong>
+                <p>{{VAR_WHY_MATERIALS}}</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <span class="why-check"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
+              <div>
+                <strong>Respect des délais</strong>
+                <p>{{VAR_WHY_DELAIS}}</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <span class="why-check"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg></span>
+              <div>
+                <strong>Garantie décennale</strong>
+                <p>{{VAR_WHY_DECENNALE}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT FINAL — formulaire simple en bas de page
+    ============================================================ -->
+    <section class="section section-alt contact-final" id="contact-bas" aria-labelledby="contact-final-title">
+      <div class="container">
+        <h2 id="contact-final-title" class="contact-final-title">Demander un devis <span class="accent-italic">gratuit</span></h2>
+
+        <form class="contact-form contact-form--centered" action="#" method="post" name="contact-bas">
+          <div class="hp-field" aria-hidden="true">
+            <label for="cf2-hp">Ne pas remplir ce champ</label>
+            <input type="text" id="cf2-hp" name="field_hp" tabindex="-1"
+                   autocomplete="off" value="" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
+          </div>
+
+          <div class="form-field">
+            <label for="cf2-name">Nom &amp; Prénom</label>
+            <input type="text" id="cf2-name" name="name" required autocomplete="name" placeholder="Votre nom et prénom">
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf2-email">Adresse e-mail</label>
+              <input type="email" id="cf2-email" name="email" required autocomplete="email" placeholder="Votre email">
+            </div>
+            <div class="form-field">
+              <label for="cf2-phone">Téléphone</label>
+              <input type="tel" id="cf2-phone" name="phone" required autocomplete="tel" placeholder="06 XX XX XX XX">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf2-postal">Code postal</label>
+              <input type="text" id="cf2-postal" name="postal" required inputmode="numeric"
+                     autocomplete="postal-code" maxlength="5" placeholder="{{CODE_POSTAL}}">
+            </div>
+            <div class="form-field">
+              <label for="cf2-city">Ville</label>
+              <input type="text" id="cf2-city" name="city" required autocomplete="address-level2" placeholder="{{NOM_COMPLET}}">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="cf2-message">Décrivez votre besoin</label>
+            <textarea id="cf2-message" name="message" rows="4" required
+                      placeholder="Ex : peinture de mon salon 40 m², murs et plafond, en Gironde…"></textarea>
+          </div>
+
+          <p class="contact-form-feedback" hidden aria-live="polite"></p>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Envoyer ma demande</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>{{MARQUE}}</strong>
+        <p>{{VAR_FOOTER_DESC_1}} {{VAR_FOOTER_DESC_2}}</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="#services">Peinture intérieure</a></li>
+          <li><a href="#services">Rénovation peinture</a></li>
+          <li><a href="#services">Pose papier peint</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-contact">
+          <li><a href="tel:{{TEL_HREF}}">{{TEL}}</a></li>
+          <li>{{CODE_POSTAL}} {{NOM_COMPLET}}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Peintre intérieur — Artisan peintre. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var toggle = document.getElementById('menu-toggle');
+      var menu   = document.getElementById('mobile-menu');
+      if (!toggle || !menu) return;
+      var backdrop = menu.querySelector('.mobile-menu-backdrop');
+      var closeBtn = document.getElementById('mobile-menu-close');
+
+      function open()  { menu.removeAttribute('hidden'); toggle.setAttribute('aria-expanded', 'true'); document.body.classList.add('no-scroll'); }
+      function close() { menu.setAttribute('hidden', ''); toggle.setAttribute('aria-expanded', 'false'); document.body.classList.remove('no-scroll'); }
+      function isOpen(){ return !menu.hasAttribute('hidden'); }
+
+      toggle.addEventListener('click', function () { isOpen() ? close() : open(); });
+      if (backdrop) backdrop.addEventListener('click', close);
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      menu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', close); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) close(); });
+    })();
+  </script>
+
+  <script src="public/js/contact-form.js" defer></script>
+</body>
+</html>

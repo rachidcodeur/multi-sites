@@ -1,0 +1,342 @@
+{
+  "_note": "Variantes textuelles — peintre intérieur. Paragraphes splités en 2-3 parties chacune avec 5 variantes pour maximiser la variation SEO.",
+
+  "var_title_arg": [
+    "Artisan peinture intérieure",
+    "Spécialiste peinture intérieure",
+    "Expert peinture d'intérieur",
+    "Peintre décorateur d'intérieur",
+    "Artisan peintre qualifié"
+  ],
+
+  "var_meta_desc": [
+    "{{MARQUE}} — artisan spécialisé en peinture intérieure, rénovation peinture et pose de papier peint. Devis gratuit sous 24 h, finitions soignées, assurance décennale.",
+    "Peintre intérieur {{NOM_A}} ({{CODE_POSTAL}}) : peinture, rénovation, papier peint. Devis gratuit sous 24 h, travail propre et garanti.",
+    "Votre artisan peinture intérieure {{NOM_A}}. Murs, plafonds, boiseries, papier peint. Finitions soignées, prix justes, devis gratuit.",
+    "{{MARQUE}} — peintre intérieur passionné. Finitions impeccables, peintures faible COV, devis gratuit sous 24 h, garantie décennale.",
+    "Peinture intérieure {{NOM_A}} : artisan peintre qualifié, finitions soignées, assurance décennale. Devis gratuit sous 24 h."
+  ],
+
+  "var_hero_lead_1": [
+    "Artisan peintre intérieur passionné par les beaux intérieurs, nous transformons vos murs, plafonds et boiseries avec précision et un vrai souci du détail.",
+    "{{MARQUE}}, artisan dédié à la peinture intérieure : rénovation, mise en couleur, papier peint pour sublimer vos pièces de vie.",
+    "Votre intérieur mérite mieux qu'un coup de peinture, et notre équipe d'artisans peintres {{NOM_A}} prend le temps de bien préparer chaque support.",
+    "Spécialiste de la peinture d'intérieur {{NOM_A}}, nous accompagnons particuliers et professionnels dans la rénovation de leurs espaces.",
+    "Peintre intérieur depuis plus de 15 ans {{NOM_A}}, nous mettons notre savoir faire au service de votre projet de peinture, papier peint ou enduits."
+  ],
+  "var_hero_lead_2": [
+    "Profitez d'un travail soigné, propre et livré dans les délais, {{NOM_A}} et dans toute la métropole.",
+    "Finitions impeccables, sans poussière ni mauvaise surprise — c'est notre signature à chaque chantier.",
+    "Conseil sur les teintes, préparation rigoureuse, application maîtrisée et nettoyage du chantier inclus dans chaque prestation.",
+    "Devis transparent, prix justes et travail garanti par notre assurance décennale.",
+    "Un seul interlocuteur du devis à la livraison, des conseils personnalisés et un chantier rendu propre."
+  ],
+
+  "var_services_intro_1": [
+    "De la simple retouche à la rénovation complète, votre {{MARQUE}} met son savoir faire à votre disposition pour transformer votre intérieur.",
+    "{{MARQUE}} couvre tous vos besoins en peinture intérieure : préparation, peinture des murs et plafonds, pose de papier peint, finitions décoratives.",
+    "Que ce soit pour un studio, un appartement ou une maison entière, notre équipe {{NOM_A}} adapte son intervention à votre budget et à vos délais.",
+    "Notre artisan peintre {{NOM_A}} prend en charge l'ensemble de votre projet : conseil, préparation des supports, peinture, finitions et nettoyage du chantier.",
+    "Spécialiste de l'intérieur, {{MARQUE}} maîtrise toutes les techniques modernes : peintures dépolluantes, finitions mates ou velours, papiers peints intissés."
+  ],
+  "var_services_intro_2": [
+    "Découvrez ci-dessous nos prestations principales, toutes réalisées par nos soins et adaptées aussi bien aux logements anciens qu'aux constructions récentes.",
+    "Chaque chantier est étudié sur mesure pour s'adapter à vos espaces, votre budget et vos contraintes de planning.",
+    "Nous prenons en charge la préparation, l'application et les finitions avec le même niveau d'exigence sur chaque chantier.",
+    "Trois prestations principales pour transformer durablement votre logement, avec des produits professionnels et des finitions soignées.",
+    "Visite gratuite à domicile, devis sous 24 h et travail garanti par notre assurance décennale — sans engagement."
+  ],
+
+  "var_service_peinture_1": [
+    "Notre cœur de métier, c'est la peinture intérieure dans toutes ses dimensions : murs, plafonds, boiseries, portes, plinthes et radiateurs.",
+    "La peinture intérieure est notre spécialité au quotidien : murs, plafonds, boiseries, portes ou radiateurs, nous traitons chaque support avec la même rigueur.",
+    "Quand on parle de peinture intérieure, la qualité du résultat se joue d'abord dans la préparation.",
+    "Notre prestation de peinture intérieure couvre l'ensemble des supports d'un logement : murs, plafonds, boiseries, portes, fenêtres, plinthes et radiateurs.",
+    "Peindre un intérieur ne se résume pas à passer un rouleau : notre équipe vous accompagne du conseil sur les teintes jusqu'à la finition."
+  ],
+  "var_service_peinture_2": [
+    "Nous commençons toujours par une visite technique pour évaluer l'état des supports et vous conseiller sur les teintes et finitions les mieux adaptées à chaque pièce — un mat profond pour un salon chaleureux, un satiné lessivable pour une cuisine, un velours pour une chambre.",
+    "Tout commence par un diagnostic précis sur place — état de la peinture existante, fissures, traces d'humidité, choix de finition adapté à chaque pièce.",
+    "C'est pourquoi nous prenons toujours le temps de diagnostiquer chaque support : présence d'anciennes peintures, fissures, traces, supports gras ou poreux.",
+    "Pour chaque chantier, nous démarrons par un conseil personnalisé sur les teintes et les finitions, puis nous préparons soigneusement les supports — lessivage, ponçage, rebouchage des défauts, sous-couche adaptée.",
+    "Choix de la peinture la mieux adaptée à chaque pièce (mat profond pour les salons, satinée lessivable pour les pièces humides, velours pour les chambres), préparation soignée des supports."
+  ],
+  "var_service_peinture_3": [
+    "Vient ensuite la préparation, étape souvent négligée et pourtant déterminante : nettoyage, ponçage, rebouchage des fissures et application d'une sous-couche quand le support l'exige. La mise en peinture est réalisée en deux couches minimum, avec des produits sélectionnés pour leur tenue, leur rendu et leur faible taux de COV.",
+    "Nous préparons ensuite le support en profondeur (lessivage, ponçage, rebouchage, sous-couche) avant d'appliquer deux couches de peinture professionnelle, choisie pour son rendu et son respect de la qualité de l'air.",
+    "Nous appliquons les traitements adaptés (rebouchage, ponçage, sous-couche d'accroche) avant de poser deux couches de peinture professionnelle dans la finition de votre choix — mat, velours, satin ou laqué.",
+    "La peinture est ensuite appliquée en deux couches minimum, avec des produits professionnels faible COV, pour un rendu uniforme, durable et fidèle à vos attentes.",
+    "Préparation soignée des supports, application en deux couches avec des peintures professionnelles à faible émission de COV pour préserver la qualité de l'air intérieur."
+  ],
+
+  "var_service_renovation_1": [
+    "Vos murs ont jauni, votre plafond porte des traces d'humidité, votre cuisine a souffert au fil des années ou la peinture s'écaille dans les angles ?",
+    "La rénovation peinture, c'est savoir redonner une seconde vie à un intérieur fatigué.",
+    "Refaire la peinture d'un logement existant demande plus qu'un simple coup de rouleau.",
+    "Notre service rénovation s'adresse aux propriétaires qui veulent transformer un intérieur abîmé en espace impeccable.",
+    "La rénovation peinture, c'est la spécialité qui demande le plus d'expérience."
+  ],
+  "var_service_renovation_2": [
+    "Nous prenons en charge la rénovation complète de vos peintures intérieures : décollage des anciens revêtements abîmés, traitement des fissures et défauts du support, lessivage, ponçage, application d'un fixateur si nécessaire, puis pose de nouvelles couches dans la teinte de votre choix.",
+    "Murs jaunis, plafonds tachés, peinture qui s'écaille, vieux papier peint à enlever, fissures à reprendre — nous gérons toutes les étapes : dépose de l'existant, nettoyage en profondeur, traitement des supports abîmés, sous-couche d'accroche puis peinture finale.",
+    "Nous prenons en charge la rénovation complète : décollage des anciennes couches qui ne tiennent plus, traitement des fissures, des trous, des supports gras ou écaillés, application d'un fixateur quand le support est friable, ponçage, sous-couche puis peinture finale.",
+    "Nous traitons tous les défauts : fissures, traces d'humidité, peinture cloquée, ancien papier peint, sous-supports en mauvais état. Chaque cas est diagnostiqué pour appliquer le traitement adapté.",
+    "Diagnostic des supports, dépose de l'ancien revêtement quand il faut, traitement des fissures et trous, lessivage en profondeur, application d'un fixateur ou d'une sous-couche selon les cas, puis peinture finale."
+  ],
+  "var_service_renovation_3": [
+    "Nous intervenons dans tous types de logements, anciens comme récents, en adaptant nos techniques et nos produits à chaque support pour garantir un résultat soigné et durable.",
+    "Nos techniques s'adaptent à chaque type de logement, de l'ancien rénové à l'appartement neuf.",
+    "Que ce soit pour un appartement après un dégât des eaux, une maison rachetée à rénover ou simplement un rafraîchissement complet, le résultat est durable et soigné.",
+    "Nous intervenons aussi bien sur des logements anciens que sur des bâtiments récents nécessitant une remise à neuf.",
+    "Nos techniques sont adaptées à chaque type de support : plâtre ancien, placo récent, béton brut, bois ou métal — pour récupérer un intérieur comme neuf."
+  ],
+
+  "var_service_papier_peint_1": [
+    "La pose de papier peint exige précision, patience et un vrai coup d'œil.",
+    "Poser un papier peint dans les règles de l'art, c'est l'affaire de quelques dixièmes de millimètres.",
+    "Le papier peint, c'est la touche de caractère qui transforme une pièce.",
+    "Pose de papier peint sur mesure pour valoriser vos pièces.",
+    "La pose de papier peint, c'est un travail de précision qui fait la différence entre un mur correct et une pièce vraiment soignée."
+  ],
+  "var_service_papier_peint_2": [
+    "Que vous ayez choisi un intissé classique, un vinyle expansé, un panoramique grand format ou un papier à motifs à raccord, nous le posons dans les règles de l'art.",
+    "Notre équipe maîtrise tous les types de revêtements : intissé, vinyle, papier traditionnel, panoramique grand format, fibre de verre, peints à motifs.",
+    "Sa pose demande un vrai savoir faire : alignement parfait, raccords millimétrés, traitement des angles, découpes propres autour des prises et plinthes.",
+    "Nous prenons en charge la dépose de l'ancien revêtement, la préparation rigoureuse du support et la pose proprement dite avec un soin particulier sur les raccords.",
+    "Notre artisan maîtrise toutes les techniques : encollage du mur pour les intissés, encollage du papier pour les classiques, manipulation délicate des panoramiques."
+  ],
+  "var_service_papier_peint_3": [
+    "Cela commence par une préparation soignée du mur — rebouchage, ponçage, primaire d'accrochage — pour garantir une adhérence parfaite. Suivent le calcul précis des lés, l'encollage à l'aide d'une encolleuse professionnelle puis la pose.",
+    "Tout commence par la préparation du mur — rebouchage, ponçage, primaire — puis vient le travail de précision : calcul des lés, encollage, pose et raccords parfaits.",
+    "Le support est toujours préparé en amont — ponçage, rebouchage, primaire d'accrochage — pour une adhérence optimale et un résultat durable.",
+    "Que vous ayez choisi un intissé uni, un papier à motifs, un panoramique ou un revêtement plus technique (vinyle, fibre de verre), nous le posons dans les règles : encollage adapté, lés calculés au millimètre, finitions nettes.",
+    "Préparation soignée du support, calcul précis des lés, raccords parfaits, finitions nettes aux découpes autour des prises et interrupteurs."
+  ],
+
+  "var_mission_1": [
+    "Notre mission de peintre intérieur est de redonner vie à vos pièces grâce à une peinture intérieure de qualité, exécutée dans les règles de l'art.",
+    "Notre mission est claire : livrer des intérieurs dont nos clients sont vraiment fiers.",
+    "Notre mission, c'est d'être l'artisan peintre intérieur de confiance que vous recommanderez à vos proches.",
+    "Donner à chaque intérieur le soin qu'il mérite — voilà notre mission au quotidien.",
+    "Notre mission, c'est de remettre l'artisanat au cœur du métier de peintre."
+  ],
+  "var_mission_2": [
+    "Nous accompagnons les particuliers comme les professionnels {{NOM_A}} à chaque étape du projet : conseil sur les teintes et les finitions, préparation minutieuse des supports, application de produits adaptés et reprise des moindres détails. L'objectif est simple : que vous retrouviez un intérieur à la hauteur de vos envies.",
+    "Cela passe par un travail rigoureux à chaque étape — diagnostic précis du support, préparation soignée, choix des produits adaptés à la pièce, application maîtrisée, finitions impeccables. Nous accompagnons chaque client de la première visite jusqu'à la livraison.",
+    "Pour cela, nous nous engageons sur trois points : la qualité de la préparation, la rigueur de l'application et la propreté du chantier. Chaque projet est traité avec la même attention.",
+    "Nous intervenons aussi bien chez des particuliers que dans des locaux professionnels, en adaptant notre approche : type de support, contraintes d'occupation, budget, délais. Conseil sur les couleurs, préparation soignée, peintures professionnelles, finitions nettes — c'est ce que vous obtenez à chaque intervention.",
+    "Pas de raccourcis, pas de produits low-cost, pas de finitions bâclées. Nous prenons le temps de bien préparer chaque support, d'appliquer la peinture en deux couches minimum, de soigner chaque raccord et de rendre le chantier propre."
+  ],
+
+  "var_vision_1": [
+    "Pour un peintre intérieur exigeant, un beau chantier de peinture commence bien avant le premier coup de rouleau.",
+    "Notre vision du métier va au-delà de la simple application de peinture.",
+    "Notre conviction : un intérieur réussi se construit par étapes.",
+    "Nous voyons la peinture intérieure comme un métier d'artisan à part entière.",
+    "Notre vision, c'est un métier exercé avec exigence du début à la fin."
+  ],
+  "var_vision_2": [
+    "Le diagnostic des supports, la qualité de la préparation, le choix d'une peinture adaptée à chaque pièce et l'attention portée à chaque raccord font toute la différence entre un travail simplement correct et un résultat dont on reste fier dix ans plus tard.",
+    "Un beau chantier, c'est avant tout une bonne préparation, un produit adapté, une exécution rigoureuse et des finitions soignées. Nous croyons que chaque intérieur mérite ce niveau d'exigence.",
+    "D'abord une bonne préparation du support — c'est elle qui détermine la durabilité du résultat. Puis le choix de la peinture la mieux adaptée à chaque pièce et à son usage. Enfin l'exécution, où chaque détail compte.",
+    "Cela signifie prendre le temps : diagnostiquer chaque support, choisir la finition la mieux adaptée, préparer méticuleusement, appliquer avec rigueur, soigner chaque raccord. Cette approche prend un peu plus de temps, mais elle livre des chantiers durables.",
+    "Pas seulement la peinture finale — c'est la partie la plus visible — mais aussi tout ce qu'on ne voit pas : le diagnostic du support, la sous-couche adaptée, le ponçage soigné des fissures rebouchées. Ce sont ces étapes invisibles qui font qu'un intérieur tient dix ans."
+  ],
+
+  "var_savoir_faire_1": [
+    "Fort de plusieurs années d'expérience sur les chantiers {{NOM_DE}}, nous maîtrisons l'ensemble des techniques de peinture intérieure.",
+    "Plus de 15 ans d'expérience nous ont permis de maîtriser toutes les techniques de peinture intérieure.",
+    "Notre savoir faire couvre l'ensemble des prestations de peinture intérieure.",
+    "Notre équipe maîtrise toutes les techniques modernes de peinture intérieure.",
+    "Le savoir faire, c'est ce qui sépare un travail correct d'un résultat vraiment durable."
+  ],
+  "var_savoir_faire_2": [
+    "Application au rouleau, à la brosse ou au pistolet, peinture mate, satinée ou velours, laque tendue sur boiseries, peintures acryliques ou glycéro selon les supports et l'usage de la pièce. Nous savons également traiter les difficultés propres au bâti local — fissures, traces d'humidité, murs irréguliers et anciennes peintures écaillées.",
+    "Finitions mates, velours, satinées, laquées ou décoratives, application au rouleau, à la brosse ou au pistolet pour les grandes surfaces. Nous savons travailler sur tous les supports — plâtre, placo, bois, métal — et adapter nos produits à chaque pièce.",
+    "Préparation des supports (enduits, ponçage, fixateurs), application en deux couches minimum, finitions au rouleau, à la brosse ou au pistolet selon les surfaces. Nous maîtrisons aussi les techniques plus pointues : laques tendues sur boiseries, finitions décoratives, application sur supports anciens difficiles.",
+    "Application traditionnelle au rouleau et à la brosse, mais aussi pistolet airless pour les grandes surfaces et certains supports techniques. Nous travaillons régulièrement sur des supports variés — plâtre, placo, béton, bois, métal — avec les produits les plus adaptés à chaque cas.",
+    "Notre équipe maîtrise toutes les techniques d'application — rouleau, brosse, pistolet — toutes les finitions — mate, velours, satin, laque tendue, décorative — et tous les supports — plâtre, placo, bois, métal, supports anciens."
+  ],
+
+  "var_contact_lead_1": [
+    "Vous avez un projet de peinture intérieure, une rénovation à prévoir ou un papier peint à poser ?",
+    "Un projet de mise en peinture, une rénovation complète ou la pose d'un papier peint dans votre salon ?",
+    "Vous voulez rafraîchir vos pièces, refaire votre intérieur ou poser un papier peint qui change tout ?",
+    "Travaux de peinture intérieure, rénovation après dégât des eaux, pose de papier peint panoramique ?",
+    "Une pièce à repeindre, un appartement entier à rénover ou un papier peint à poser parfaitement ?"
+  ],
+  "var_contact_lead_2": [
+    "Demandez votre devis gratuit et sans engagement. Votre peintre intérieur se déplace chez vous pour une proposition chiffrée claire, détaillée et sans surprise.",
+    "Décrivez-nous votre projet et recevez un devis détaillé sous 24 h. Visite gratuite à domicile pour les chantiers de plus de 30 m².",
+    "Notre artisan vous rappelle dans la journée pour fixer un rendez-vous gratuit. Conseils sur les teintes, planning détaillé et chiffrage transparent inclus.",
+    "Remplissez le formulaire ci-dessous et nous vous répondons sous 24 h. Devis sur mesure, sans engagement, après une visite à domicile.",
+    "Un coup de fil ou un message suffit pour démarrer votre projet. Visite gratuite, devis transparent sous 24 h, prix justes et travail garanti."
+  ],
+
+  "var_devis_24h": [
+    "Nous garantissons une réponse à votre demande sous 24 h, du lundi au samedi.",
+    "Une réponse rapide est notre priorité : nous revenons vers vous sous 24 h ouvrées maximum.",
+    "Du lundi au samedi, votre artisan peintre vous recontacte dans les 24 h pour étudier votre projet.",
+    "Demande envoyée avant 18 h ? Vous recevez un retour le jour même ou au plus tard sous 24 h.",
+    "Pas de longue attente : nos artisans s'engagent à répondre à chaque demande sous 24 h ouvrées."
+  ],
+
+  "var_cta_title": [
+    "Vous souhaitez refaire votre peinture intérieure {{NOM_A}} ?",
+    "Un projet de peinture intérieure {{NOM_A}} ?",
+    "Besoin d'un artisan peintre intérieur {{NOM_A}} ?",
+    "Envie de rafraîchir votre intérieur {{NOM_A}} ?",
+    "Une rénovation peinture en tête {{NOM_A}} ?"
+  ],
+
+  "var_cta_1": [
+    "Recevez votre devis personnalisé sous 24 h.",
+    "Notre équipe vous rappelle dans la journée pour fixer une visite gratuite.",
+    "Un coup de fil suffit pour démarrer votre projet.",
+    "Décrivez-nous votre projet — pièce, surface, budget — et nous vous proposons une solution adaptée.",
+    "Une question, un devis, un conseil ? Nous sommes joignables du lundi au samedi de 8 h à 19 h."
+  ],
+  "var_cta_2": [
+    "Visite gratuite à domicile, conseil sur les teintes, planning détaillé — sans engagement.",
+    "Sans engagement, devis transparent et conseils personnalisés sur les teintes et les finitions.",
+    "Nous étudions votre demande et vous remettons un devis détaillé sous 24 h.",
+    "Chiffrage clair sous 24 h et planning précis pour vos travaux.",
+    "Nous répondons à toutes vos demandes avec un devis honnête et transparent."
+  ],
+
+  "var_zones_intro_1": [
+    "Notre équipe se déplace dans toute la métropole {{NOM_DE}} et au-delà.",
+    "Au-delà {{NOM_DE}}, nous intervenons aussi dans toutes les communes alentour.",
+    "Notre rayon d'action couvre {{NOM_COMPLET}} et l'ensemble des communes de la métropole.",
+    "Pour les chantiers proches {{NOM_DE}}, nous nous déplaçons sans frais supplémentaires.",
+    "Nos artisans peintres rayonnent autour {{NOM_DE}} et interviennent dans toutes les communes voisines."
+  ],
+  "var_zones_intro_2": [
+    "Retrouvez ci-dessous les villes où nous intervenons régulièrement pour des chantiers de peinture intérieure.",
+    "Voici les villes où nos artisans peintres se déplacent régulièrement pour des chantiers résidentiels et professionnels.",
+    "Voici quelques-unes des villes où nous sommes intervenus ces derniers mois pour des projets de peinture intérieure.",
+    "Découvrez les communes où nos équipes interviennent régulièrement pour des prestations de peinture et de rénovation.",
+    "Voici une sélection des villes où nous avons réalisé des chantiers récents."
+  ],
+
+  "var_why_intro_1": [
+    "Choisir un peintre intérieur, ce n'est pas seulement comparer des prix : c'est s'assurer d'un travail durable.",
+    "Pourquoi confier votre projet de peinture à notre équipe plutôt qu'à un autre ?",
+    "Choisir le bon peintre intérieur, c'est éviter bien des déconvenues.",
+    "Quatre raisons concrètes de nous faire confiance pour votre projet de peinture intérieure.",
+    "Nos clients {{NOM_A}} nous recommandent pour quatre raisons principales."
+  ],
+  "var_why_intro_2": [
+    "Voici les raisons concrètes pour lesquelles nos clients {{NOM_A}} nous font confiance, et continuent de nous recommander à leur entourage.",
+    "Parce que nous avons fait de la qualité, de la transparence et du respect de votre logement nos trois engagements quotidiens.",
+    "Voici les engagements qui font notre différence et qui rassurent nos clients dès le premier rendez-vous.",
+    "Notre approche se distingue par la qualité des matériaux, la rigueur des préparations, le respect des délais et la garantie décennale.",
+    "Un ancrage local, des peintures professionnelles, le respect strict des délais et la sécurité d'une assurance décennale incluse."
+  ],
+
+  "var_why_local": [
+    "Implantés {{NOM_A}}, nous connaissons parfaitement le bâti local : maisons anciennes, échoppes, pavillons ou appartements neufs.",
+    "Artisan local {{NOM_A}}, nous nous déplaçons rapidement et sans frais supplémentaires sur l'ensemble du secteur.",
+    "Notre ancrage {{NOM_A}} nous donne une vraie connaissance du bâti local : nous savons identifier rapidement les défauts typiques.",
+    "Travailler avec un artisan local, c'est l'assurance d'un suivi de proximité et d'une intervention rapide.",
+    "Notre implantation {{NOM_A}} nous permet d'intervenir vite, de bien connaître les caractéristiques du bâti local et de nous déplacer sans frais supplémentaires."
+  ],
+
+  "var_why_materials": [
+    "Nous travaillons exclusivement avec des marques pro (Tollens, Seigneurie, Zolpan) et privilégions les peintures à faible émission de COV.",
+    "Les peintures que nous appliquons sont issues des grandes marques professionnelles, sélectionnées pour leur tenue, leur rendu et leur faible impact sur la qualité de l'air.",
+    "Nous n'utilisons que des peintures professionnelles certifiées : faible taux de COV, labels NF Environnement ou Écolabel européen.",
+    "La qualité des matériaux fait toute la différence. Nous travaillons exclusivement avec des peintures pro et des sous-couches adaptées.",
+    "Peintures pro à faible émission de COV, sous-couches d'accroche adaptées, enduits de qualité : aucun compromis sur les matériaux."
+  ],
+
+  "var_why_delais": [
+    "Quand nous annonçons une date de fin de chantier, nous nous y tenons. Au moindre imprévu, nous vous prévenons immédiatement.",
+    "Le respect des délais est une de nos priorités. Chaque chantier fait l'objet d'un planning détaillé partagé avec vous dès la signature.",
+    "Délais annoncés = délais tenus. Nous établissons un planning précis dès le devis et le partageons avec vous.",
+    "Vos délais comptent autant que les nôtres. Nous chiffrons précisément la durée et nous nous y tenons.",
+    "Nous prenons le temps de bien estimer la durée de chaque chantier avant de signer. Une fois engagés, nous tenons les délais."
+  ],
+
+  "var_why_decennale": [
+    "Notre activité est couverte par une assurance décennale : vous êtes protégé dix ans contre tout défaut de la prestation.",
+    "Chaque prestation est couverte par notre assurance décennale, qui vous protège pendant dix ans contre les éventuels défauts.",
+    "L'assurance décennale est un gage de sérieux. Notre entreprise est couverte pour l'ensemble de ses interventions.",
+    "Sécurité juridique incluse : nos prestations sont garanties dix ans par notre assurance décennale.",
+    "Notre garantie décennale couvre l'ensemble des travaux que nous réalisons. L'attestation est fournie d'office avec le devis."
+  ],
+
+  "var_reviews_title": [
+    "Ils nous ont confié leurs <span class=\"accent\">murs.</span>",
+    "Ils nous ont fait <span class=\"accent\">confiance.</span>",
+    "Les avis de nos clients <span class=\"accent\">{{NOM_A}}.</span>",
+    "Le retour de nos <span class=\"accent\">clients.</span>",
+    "Ce qu'en pensent nos clients <span class=\"accent\">{{NOM_A}}.</span>"
+  ],
+
+  "var_review_1_text": [
+    "Le résultat est au-delà de ce que j'imaginais. L'équipe a choisi un blanc cassé que je n'aurais jamais osé — et c'est exactement ce que la pièce attendait. Trois jours, zéro poussière, et un salon que je redécouvre chaque matin.",
+    "Travail impeccable du début à la fin. L'équipe a parfaitement préparé les murs avant l'application, le rendu est parfait. Chantier rendu propre, conseil sur les teintes très juste. Je recommande sans hésiter.",
+    "{{MARQUE}} a refait notre salon avec un soin remarquable. Peinture mate de qualité, raccords invisibles, finitions impeccables. On nous demande toujours le nom de l'artisan quand des amis viennent à la maison.",
+    "Très satisfaite de la peinture du salon et du couloir. Conseil sur les teintes vraiment précieux, équipe ponctuelle et soignée. Aucune trace, finitions nettes, chantier rendu impeccable.",
+    "Excellente prestation. Peintres très professionnels, à l'écoute des envies. Le rendu est magnifique et le chantier a été rendu propre comme on n'osait l'espérer."
+  ],
+  "var_review_1_author": ["Camille R.", "Sophie L.", "Marc D.", "Christine R.", "Émilie B."],
+  "var_review_1_initials": ["CR", "SL", "MD", "CR", "EB"],
+  "var_review_1_context": [
+    "Salon & couloir",
+    "Pièce de vie",
+    "Rénovation salon",
+    "Salon décoratif",
+    "Peinture pièces principales"
+  ],
+
+  "var_review_2_text": [
+    "Trois jours de chantier, zéro poussière, des bâches partout. Et un devis tenu au centime près. C'est ça, le vrai luxe.",
+    "Pose de papier peint panoramique dans l'entrée — un travail délicat fait à la perfection. Raccords invisibles, équipe minutieuse.",
+    "Refonte complète de la chambre : peinture mate et papier peint sur un mur. Très joli résultat, conseils précieux sur les teintes.",
+    "Travail soigné, équipe ponctuelle. Peinture des plafonds parfaitement appliquée, aucune trace ni reprise. Très professionnel.",
+    "{{MARQUE}} a entièrement repeint nos chambres. Préparation impeccable, deux couches de qualité, aucun désordre laissé sur place."
+  ],
+  "var_review_2_author": ["Famille Lemoine", "Julie P.", "Olivier T.", "Nathalie V.", "Camille L."],
+  "var_review_2_initials": ["FL", "JP", "OT", "NV", "CL"],
+  "var_review_2_context": [
+    "Maison de ville",
+    "Papier peint panoramique",
+    "Peinture chambres",
+    "Plafonds appartement",
+    "Rafraîchissement avant emménagement"
+  ],
+
+  "var_review_3_text": [
+    "On a fait poser un papier panoramique sur trois murs. Les raccords sont invisibles. Tout simplement parfait.",
+    "Rénovation après dégâts des eaux. {{MARQUE}} a tout repris : enduits, sous-couches, peinture finale. Travail invisible, comme neuf.",
+    "Très bon contact dès le premier appel. Équipe sérieuse, respectueuse du logement. Le résultat parle de lui-même.",
+    "Réfection peinture suite à des fissures sur les murs. Diagnostic précis, traitement adapté, peinture finale magnifique.",
+    "Tout l'appartement repeint en cinq jours sans le moindre accroc. Équipe efficace, propre et de bon conseil sur les teintes."
+  ],
+  "var_review_3_author": ["Studio Mélo", "Patrick M.", "Valérie S.", "Thomas C.", "Sébastien R."],
+  "var_review_3_initials": ["SM", "PM", "VS", "TC", "SR"],
+  "var_review_3_context": [
+    "Boutique",
+    "Rénovation après dégât des eaux",
+    "Réfection complète T2",
+    "Traitement fissures + peinture",
+    "Peinture intégrale appartement"
+  ],
+
+  "var_footer_desc_1": [
+    "Entreprise artisanale spécialisée dans la peinture intérieure, la rénovation et la pose de papier peint.",
+    "{{MARQUE}} — artisan peintre intérieur dédié à la qualité et au détail.",
+    "Votre artisan peinture intérieure {{NOM_A}}, au service des particuliers et professionnels.",
+    "Spécialiste peinture d'intérieur depuis plus de 15 ans, {{MARQUE}} accompagne votre projet.",
+    "Peintre intérieur {{NOM_A}} : finitions soignées, peintures professionnelles, conseil personnalisé."
+  ],
+  "var_footer_desc_2": [
+    "Nous intervenons {{NOM_A}} et dans toute la métropole. Devis gratuit, garantie décennale.",
+    "Devis sous 24 h, garantie décennale, chantier rendu propre — c'est notre engagement à chaque intervention.",
+    "Travail soigné, finitions impeccables, devis transparent et assurance décennale incluse dans chaque prestation.",
+    "De la simple retouche à la rénovation complète, nous vous proposons un devis clair et transparent.",
+    "Devis gratuit sous 24 h, prix justes et travail garanti par notre assurance décennale."
+  ]
+}
