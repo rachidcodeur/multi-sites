@@ -521,6 +521,17 @@
   </section>
 
   <section>
+    <div class="section-label">France entière — 94 départements en 1 script</div>
+    <div class="info-banner" style="display:block; margin-bottom: 18px;">
+      <strong>Alternative bulk :</strong> génère un seul script bash qui configure SSL wildcard + Nginx pour les <strong>94 départements métropolitains</strong> (01-95 sauf 75, Corse traitée en <code>20</code> → "Corse").
+      Pré-requis : <strong>tous</strong> les DNS pointés vers le VPS, OVH API valide dans <code>/etc/letsencrypt/ovh.ini</code>. Durée estimée : <strong>1-2 h</strong> (94 challenges DNS Certbot).
+    </div>
+    <div id="france-area">
+      <button class="copy-all" id="generate-france-btn" style="padding: 8px 16px; font-size: 12px;">⚙ Générer le script France entière</button>
+    </div>
+  </section>
+
+  <section>
     <div class="section-label" style="display: flex; justify-content: space-between;">
       <span style="display: flex; align-items: center; gap: 10px;"><span style="width: 18px; height: 1px; background: var(--border-strong);"></span>Historique</span>
       <button class="history-clear" id="clear-history" style="border: none;">Vider</button>
@@ -1000,6 +1011,170 @@ EOF`
     update();
     store.email = mailEl.value.trim();
     saveStore(store);
+  });
+
+  // ─── France entière : génère un script bash pour 94 deps en 1 passe ────────
+
+  function buildFranceScript(email) {
+    const codes = [];
+    for (let i = 1; i <= 95; i++) {
+      if (i === 75) continue;
+      codes.push(String(i).padStart(2, '0'));
+    }
+
+    const callLines = codes.map(c => {
+      const name = (c === '20') ? 'Corse' : (DEPTS[c] || 'dep-' + c);
+      const slug = normalize(name);
+      return 'configure_dep "' + c + '" "' + slug + '"  # ' + name;
+    }).join('\n');
+
+    return '#!/bin/bash\n' +
+'# ════════════════════════════════════════════════════════════════\n' +
+'# Config France entière — ' + codes.length + ' départements peintre-interieur\n' +
+'# SSL wildcard + Nginx HTTPS pour 01-95 (sauf 75), Corse = 20.\n' +
+'# Pré-requis : DNS pointés vers ce VPS pour TOUS les domaines.\n' +
+'#              OVH API configurée (/etc/letsencrypt/ovh.ini).\n' +
+'# Durée estimée : 1-2 h (' + codes.length + ' challenges DNS Certbot).\n' +
+'# ════════════════════════════════════════════════════════════════\n' +
+'\n' +
+'set -e\n' +
+'\n' +
+'EMAIL="' + email + '"\n' +
+'\n' +
+'sudo mkdir -p /var/www/peintre-interieur/sous-domaines\n' +
+'\n' +
+"# Template Nginx (single-quoted heredoc = pas d'expansion bash, placeholders __XXX__)\n" +
+"read -r -d '' NGINX_TMPL <<'NGINX_TMPL_EOF' || true\n" +
+'server {\n' +
+'    listen 80;\n' +
+'    listen [::]:80;\n' +
+'    server_name __DOMAIN__ *.__DOMAIN__;\n' +
+'    return 301 https://$host$request_uri;\n' +
+'}\n' +
+'\n' +
+'server {\n' +
+'    listen 443 ssl http2;\n' +
+'    listen [::]:443 ssl http2;\n' +
+'    server_name __DOMAIN__ www.__DOMAIN__;\n' +
+'    ssl_certificate     /etc/letsencrypt/live/__DOMAIN__/fullchain.pem;\n' +
+'    ssl_certificate_key /etc/letsencrypt/live/__DOMAIN__/privkey.pem;\n' +
+'    ssl_protocols       TLSv1.2 TLSv1.3;\n' +
+'    ssl_prefer_server_ciphers off;\n' +
+'\n' +
+'    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;\n' +
+'    add_header X-Content-Type-Options "nosniff" always;\n' +
+'    add_header X-Frame-Options "SAMEORIGIN" always;\n' +
+'    add_header Referrer-Policy "strict-origin-when-cross-origin" always;\n' +
+'\n' +
+'    root  __MAIN_DIR__;\n' +
+'    index index.html;\n' +
+'\n' +
+'    location ~* \\.(webp|png|jpg|jpeg|gif|svg|ico|css|js|woff2?|ttf)$ {\n' +
+'        expires 1y;\n' +
+'        add_header Cache-Control "public, immutable" always;\n' +
+'        access_log off;\n' +
+'    }\n' +
+'\n' +
+'    location / {\n' +
+'        try_files $uri $uri/ /index.html;\n' +
+'    }\n' +
+'}\n' +
+'\n' +
+'server {\n' +
+'    listen 443 ssl http2;\n' +
+'    listen [::]:443 ssl http2;\n' +
+'    server_name ~^(?<subdomain>(?!www$)[^.]+)\\.peintre-interieur-__CODE__\\.fr$;\n' +
+'    ssl_certificate     /etc/letsencrypt/live/__DOMAIN__/fullchain.pem;\n' +
+'    ssl_certificate_key /etc/letsencrypt/live/__DOMAIN__/privkey.pem;\n' +
+'    ssl_protocols       TLSv1.2 TLSv1.3;\n' +
+'    ssl_prefer_server_ciphers off;\n' +
+'\n' +
+'    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;\n' +
+'    add_header X-Content-Type-Options "nosniff" always;\n' +
+'    add_header X-Frame-Options "SAMEORIGIN" always;\n' +
+'    add_header Referrer-Policy "strict-origin-when-cross-origin" always;\n' +
+'\n' +
+'    root  __SUBS_DIR__/$subdomain;\n' +
+'    index index.html;\n' +
+'\n' +
+'    location ~* \\.(webp|png|jpg|jpeg|gif|svg|ico|css|js|woff2?|ttf)$ {\n' +
+'        expires 1y;\n' +
+'        add_header Cache-Control "public, immutable" always;\n' +
+'        access_log off;\n' +
+'    }\n' +
+'\n' +
+'    location / {\n' +
+'        try_files $uri $uri/ /index.html;\n' +
+'    }\n' +
+'}\n' +
+'NGINX_TMPL_EOF\n' +
+'\n' +
+'configure_dep() {\n' +
+'  local code="$1"\n' +
+'  local slug="$2"\n' +
+'  local domain="peintre-interieur-${code}.fr"\n' +
+'  local conf="peintre-interieur-${code}"\n' +
+'  local mainDir="/var/www/peintre-interieur/peintre-interieur-${code}"\n' +
+'  local subsDir="/var/www/peintre-interieur/sous-domaines/${slug}"\n' +
+'\n' +
+'  echo ""\n' +
+'  echo "═══ ${code} → ${slug} ═══"\n' +
+'\n' +
+'  sudo mkdir -p "$mainDir" "$subsDir"\n' +
+'\n' +
+'  sudo certbot certonly \\\n' +
+'    --dns-ovh \\\n' +
+'    --dns-ovh-credentials /etc/letsencrypt/ovh.ini \\\n' +
+'    -d "$domain" \\\n' +
+'    -d "*.$domain" \\\n' +
+'    --agree-tos \\\n' +
+'    --email "$EMAIL" \\\n' +
+'    --non-interactive\n' +
+'\n' +
+'  echo "$NGINX_TMPL" \\\n' +
+'    | sed -e "s|__DOMAIN__|$domain|g" \\\n' +
+'          -e "s|__MAIN_DIR__|$mainDir|g" \\\n' +
+'          -e "s|__SUBS_DIR__|$subsDir|g" \\\n' +
+'          -e "s|__CODE__|$code|g" \\\n' +
+'    | sudo tee "/etc/nginx/sites-available/$conf" > /dev/null\n' +
+'\n' +
+'  sudo ln -sf "/etc/nginx/sites-available/$conf" /etc/nginx/sites-enabled/\n' +
+'}\n' +
+'\n' +
+callLines + '\n' +
+'\n' +
+'sudo chown -R www-data:www-data /var/www/peintre-interieur\n' +
+'sudo chmod -R 755 /var/www/\n' +
+'sudo nginx -t && sudo systemctl reload nginx\n' +
+'\n' +
+'echo ""\n' +
+'echo "✅ ' + codes.length + ' départements configurés."\n';
+  }
+
+  const generateFranceBtn = document.getElementById('generate-france-btn');
+  const franceArea = document.getElementById('france-area');
+
+  generateFranceBtn.addEventListener('click', () => {
+    const email = mailEl.value.trim() || 'ton@email.com';
+    const script = buildFranceScript(email);
+    franceArea.innerHTML = '<div class="commands"><div class="cmd-block">' +
+      '<div class="cmd-header">' +
+      '<span class="cmd-title"><span class="cmd-num">∞</span><span>Script France entière</span><span class="desc">· 94 deps SSL+Nginx en 1 passe</span></span>' +
+      '<button class="cmd-copy">Copier</button>' +
+      '</div>' +
+      '<div class="cmd-body" data-raw="' + encodeURIComponent(script) + '">' +
+      script.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') +
+      '</div>' +
+      '</div></div>';
+    franceArea.querySelector('.cmd-copy').addEventListener('click', (e) => {
+      const btn = e.currentTarget;
+      const raw = decodeURIComponent(btn.closest('.cmd-block').querySelector('.cmd-body').dataset.raw);
+      navigator.clipboard.writeText(raw).then(() => {
+        btn.textContent = '✓ Copié';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 1500);
+      });
+    });
   });
 
   renderHistory();
