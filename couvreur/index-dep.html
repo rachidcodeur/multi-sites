@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Couvreur professionnel {{NOM_A}} : pose et rénovation de toiture, zinguerie, gouttières, démoussage, isolation de combles, pose de Velux. Devis gratuit sous 48 h, garantie décennale.">
+  <meta name="keywords" content="couvreur {{DEP_NOM}}, couverture {{DEP_NOM}}, toiture {{DEP_NOM}}, réparation toiture {{DEP_NOM}}, artisan couvreur {{DEP_CODE}}">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Couvreur {{DEP_NOM}} {{DEP_CODE}} | Devis Gratuit">
+  <meta property="og:description" content="Couvreur professionnel {{NOM_A}} : pose et rénovation de toiture, zinguerie, gouttières, démoussage, isolation de combles, pose de Velux. Devis gratuit sous 48 h, garantie décennale.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://{{URL}}">
+  <title>Couvreur {{DEP_NOM}} - {{DEP_CODE}} - Devis gratuit</title>
+  <link rel="icon" href="public/images/favicon.webp" type="image/webp">
+  <link rel="canonical" href="https://{{URL}}">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" title="Plan du site">
+  <link rel="preload" as="image" href="public/images/artisan-couvreur.webp" fetchpriority="high">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .section-sub { max-width: 80ch; }
+    .cta-call-inner { max-width: 820px; }
+    .cta-call-text { max-width: 80ch; margin-inline: auto; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PaintingContractor",
+    "name": "{{MARQUE}}",
+    "url": "https://{{URL}}",
+    "logo": "https://{{URL}}/public/images/logo.webp",
+    "telephone": "{{TEL}}",
+    "description": "Couvreur professionnel {{NOM_A}} : pose et rénovation de toiture, zinguerie, gouttières, démoussage, isolation de combles, pose de Velux. Devis gratuit sous 48 h, garantie décennale.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "{{DEP_NOM}}",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "{{DEP_NOM}}"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de couverture",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peinture intérieure" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peinture extérieure" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pose de papiers peints et revêtements muraux" } }
+      ]
+    }
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="{{MARQUE}} — accueil">{{MARQUE}}</a>
+      <nav class="nav nav-desktop" aria-label="Navigation principale">
+        <a href="#services">Nos prestations</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#contact">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn btn-primary header-call header-call-desktop" aria-label="{{TEL}}">{{TEL}}</a>
+      <button type="button" class="header-menu-toggle" id="header-menu-toggle"
+              aria-expanded="false" aria-controls="header-menu" aria-label="Ouvrir le menu">
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="header-menu" id="header-menu" hidden>
+    <div class="header-menu-backdrop" tabindex="-1"></div>
+    <div class="header-menu-panel" role="dialog" aria-modal="true" aria-labelledby="header-menu-title">
+      <div class="header-menu-panel-header">
+        <p id="header-menu-title" class="visually-hidden">Menu</p>
+        <button type="button" class="header-menu-close" id="header-menu-close" aria-label="Fermer le menu">
+          <svg class="header-menu-close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav nav-mobile" aria-label="Navigation principale">
+        <a href="#services">Nos prestations</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#contact">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn header-call header-call-mobile" aria-label="{{TEL}}">{{TEL}}</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="hero-blob hero-blob--1"></span>
+        <span class="hero-blob hero-blob--2"></span>
+        <span class="hero-blob hero-blob--3"></span>
+        <span class="hero-gridlines"></span>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content anim-fade-up">
+          <h1 id="hero-title">Couvreur <span class="hero-h1-city">{{DEP_NOM}}</span></h1>
+
+          <p class="hero-lead">
+            {{VAR_HERO_LEAD_1}} {{VAR_HERO_LEAD_2}}
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Devis gratuit</a>
+            <a href="#services" class="btn btn-outline">Nos services</a>
+          </div>
+        </div>
+        <div class="hero-visual anim-fade-up anim-delay-1">
+          <figure class="hero-figure">
+            <img src="public/images/artisan-couvreur.webp" width="600" height="496"
+                 alt="Couvreur professionnel {{NOM_A}} réalisant des travaux de couverture"
+                 loading="eager" fetchpriority="high" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION CONTACT + 4 CARDS INTRO
+    ============================================================ -->
+    <section class="section section-intro" id="contact" aria-labelledby="intro-title">
+      <div class="section-intro-accent" aria-hidden="true"></div>
+      <div class="container two-col">
+
+        <!-- Colonne gauche : blocs mission / vision / devis / matériaux -->
+        <div>
+          <h2 class="visually-hidden">Notre approche {{NOM_A}}</h2>
+          <div class="about-grid">
+
+            <article class="card card-text anim-fade-up">
+              <h3 class="card-title">Couvreur zingueur professionnel avec 25 ans d'expérience</h3>
+              <p>{{VAR_INTRO_COUVREUR_1}} {{VAR_INTRO_COUVREUR_2}}</p>
+            </article>
+
+            <article class="card card-text anim-fade-up anim-delay-1">
+              <h3 class="card-title">Réponse rapide, devis sous 24 à 48 h</h3>
+              <p>{{VAR_INTRO_REPONSE_1}} {{VAR_INTRO_REPONSE_2}}</p>
+            </article>
+
+            <article class="card card-text anim-fade-up anim-delay-2">
+              <h3 class="card-title">Garantie décennale</h3>
+              <p>{{VAR_INTRO_AIDES_1}} {{VAR_INTRO_AIDES_2}}</p>
+            </article>
+
+            <article class="card card-text anim-fade-up anim-delay-3">
+              <h3 class="card-title">Matériaux de qualité</h3>
+              <p>{{VAR_INTRO_MATERIAUX_1}} {{VAR_INTRO_MATERIAUX_2}}</p>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Colonne droite : formulaire de contact -->
+        <div class="contact-block anim-fade-up anim-delay-1">
+          <p class="eyebrow">Contactez-nous</p>
+          <h2 class="section-heading">Demandez un devis de couverture dès maintenant</h2>
+          <form class="contact-form" action="#" method="post" name="contact">
+            <div class="hp-field" aria-hidden="true">
+              <label for="field-hp">Ne pas remplir ce champ</label>
+              <input type="text" id="field-hp" name="field_hp" tabindex="-1"
+                     autocomplete="off" value="" data-lpignore="true" data-1p-ignore="true" data-form-type="other">
+            </div>
+
+            <div class="contact-field">
+              <label for="name">Nom &amp; Prénom</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Votre nom et prénom">
+            </div>
+
+            <div class="contact-field">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="Votre email">
+            </div>
+
+            <div class="contact-field">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="06 XX XX XX XX">
+            </div>
+
+            <div class="contact-field">
+              <label for="postal">Code postal</label>
+              <input type="text" id="postal" name="postal" required inputmode="numeric"
+                     autocomplete="postal-code" maxlength="5" placeholder="{{DEP_CODE}}000">
+            </div>
+
+            <div class="contact-field">
+              <label for="city">Ville</label>
+              <input type="text" id="city" name="city" required autocomplete="address-level2" placeholder="{{DEP_NOM}}">
+            </div>
+
+            <div class="contact-field">
+              <label for="message">Décrivez votre besoin</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Ex : rénovation toiture maison 80 m², démoussage, isolation, {{NOM_A}}…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande</button>
+            <p id="contact-form-feedback" class="contact-form-feedback" hidden aria-live="polite"></p>
+          </form>
+
+          <div class="contact-reassurance">
+            <span class="contact-reassurance-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <div>
+              <strong class="contact-reassurance-title">Réponse rapide</strong>
+              <p class="contact-reassurance-text">Nous garantissons une réponse à votre demande sous <strong>24 h</strong>, du lundi au samedi.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================ -->
+    <section class="section section-services" id="services" aria-labelledby="services-title">
+      <div class="section-services-glow" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow center">Ce que nous faisons</p>
+        <h2 id="services-title" class="section-heading center">Nos prestations de couverture {{NOM_A}}</h2>
+        <p class="section-sub">{{VAR_SERVICES_INTRO_1}} {{VAR_SERVICES_INTRO_2}}</p>
+
+        <div class="services-grid">
+
+          <article class="card card-service anim-fade-up">
+            <img src="public/images/pose-renovation-toiture.webp"
+                 width="400" height="285" alt="Pose et rénovation de toiture {{NOM_A}}" loading="lazy" decoding="async">
+            <div class="card-service-body">
+              <h3 class="card-title">Pose et rénovation de toiture {{DEP_NOM_A}}</h3>
+              <p>{{VAR_SERVICE_TOITURE_1}} {{VAR_SERVICE_TOITURE_2}}</p>
+              <a href="#contact" class="card-service-link">Demander un devis gratuit →</a>
+            </div>
+          </article>
+
+          <article class="card card-service anim-fade-up anim-delay-1">
+            <img src="public/images/travaux-de-zinguerie.webp"
+                 width="400" height="285" alt="Travaux de zinguerie {{DEP_NOM_A}}" loading="lazy" decoding="async">
+            <div class="card-service-body">
+              <h3 class="card-title">Travaux de zinguerie {{DEP_NOM_A}}</h3>
+              <p>{{VAR_SERVICE_ZINGUERIE_1}} {{VAR_SERVICE_ZINGUERIE_2}}</p>
+              <a href="#contact" class="card-service-link">Demander un devis gratuit →</a>
+            </div>
+          </article>
+
+          <article class="card card-service anim-fade-up anim-delay-2">
+            <img src="public/images/pose-de-gouttieres.webp"
+                 width="400" height="285" alt="Pose et remplacement de gouttières {{DEP_NOM_A}}" loading="lazy" decoding="async">
+            <div class="card-service-body">
+              <h3 class="card-title">Pose de gouttières {{DEP_NOM_A}}</h3>
+              <p>{{VAR_SERVICE_GOUTTIERES_1}} {{VAR_SERVICE_GOUTTIERES_2}}</p>
+              <a href="#contact" class="card-service-link">Demander un devis gratuit →</a>
+            </div>
+          </article>
+
+          <article class="card card-service anim-fade-up">
+            <img src="public/images/nettoyage-de-toitures.webp"
+                 width="400" height="285" alt="Démoussage et hydrofuge de toiture {{DEP_NOM_A}}" loading="lazy" decoding="async">
+            <div class="card-service-body">
+              <h3 class="card-title">Nettoyage de toitures {{DEP_NOM_A}}</h3>
+              <p>{{VAR_SERVICE_NETTOYAGE_1}} {{VAR_SERVICE_NETTOYAGE_2}}</p>
+              <a href="#contact" class="card-service-link">Demander un devis gratuit →</a>
+            </div>
+          </article>
+
+          <article class="card card-service anim-fade-up anim-delay-1">
+            <img src="public/images/isolation-de-combles.webp"
+                 width="400" height="285" alt="Isolation thermique des combles {{DEP_NOM_A}}" loading="lazy" decoding="async">
+            <div class="card-service-body">
+              <h3 class="card-title">Isolation de combles {{DEP_NOM_A}}</h3>
+              <p>{{VAR_SERVICE_ISOLATION_1}} {{VAR_SERVICE_ISOLATION_2}}</p>
+              <a href="#contact" class="card-service-link">Demander un devis gratuit →</a>
+            </div>
+          </article>
+
+          <article class="card card-service anim-fade-up anim-delay-2">
+            <img src="public/images/pose-de-velux.webp"
+                 width="400" height="285" alt="Pose de fenêtres de toit Velux {{DEP_NOM_A}}" loading="lazy" decoding="async">
+            <div class="card-service-body">
+              <h3 class="card-title">Pose de fenêtres de toit {{DEP_NOM_A}}</h3>
+              <p>{{VAR_SERVICE_VELUX_1}} {{VAR_SERVICE_VELUX_2}}</p>
+              <a href="#contact" class="card-service-link">Demander un devis gratuit →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA APPEL
+    ============================================================ -->
+    <section class="section section-cta-call" aria-labelledby="call-title">
+      <div class="container cta-call-inner anim-fade-up">
+        <p class="eyebrow center">Appel gratuit</p>
+        <h2 id="call-title">Obtenez votre devis couverture gratuit {{NOM_A}}</h2>
+        <p class="cta-call-text">{{VAR_CTA_TEXT_1}} {{VAR_CTA_TEXT_2}}</p>
+        <div class="cta-call-actions">
+          <a href="#contact" class="btn btn-cta-devis">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+            Devis gratuit
+          </a>
+          <a href="tel:{{TEL_HREF}}" class="btn btn-call">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            {{TEL}}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         AVIS CLIENTS
+    ============================================================ -->
+    <section class="section section-reviews" id="avis" aria-labelledby="reviews-title">
+      <div class="container">
+        <p class="eyebrow center">Témoignages</p>
+        <h2 id="reviews-title" class="section-heading center">Les avis de nos clients {{NOM_A}}</h2>
+        <p class="section-sub">{{VAR_REVIEWS_INTRO_1}} {{VAR_REVIEWS_INTRO_2}}</p>
+        <div class="reviews-grid">
+
+          <blockquote class="card review anim-fade-up">
+            <p>{{VAR_REVIEW_1_TEXT_1}} {{VAR_REVIEW_1_TEXT_2}}</p>
+            <footer>— Isabelle RENAUD <span class="review-context">· Réfection complète de toiture</span></footer>
+          </blockquote>
+
+          <blockquote class="card review anim-fade-up anim-delay-1">
+            <p>{{VAR_REVIEW_2_TEXT_1}} {{VAR_REVIEW_2_TEXT_2}}</p>
+            <footer>— Olivier MARTIN <span class="review-context">· Réparation d'urgence après tempête</span></footer>
+          </blockquote>
+
+          <blockquote class="card review anim-fade-up anim-delay-2">
+            <p>{{VAR_REVIEW_3_TEXT_1}} {{VAR_REVIEW_3_TEXT_2}}</p>
+            <footer>— Matthieu NICOLAS <span class="review-context">· Isolation de combles et pose de Velux</span></footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOTRE APPROCHE — 3 points
+    ============================================================ -->
+    <section class="section section-approach" aria-labelledby="approach-title">
+      <div class="container">
+        <p class="eyebrow center">Notre méthode</p>
+        <h2 id="approach-title" class="section-heading center">Notre approche {{NOM_A}}</h2>
+        <div class="why-grid">
+
+          <article class="card card-why anim-fade-up">
+            <h3 class="card-title">Diagnostic avant chantier</h3>
+            <p>{{VAR_APPROCHE_DIAGNOSTIC_1}} {{VAR_APPROCHE_DIAGNOSTIC_2}}</p>
+          </article>
+
+          <article class="card card-why anim-fade-up anim-delay-1">
+            <h3 class="card-title">Savoir-faire d'artisan couvreur</h3>
+            <p>{{VAR_APPROCHE_SAVOIR_1}} {{VAR_APPROCHE_SAVOIR_2}}</p>
+          </article>
+
+          <article class="card card-why anim-fade-up anim-delay-2">
+            <h3 class="card-title">Devis détaillés, sans frais cachés</h3>
+            <p>{{VAR_APPROCHE_DEVIS_1}} {{VAR_APPROCHE_DEVIS_2}}</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-communes">
+      <h3 class="footer-communes-title">Couvreur dans les principales communes {{DEP_NOM_DE}}</h3>
+      <div class="footer-communes-grid">{{TOP_COMMUNES_DEP}}
+      </div>
+    </div>
+
+    <div class="container footer-grid footer-grid--4">
+
+      <div class="footer-col footer-col--brand">
+        <strong class="footer-logo">{{MARQUE}}</strong>
+        <p class="footer-desc">{{VAR_FOOTER_DESC_1}} {{VAR_FOOTER_DESC_2}}</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Nos services</h3>
+        <ul class="footer-list">
+          <li><a href="#services">Pose et rénovation de toiture</a></li>
+          <li><a href="#services">Démoussage et nettoyage</a></li>
+          <li><a href="#services">Réparation et étanchéité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Informations</h3>
+        <ul class="footer-list">
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Contact</h3>
+        <p class="footer-contact-line">Département {{DEP_NOM}} ({{DEP_CODE}})</p>
+        <p class="footer-contact-line">
+          <a href="tel:{{TEL_HREF}}">{{TEL}}</a>
+        </p>
+        <p class="footer-contact-line">
+          <a href="#contact">Demande de devis gratuit</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <p class="footer-copy">
+        &copy; <span id="year"></span> {{MARQUE}}. Tous droits réservés.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Supabase config — à renseigner avec vos propres clés -->
+  <script type="application/json" id="supabase-config-json">{"directUrl":"","url":"","relative":false,"anon":"","table":"leads_couvreur"}</script>
+  <script src="public/js/contact-form.js" defer></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var toggle   = document.getElementById('header-menu-toggle');
+      var menu     = document.getElementById('header-menu');
+      if (!toggle || !menu) return;
+      var backdrop = menu.querySelector('.header-menu-backdrop');
+      var closeBtn = document.getElementById('header-menu-close');
+
+      function openMenu() {
+        menu.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.classList.add('is-open');
+        document.body.classList.add('menu-open');
+      }
+      function closeMenu() {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      }
+      function isOpen() { return !menu.hasAttribute('hidden'); }
+
+      toggle.addEventListener('click',   function () { isOpen() ? closeMenu() : openMenu(); });
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+      menu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMenu); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && isOpen()) closeMenu(); });
+    })();
+  </script>
+
+</body>
+</html>

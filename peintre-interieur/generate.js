@@ -138,9 +138,14 @@ communes.forEach(c => {
   });
 });
 
-// Normalise : minuscules, sans accents, trim — pour matcher quel que soit l'orthographe saisie
+// Normalise : minuscules, sans accents, tirets/espaces/apostrophes tous équivalents — pour matcher quel que soit l'orthographe saisie
 function normalise(str) {
-  return String(str).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+  return String(str)
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/['']/g, ' ')              // apostrophes → espace
+    .replace(/[\s\-_]+/g, ' ')           // espaces, tirets, underscores → espace simple
+    .trim();
 }
 
 // ─── Utilitaires ─────────────────────────────────────────────────────────────

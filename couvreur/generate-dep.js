@@ -34,15 +34,15 @@ const ENV = loadEnv();
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
-const TEL_DEFAULT      = '09 88 99 03 94';
-const TEL_HREF_DEFAULT = '+33988990394';
+const TEL_DEFAULT      = '09 80 40 96 11';
+const TEL_HREF_DEFAULT = '+33980409611';
 
 const SUPABASE_JSON = JSON.stringify({
   directUrl: ENV.SUPABASE_URL || '',
   url:       ENV.SUPABASE_USE_RELATIVE_API === '1' ? '' : (ENV.SUPABASE_URL || ''),
   relative:  ENV.SUPABASE_USE_RELATIVE_API === '1',
   anon:      ENV.SUPABASE_ANON_KEY || '',
-  table:     ENV.SUPABASE_TABLE || 'leads_peinture',
+  table:     ENV.SUPABASE_TABLE_COUVREUR || 'leads_couvreur',
 });
 
 // ─── Arguments CLI ───────────────────────────────────────────────────────────
@@ -71,10 +71,10 @@ const outDir = `${depCode}-${slugifyDep(depNom)}`;
 
 // ─── Lecture des fichiers ─────────────────────────────────────────────────────
 
-const variables   = JSON.parse(fs.readFileSync('data/variables.json', 'utf8'));
-const template    = fs.readFileSync('index-dep.html',                 'utf8');
-const tplMentions = fs.readFileSync('mentions-legales.html',          'utf8');
-const tplConfid   = fs.readFileSync('politique-confidentialite.html', 'utf8');
+const variables   = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'variables.json'), 'utf8'));
+const template    = fs.readFileSync(path.join(__dirname, 'index-dep.html'),                 'utf8');
+const tplMentions = fs.readFileSync(path.join(__dirname, 'mentions-legales.html'),          'utf8');
+const tplConfid   = fs.readFileSync(path.join(__dirname, 'politique-confidentialite.html'), 'utf8');
 
 // ─── Utilitaires ─────────────────────────────────────────────────────────────
 
@@ -209,9 +209,33 @@ function getDepFormes(code, nom) {
 // ─── Construction des variables ───────────────────────────────────────────────
 
 const depFormes = getDepFormes(depCode, depNom);
-const url    = `peintre-en-batiment-${depCode}.com`;
-const marque = `Peintre ${depNom}`;
+// Padding 2 chiffres pour matcher buildUrl() dans generate.js (couvreur{NN}-pro.fr).
+// 2A/2B et outre-mer 971+ restent intacts.
+const depDomain = (() => {
+  const s = String(depCode).toUpperCase();
+  if (s === '2A' || s === '2B' || s.length >= 3) return s;
+  return s.padStart(2, '0');
+})();
+const url    = `couvreur${depDomain}-pro.fr`;
+const marque = `Couvreur ${depNom}`;
 const slug   = String(depCode);   // seed pour pickVariant
+
+// ─── Top 40 communes du département (par population) — pour footer (4 col × 10 lignes desktop) ──────────
+const ROOT_PARENT = path.resolve(__dirname, '..');
+const allCommunes = JSON.parse(fs.readFileSync(path.join(ROOT_PARENT, 'data', 'communes.json'), 'utf8'));
+const normDep = String(depCode).replace(/^0+/, '');
+function slugifyVille(s) {
+  return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .toLowerCase().replace(/['']/g, '-').replace(/\s+/g, '-')
+    .replace(/-{2,}/g, '-').replace(/^-|-$/g, '');
+}
+const topCommunes = allCommunes
+  .filter(c => String(c.dep_code).replace(/^0+/, '') === normDep)
+  .map(c => ({ nom: c.nom_standard, pop: parseInt(c.population, 10) || 0, slug: slugifyVille(c.nom_sans_accent) }))
+  .sort((a, b) => b.pop - a.pop)
+  .slice(0, 40);
+const topCommunesHtml = topCommunes.map(c => `
+        <a href="https://${c.slug}.couvreur${depDomain}-pro.fr" class="footer-commune-link">${c.nom}</a>`).join('');
 
 const staticVars = {
   DEP_CODE:    String(depCode),
@@ -224,12 +248,14 @@ const staticVars = {
   TEL_HREF:    TEL_HREF_DEFAULT,
   MARQUE:      marque,
   MARQUE_MAJ:  marque.toUpperCase(),
-  NOM:         depNom,
-  NOM_A:       depFormes.a,
-  NOM_DE:      depFormes.de,
-  NOM_MAJ:     depNom.toUpperCase(),
+  NOM:          depNom,
+  NOM_COMPLET:  depNom,
+  NOM_A:        depFormes.a,
+  NOM_DE:       depFormes.de,
+  NOM_MAJ:      depNom.toUpperCase(),
   CODE_POSTAL: String(depCode),
   SLUG:        slug,
+  TOP_COMMUNES_DEP: topCommunesHtml,
 };
 
 const dynVars = {};
@@ -250,7 +276,7 @@ const allVars = { ...staticVars, ...dynVars };
 
 // ─── Génération ───────────────────────────────────────────────────────────────
 
-const outPath = path.join('output', outDir + '-dep');
+const outPath = path.join(__dirname, 'output', outDir + '-dep');
 
 fs.mkdirSync(outPath, { recursive: true });
 
@@ -266,7 +292,7 @@ if (ENV.SUPABASE_ANON_KEY) {
 fs.writeFileSync(path.join(outPath, 'index.html'),                    html,                              'utf8');
 fs.writeFileSync(path.join(outPath, 'mentions-legales.html'),         replace(tplMentions, allVars),     'utf8');
 fs.writeFileSync(path.join(outPath, 'politique-confidentialite.html'),replace(tplConfid,   allVars),     'utf8');
-fs.copyFileSync('style.css', path.join(outPath, 'style.css'));
+fs.copyFileSync(path.join(__dirname, 'style.css'), path.join(outPath, 'style.css'));
 
 // Assets partagés
 const imgOut = path.join(outPath, 'public', 'images');
@@ -275,16 +301,19 @@ fs.mkdirSync(imgOut, { recursive: true });
 fs.mkdirSync(jsOut,  { recursive: true });
 
 [
-  path.join('public', 'images', 'favicon.webp'),
-  path.join('public', 'images', 'peintre-professionnel.webp'),
-  path.join('public', 'images', 'images-services', 'peinture-interieur.webp'),
-  path.join('public', 'images', 'images-services', 'peinture-exterieur.webp'),
-  path.join('public', 'images', 'images-services', 'pose-papier-peint.webp'),
+  path.join(__dirname, 'public', 'images', 'favicon.webp'),
+  path.join(__dirname, 'public', 'images', 'artisan-couvreur.webp'),
+  path.join(__dirname, 'public', 'images', 'images-services', 'pose-renovation-toiture.webp'),
+  path.join(__dirname, 'public', 'images', 'images-services', 'travaux-de-zinguerie.webp'),
+  path.join(__dirname, 'public', 'images', 'images-services', 'pose-de-gouttieres.webp'),
+  path.join(__dirname, 'public', 'images', 'images-services', 'nettoyage-de-toitures.webp'),
+  path.join(__dirname, 'public', 'images', 'images-services', 'isolation-de-combles.webp'),
+  path.join(__dirname, 'public', 'images', 'images-services', 'pose-de-velux.webp'),
 ].forEach(src => {
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(imgOut, path.basename(src)));
 });
 
-const jsSrc = path.join('public', 'js');
+const jsSrc = path.join(__dirname, 'public', 'js');
 if (fs.existsSync(jsSrc)) {
   fs.readdirSync(jsSrc).forEach(file => {
     fs.copyFileSync(path.join(jsSrc, file), path.join(jsOut, file));

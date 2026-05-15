@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configurateur · Réseau peintre-interieur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #f5f0e8;
+    --bg-elevated: #fbf8f2;
+    --bg-paper: #ffffff;
+    --text: #0a0a0a;
+    --text-muted: #6e6a62;
+    --text-subtle: #a09b91;
+    --border: #e0d9cb;
+    --border-strong: #cfc6b4;
+    --accent: #b53f24;
+    --accent-soft: #f3d8cf;
+    --code-bg: #161310;
+    --code-text: #e8e2d4;
+    --code-comment: #8a8478;
+    --code-string: #d4a373;
+    --code-keyword: #f4a261;
+    --code-cmd: #a3c585;
+    --success: #3d6b34;
+    --warning: #b8860b;
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(181, 63, 36, 0.04), transparent 40%),
+      radial-gradient(circle at 90% 100%, rgba(110, 106, 98, 0.05), transparent 40%);
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 28px 80px;
+  }
+
+  header {
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .title-block h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .title-block h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .title-block p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    max-width: 480px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-subtle);
+    text-align: right;
+    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .meta span { display: block; }
+  .meta .vps-ip { color: var(--text); font-weight: 500; }
+
+  section { margin-bottom: 36px; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: var(--border-strong);
+  }
+  .section-label .right {
+    margin-left: auto;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .form {
+    background: var(--bg-paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px;
+    display: grid;
+    gap: 20px;
+  }
+  .row-double {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 480px) {
+    .row-double { grid-template-columns: 1fr; }
+  }
+
+  .field { position: relative; }
+  .field label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .field input {
+    width: 100%;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .field input:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #fff;
+  }
+  .field input::placeholder { color: var(--text-subtle); }
+  .field input.unknown { border-color: var(--warning); }
+  .field-hint {
+    font-size: 11px;
+    color: var(--text-subtle);
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-height: 14px;
+  }
+  .field-hint.warn { color: var(--warning); }
+  .field-hint.ok { color: var(--success); }
+
+  .preview {
+    background: var(--bg-paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 22px;
+    display: none;
+  }
+  .preview.show { display: block; }
+  .preview-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 12px;
+    padding: 6px 0;
+    align-items: baseline;
+  }
+  .preview-row + .preview-row { border-top: 1px dashed var(--border); }
+  .preview-row .label {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .preview-row .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text);
+    word-break: break-all;
+  }
+
+  .commands { display: grid; gap: 14px; }
+  .cmd-block {
+    background: var(--code-bg);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #2a251f;
+  }
+  .cmd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: #1f1c17;
+    border-bottom: 1px solid #2a251f;
+    gap: 12px;
+  }
+  .cmd-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #b8b2a3;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+  .cmd-title .desc {
+    color: #6f695c;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .cmd-num {
+    background: var(--accent);
+    color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .cmd-copy {
+    background: transparent;
+    border: 1px solid #3a342c;
+    color: #c5bfb0;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cmd-copy:hover {
+    background: #2a251f;
+    border-color: #4a4339;
+    color: #fff;
+  }
+  .cmd-copy.copied {
+    background: var(--success);
+    border-color: var(--success);
+    color: #fff;
+  }
+  .cmd-body {
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--code-text);
+    white-space: pre;
+    word-break: normal;
+    overflow-x: auto;
+  }
+  .cmd-body .comment { color: var(--code-comment); font-style: italic; }
+  .cmd-body .keyword { color: var(--code-keyword); }
+  .cmd-body .string { color: var(--code-string); }
+  .cmd-body .cmd { color: var(--code-cmd); }
+
+  .copy-all {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: opacity 0.15s;
+  }
+  .copy-all:hover { opacity: 0.85; }
+  .copy-all.copied { background: var(--success); }
+
+  .empty-state {
+    background: var(--bg-paper);
+    border: 1px dashed var(--border-strong);
+    border-radius: 6px;
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--text-subtle);
+    font-style: italic;
+    font-family: 'Instrument Serif', serif;
+    font-size: 18px;
+  }
+
+  .info-banner {
+    background: linear-gradient(135deg, #fbf3e8 0%, #f9ebe0 100%);
+    border: 1px solid #e8d4be;
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-banner strong { color: var(--accent); }
+  .info-banner code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: rgba(181, 63, 36, 0.08);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .history {
+    background: var(--bg-paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 22px;
+  }
+  .history-empty {
+    color: var(--text-subtle);
+    font-size: 13px;
+    font-style: italic;
+  }
+  .history-list { display: grid; gap: 8px; }
+  .history-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .history-item:hover {
+    border-color: var(--accent);
+    background: #fff;
+  }
+  .history-info {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .history-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .history-name { font-size: 14px; color: var(--text); }
+  .history-slug {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .history-date {
+    font-size: 11px;
+    color: var(--text-subtle);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .history-clear {
+    background: transparent;
+    border: none;
+    color: var(--text-subtle);
+    font-size: 11px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 0;
+  }
+  .history-clear:hover { color: var(--accent); }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-subtle);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .preview.show, .commands { animation: slideIn 0.25s ease-out; }
+  @keyframes flash {
+    0% { background: var(--accent-soft); }
+    100% { background: var(--bg-elevated); }
+  }
+  .field input.flash { animation: flash 0.6s ease-out; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="title-block">
+      <h1>Configurateur <em>peintre-interieur</em></h1>
+      <p>Déploiement avec SSL actif dès la mise en ligne, HSTS et redirection forcée — Google-ready dès le 1er crawl.</p>
+      <span class="badge">v4 · SSL-first · HSTS · Wildcard</span>
+    </div>
+    <div class="meta">
+      <span>VPS</span>
+      <span class="vps-ip">137.74.112.253</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-label">Paramètres</div>
+    <div class="form">
+      <div class="row-double">
+        <div class="field">
+          <label for="dept-num">Numéro</label>
+          <input type="text" id="dept-num" placeholder="33" maxlength="3" autocomplete="off" autofocus />
+          <div class="field-hint" id="hint-num">&nbsp;</div>
+        </div>
+        <div class="field">
+          <label for="dept-name">Nom du département</label>
+          <input type="text" id="dept-name" placeholder="Tape un numéro à gauche…" autocomplete="off" />
+          <div class="field-hint" id="hint-name">&nbsp;</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email (Let's Encrypt)</label>
+        <input type="email" id="email" placeholder="virgile@example.com" autocomplete="email" />
+      </div>
+    </div>
+  </section>
+
+  <section id="preview-section" style="display: none;">
+    <div class="section-label">Aperçu</div>
+    <div class="preview show" id="preview">
+      <div class="preview-row">
+        <span class="label">Domaine</span>
+        <span class="value" id="p-domain"></span>
+      </div>
+      <div class="preview-row">
+        <span class="label">Site principal</span>
+        <span class="value" id="p-main"></span>
+      </div>
+      <div class="preview-row">
+        <span class="label">Sous-domaines</span>
+        <span class="value" id="p-subs"></span>
+      </div>
+      <div class="preview-row">
+        <span class="label">Config Nginx</span>
+        <span class="value" id="p-nginx"></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">
+      Commandes complètes
+      <span class="right">
+        <button class="copy-all" id="copy-all-btn" style="display:none;">Tout copier</button>
+      </span>
+    </div>
+    <div class="info-banner" id="info-banner" style="display:none;">
+      <strong>Ordre logique :</strong> SSL d'abord (challenge DNS, sans Nginx), puis Nginx directement en HTTPS.
+      Le site n'est <strong>jamais</strong> accessible en HTTP-only — Google le voit en HTTPS dès le 1er crawl.
+      Racine peintre-interieur : <code>/var/www/peintre-interieur/</code> · sites dép. dans <code>peintre-interieur-{XX}/</code> · villes dans <code>sous-domaines/{dep}/</code>. Headers ajoutés : <code>HSTS</code> (1 an), <code>X-Content-Type-Options</code>, <code>X-Frame-Options</code>.
+    </div>
+    <div id="commands-area">
+      <div class="empty-state">Tape un numéro de département pour générer toutes les commandes</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label" style="display: flex; justify-content: space-between;">
+      <span style="display: flex; align-items: center; gap: 10px;"><span style="width: 18px; height: 1px; background: var(--border-strong);"></span>Historique</span>
+      <button class="history-clear" id="clear-history" style="border: none;">Vider</button>
+    </div>
+    <div class="history" id="history-container">
+      <div class="history-empty">Aucun site généré pour l'instant.</div>
+    </div>
+  </section>
+
+  <footer>
+    Local · Aucune donnée n'est envoyée · Stockage navigateur uniquement
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const STORAGE_KEY = 'configurateur-peintre-interieur-v4';
+  const VPS_IP = '137.74.112.253';
+
+  // Hiérarchie peintre-interieur : tout sous /var/www/peintre-interieur/
+  //   ├── peintre-interieur-XX/             ← site département (BASE_ROOT/peintre-interieur-XX)
+  //   └── sous-domaines/{nom_dep}/{slug}/   ← sites villes  (SUBS_ROOT/{nom_dep})
+  const BASE_ROOT = '/var/www/peintre-interieur';
+  const SUBS_ROOT = `${BASE_ROOT}/sous-domaines`;
+
+  const DEPTS = {
+    '01': 'Ain', '02': 'Aisne', '03': 'Allier', '04': 'Alpes-de-Haute-Provence',
+    '05': 'Hautes-Alpes', '06': 'Alpes-Maritimes', '07': 'Ardèche', '08': 'Ardennes',
+    '09': 'Ariège', '10': 'Aube', '11': 'Aude', '12': 'Aveyron',
+    '13': 'Bouches-du-Rhône', '14': 'Calvados', '15': 'Cantal', '16': 'Charente',
+    '17': 'Charente-Maritime', '18': 'Cher', '19': 'Corrèze',
+    '20': 'Corse', '2A': 'Corse-du-Sud', '2B': 'Haute-Corse',
+    '21': 'Côte-d\'Or', '22': 'Côtes-d\'Armor', '23': 'Creuse', '24': 'Dordogne',
+    '25': 'Doubs', '26': 'Drôme', '27': 'Eure', '28': 'Eure-et-Loir',
+    '29': 'Finistère', '30': 'Gard', '31': 'Haute-Garonne', '32': 'Gers',
+    '33': 'Gironde', '34': 'Hérault', '35': 'Ille-et-Vilaine', '36': 'Indre',
+    '37': 'Indre-et-Loire', '38': 'Isère', '39': 'Jura', '40': 'Landes',
+    '41': 'Loir-et-Cher', '42': 'Loire', '43': 'Haute-Loire', '44': 'Loire-Atlantique',
+    '45': 'Loiret', '46': 'Lot', '47': 'Lot-et-Garonne', '48': 'Lozère',
+    '49': 'Maine-et-Loire', '50': 'Manche', '51': 'Marne', '52': 'Haute-Marne',
+    '53': 'Mayenne', '54': 'Meurthe-et-Moselle', '55': 'Meuse', '56': 'Morbihan',
+    '57': 'Moselle', '58': 'Nièvre', '59': 'Nord', '60': 'Oise',
+    '61': 'Orne', '62': 'Pas-de-Calais', '63': 'Puy-de-Dôme', '64': 'Pyrénées-Atlantiques',
+    '65': 'Hautes-Pyrénées', '66': 'Pyrénées-Orientales', '67': 'Bas-Rhin', '68': 'Haut-Rhin',
+    '69': 'Rhône', '70': 'Haute-Saône', '71': 'Saône-et-Loire', '72': 'Sarthe',
+    '73': 'Savoie', '74': 'Haute-Savoie', '75': 'Paris', '76': 'Seine-Maritime',
+    '77': 'Seine-et-Marne', '78': 'Yvelines', '79': 'Deux-Sèvres', '80': 'Somme',
+    '81': 'Tarn', '82': 'Tarn-et-Garonne', '83': 'Var', '84': 'Vaucluse',
+    '85': 'Vendée', '86': 'Vienne', '87': 'Haute-Vienne', '88': 'Vosges',
+    '89': 'Yonne', '90': 'Territoire de Belfort', '91': 'Essonne', '92': 'Hauts-de-Seine',
+    '93': 'Seine-Saint-Denis', '94': 'Val-de-Marne', '95': 'Val-d\'Oise',
+    '971': 'Guadeloupe', '972': 'Martinique', '973': 'Guyane',
+    '974': 'La Réunion', '976': 'Mayotte'
+  };
+
+  function normalize(str) {
+    return str
+      .toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/['\s]+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
+  function normalizeNum(raw) {
+    return raw.trim().toUpperCase().replace(/[^0-9AB]/g, '');
+  }
+
+  // Padding 2 chiffres pour matcher exactement le pattern URL utilisé par peintre-interieur/generate.js (peintre-interieur-{NN}.fr).
+  // 2A/2B et outre-mer 971+ restent intacts.
+  function depForDomain(raw) {
+    const s = String(raw).toUpperCase();
+    if (s === '2A' || s === '2B' || s.length >= 3) return s;
+    return s.padStart(2, '0');
+  }
+
+  function loadStore() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { email: '', history: [] };
+    } catch (e) { return { email: '', history: [] }; }
+  }
+  function saveStore(s) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch (e) {}
+  }
+
+  let store = loadStore();
+  let userEditedName = false;
+
+  const numEl   = document.getElementById('dept-num');
+  const nameEl  = document.getElementById('dept-name');
+  const mailEl  = document.getElementById('email');
+  const hintNum = document.getElementById('hint-num');
+  const hintName = document.getElementById('hint-name');
+  const preview = document.getElementById('preview-section');
+  const pDomain = document.getElementById('p-domain');
+  const pMain   = document.getElementById('p-main');
+  const pSubs   = document.getElementById('p-subs');
+  const pNginx  = document.getElementById('p-nginx');
+  const cmdArea = document.getElementById('commands-area');
+  const histBox = document.getElementById('history-container');
+  const clearBtn = document.getElementById('clear-history');
+  const copyAllBtn = document.getElementById('copy-all-btn');
+  const infoBanner = document.getElementById('info-banner');
+
+  if (store.email) mailEl.value = store.email;
+
+  function buildBlocks(num, slug, email) {
+    const numDomain = depForDomain(num).toLowerCase();
+    const domain = `peintre-interieur-${numDomain}.fr`;
+    const confName = `peintre-interieur-${numDomain}`;
+    const mainDir = `${BASE_ROOT}/peintre-interieur-${numDomain}`;
+    const subsDir = `${SUBS_ROOT}/${slug}`;
+
+    return [
+      {
+        num: 1,
+        title: 'Vérification DNS',
+        desc: 'Confirme que le domaine pointe vers le VPS',
+        body:
+`<span class="comment"># Doit retourner ${VPS_IP} pour les 3 lignes</span>
+<span class="cmd">dig</span> ${domain} +short
+<span class="cmd">dig</span> www.${domain} +short
+<span class="cmd">dig</span> test.${domain} +short`
+      },
+      {
+        num: 2,
+        title: 'Création des dossiers',
+        desc: 'Hiérarchie /var/www/peintre-interieur/ : peintre-interieur-XX + sous-domaines/{dep}/',
+        body:
+`<span class="cmd">sudo mkdir</span> -p ${mainDir}
+<span class="cmd">sudo mkdir</span> -p ${subsDir}
+<span class="cmd">sudo chown</span> -R www-data:www-data ${BASE_ROOT}
+<span class="cmd">sudo chmod</span> -R 755 /var/www/`
+      },
+      {
+        num: 3,
+        title: 'Certificat SSL wildcard',
+        desc: 'Certbot via API OVH (DNS-01) — généré AVANT Nginx',
+        body:
+`<span class="comment"># Certificat couvrant le domaine + tous les sous-domaines</span>
+<span class="comment"># DNS-01 = aucune dépendance à Nginx, le cert existe avant la 1re mise en ligne</span>
+<span class="cmd">sudo certbot</span> certonly \\
+  --dns-ovh \\
+  --dns-ovh-credentials /etc/letsencrypt/ovh.ini \\
+  -d <span class="string">${domain}</span> \\
+  -d <span class="string">"*.${domain}"</span> \\
+  --agree-tos \\
+  --email <span class="string">${email}</span> \\
+  --non-interactive`
+      },
+      {
+        num: 4,
+        title: 'Config Nginx HTTPS (avec HSTS et redirection)',
+        desc: 'Site servi en HTTPS dès le 1er chargement, headers Google-friendly',
+        body:
+`<span class="cmd">sudo tee</span> /etc/nginx/sites-available/${confName} &gt; /dev/null &lt;&lt;<span class="string">'EOF'</span>
+<span class="comment"># ─────────────────────────────────────────────────────────</span>
+<span class="comment"># REDIRECTION HTTP → HTTPS (domaine principal + sous-domaines)</span>
+<span class="comment"># ─────────────────────────────────────────────────────────</span>
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ${domain} *.${domain};
+    return 301 https://$host$request_uri;
+}
+
+<span class="comment"># ─────────────────────────────────────────────────────────</span>
+<span class="comment"># HTTPS — DOMAINE PRINCIPAL</span>
+<span class="comment"># ─────────────────────────────────────────────────────────</span>
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name ${domain} www.${domain};
+
+    ssl_certificate     /etc/letsencrypt/live/${domain}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${domain}/privkey.pem;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    <span class="comment"># HSTS : annonce à Google que le site est HTTPS-only pour 1 an</span>
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    root  ${mainDir};
+    index index.html;
+
+    <span class="comment"># Cache long sur les assets statiques (gain ~130 KiB sur visites répétées)</span>
+    location ~* \\.(webp|png|jpg|jpeg|gif|svg|ico|css|js|woff2?|ttf)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable" always;
+        access_log off;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+
+<span class="comment"># ─────────────────────────────────────────────────────────</span>
+<span class="comment"># HTTPS — SOUS-DOMAINES DYNAMIQUES (1 par commune)</span>
+<span class="comment"># Racine servie : ${subsDir}/&lt;commune&gt;/</span>
+<span class="comment"># ─────────────────────────────────────────────────────────</span>
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name ~^(?&lt;subdomain&gt;(?!www$)[^.]+)\\.peintre-interieur-${numDomain}\\.fr$;
+
+    ssl_certificate     /etc/letsencrypt/live/${domain}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${domain}/privkey.pem;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    root  ${subsDir}/$subdomain;
+    index index.html;
+
+    location ~* \\.(webp|png|jpg|jpeg|gif|svg|ico|css|js|woff2?|ttf)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable" always;
+        access_log off;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
+EOF`
+      },
+      {
+        num: 5,
+        title: 'Activation du site',
+        desc: 'Symlink + test syntaxique + reload sans interruption',
+        body:
+`<span class="cmd">sudo ln</span> -sf /etc/nginx/sites-available/${confName} /etc/nginx/sites-enabled/
+<span class="cmd">sudo nginx</span> -t
+<span class="cmd">sudo systemctl</span> reload nginx`
+      },
+      {
+        num: 6,
+        title: 'Tests Google Search Console-ready',
+        desc: 'Valide redirect, HSTS, certificat wildcard avant soumission',
+        body:
+`<span class="comment"># ─── Test 1 : HTTP doit retourner 301 vers HTTPS ───</span>
+<span class="cmd">curl</span> -I http://${domain}
+<span class="comment"># ATTENDU : HTTP/1.1 301 Moved Permanently + Location: https://${domain}/</span>
+
+<span class="comment"># ─── Test 2 : HTTPS doit retourner 200 + header HSTS ───</span>
+<span class="cmd">curl</span> -I https://${domain}
+<span class="cmd">curl</span> -I https://www.${domain}
+<span class="comment"># ATTENDU : HTTP/2 200 + strict-transport-security: max-age=31536000...</span>
+
+<span class="comment"># ─── Test 3 : un sous-domaine quelconque (le wildcard fonctionne) ───</span>
+<span class="cmd">curl</span> -I https://test.${domain}
+<span class="comment"># ATTENDU : HTTP/2 200 (ou 404 si dossier vide, mais cert valide = OK)</span>
+
+<span class="comment"># ─── Test 4 : validation du certificat wildcard ───</span>
+<span class="cmd">echo</span> | <span class="cmd">openssl</span> s_client -connect test.${domain}:443 \\
+  -servername test.${domain} 2&gt;/dev/null \\
+  | <span class="cmd">openssl</span> x509 -noout -subject -dates
+<span class="comment"># ATTENDU : subject=CN=${domain} + dates valides (90 jours)</span>
+
+<span class="comment"># ─── Si tous les tests passent : tu peux soumettre à Google ───</span>
+<span class="comment"># https://search.google.com/search-console</span>`
+      }
+    ];
+  }
+
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || '';
+  }
+
+  function renderCommands(num, slug, email) {
+    const blocks = buildBlocks(num, slug, email);
+    cmdArea.innerHTML = '<div class="commands">' + blocks.map(b => `
+      <div class="cmd-block">
+        <div class="cmd-header">
+          <span class="cmd-title">
+            <span class="cmd-num">${b.num}</span>
+            <span>${b.title}</span>
+            <span class="desc">· ${b.desc}</span>
+          </span>
+          <button class="cmd-copy">Copier</button>
+        </div>
+        <div class="cmd-body" data-raw="${encodeURIComponent(stripHtml(b.body))}">${b.body}</div>
+      </div>
+    `).join('') + '</div>';
+
+    cmdArea.querySelectorAll('.cmd-copy').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const block = btn.closest('.cmd-block');
+        const raw = decodeURIComponent(block.querySelector('.cmd-body').dataset.raw);
+        navigator.clipboard.writeText(raw).then(() => {
+          const old = btn.textContent;
+          btn.textContent = '✓ Copié';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = old;
+            btn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    });
+
+    copyAllBtn.style.display = 'inline-block';
+    infoBanner.style.display = 'block';
+  }
+
+  function renderEmpty() {
+    cmdArea.innerHTML = '<div class="empty-state">Tape un numéro de département pour générer toutes les commandes</div>';
+    copyAllBtn.style.display = 'none';
+    infoBanner.style.display = 'none';
+  }
+
+  function autoFillName(num) {
+    if (DEPTS[num]) {
+      nameEl.value = DEPTS[num];
+      nameEl.classList.add('flash');
+      setTimeout(() => nameEl.classList.remove('flash'), 600);
+      userEditedName = false;
+      hintNum.textContent = '✓ ' + DEPTS[num];
+      hintNum.className = 'field-hint ok';
+      numEl.classList.remove('unknown');
+    } else if (num.length >= 2) {
+      hintNum.textContent = 'Code inconnu — saisis le nom à la main';
+      hintNum.className = 'field-hint warn';
+      numEl.classList.add('unknown');
+      if (!userEditedName) nameEl.value = '';
+    } else {
+      hintNum.innerHTML = '&nbsp;';
+      hintNum.className = 'field-hint';
+      numEl.classList.remove('unknown');
+    }
+  }
+
+  function update() {
+    const rawNum = numEl.value;
+    const num    = normalizeNum(rawNum);
+    if (rawNum !== num) numEl.value = num;
+
+    const name  = nameEl.value.trim();
+    const email = mailEl.value.trim() || 'ton@email.com';
+    const slug  = name ? normalize(name) : '';
+
+    if (slug) {
+      hintName.textContent = 'slug : ' + slug;
+      hintName.className = 'field-hint';
+    } else {
+      hintName.innerHTML = '&nbsp;';
+      hintName.className = 'field-hint';
+    }
+
+    if (num && slug) {
+      const numDomain = depForDomain(num).toLowerCase();
+      const domain = `peintre-interieur-${numDomain}.fr`;
+      pDomain.textContent = domain;
+      pMain.textContent   = `${BASE_ROOT}/peintre-interieur-${numDomain}`;
+      pSubs.textContent   = `${SUBS_ROOT}/${slug}`;
+      pNginx.textContent  = `/etc/nginx/sites-available/peintre-interieur-${numDomain}`;
+      preview.style.display = 'block';
+      renderCommands(num, slug, email);
+    } else {
+      preview.style.display = 'none';
+      renderEmpty();
+    }
+  }
+
+  copyAllBtn.addEventListener('click', () => {
+    const bodies = cmdArea.querySelectorAll('.cmd-body');
+    let all = '';
+    bodies.forEach((body, i) => {
+      const block = body.closest('.cmd-block');
+      const titleEl = block.querySelector('.cmd-title span:nth-child(2)');
+      const title = titleEl ? titleEl.textContent.trim() : '';
+      const raw = decodeURIComponent(body.dataset.raw);
+      all += `# ═══════════════════════════════════════════════════════\n`;
+      all += `# ÉTAPE ${i + 1} — ${title.toUpperCase()}\n`;
+      all += `# ═══════════════════════════════════════════════════════\n`;
+      all += raw + '\n\n';
+    });
+    navigator.clipboard.writeText(all.trim()).then(() => {
+      const old = copyAllBtn.textContent;
+      copyAllBtn.textContent = '✓ Tout copié';
+      copyAllBtn.classList.add('copied');
+      setTimeout(() => {
+        copyAllBtn.textContent = old;
+        copyAllBtn.classList.remove('copied');
+      }, 1500);
+    });
+  });
+
+  function addToHistory(num, name, slug) {
+    store.history = store.history.filter(h => !(h.num === num && h.slug === slug));
+    store.history.unshift({ num, name, slug, date: new Date().toISOString() });
+    if (store.history.length > 12) store.history.length = 12;
+    saveStore(store);
+    renderHistory();
+  }
+
+  function formatDate(iso) {
+    const d = new Date(iso);
+    const today = new Date();
+    const sameDay = d.toDateString() === today.toDateString();
+    if (sameDay) return d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+    return d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit' });
+  }
+
+  function renderHistory() {
+    if (!store.history.length) {
+      histBox.innerHTML = '<div class="history-empty">Aucun site généré pour l\'instant.</div>';
+      return;
+    }
+    histBox.innerHTML = '<div class="history-list">' + store.history.map(h => `
+      <div class="history-item" data-num="${h.num}" data-name="${h.name.replace(/"/g, '&quot;')}">
+        <div class="history-info">
+          <span class="history-num">${h.num}</span>
+          <span class="history-name">${h.name}</span>
+          <span class="history-slug">${h.slug}</span>
+        </div>
+        <span class="history-date">${formatDate(h.date)}</span>
+      </div>
+    `).join('') + '</div>';
+
+    histBox.querySelectorAll('.history-item').forEach(item => {
+      item.addEventListener('click', () => {
+        numEl.value = item.dataset.num;
+        nameEl.value = item.dataset.name;
+        userEditedName = true;
+        update();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  clearBtn.addEventListener('click', () => {
+    if (confirm('Vider l\'historique ?')) {
+      store.history = [];
+      saveStore(store);
+      renderHistory();
+    }
+  });
+
+  let saveTimer;
+  function debounceHistory() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      const num = normalizeNum(numEl.value);
+      const name = nameEl.value.trim();
+      const slug = name ? normalize(name) : '';
+      if (num && slug && name.length >= 2) addToHistory(num, name, slug);
+    }, 1500);
+  }
+
+  numEl.addEventListener('input', () => {
+    const num = normalizeNum(numEl.value);
+    autoFillName(num);
+    update();
+    debounceHistory();
+  });
+  nameEl.addEventListener('input', () => {
+    userEditedName = true;
+    update();
+    debounceHistory();
+  });
+  mailEl.addEventListener('input', () => {
+    update();
+    store.email = mailEl.value.trim();
+    saveStore(store);
+  });
+
+  renderHistory();
+  update();
+
+})();
+</script>
+</body>
+</html>

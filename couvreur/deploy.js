@@ -7,8 +7,8 @@
  *     --server root@204.168.224.81 \
  *     --local-dep output/33-gironde-dep \
  *     --local-villes output/33-gironde \
- *     --remote-dep /var/www/peintre-en-batiment-33 \
- *     --remote-villes /var/www/peintres/gironde
+ *     --remote-dep /var/www/couvreur/couvreur33-pro \
+ *     --remote-villes /var/www/couvreur/sous-domaines/gironde
  *
  * Options :
  *   --dep            Code département (obligatoire)
@@ -16,8 +16,8 @@
  *   --server         Serveur SSH (défaut : root@204.168.224.81)
  *   --local-dep      Dossier local du site département (défaut : output/{code}-{nom}-dep)
  *   --local-villes   Dossier local des sites villes (défaut : output/{code}-{nom})
- *   --remote-dep     Dossier distant du site département (défaut : /var/www/peintre-en-batiment-{code})
- *   --remote-villes  Dossier distant des sites villes (défaut : /var/www/peintres/{nom})
+ *   --remote-dep     Dossier distant du site département (défaut : /var/www/couvreur/couvreur{code}-pro)
+ *   --remote-villes  Dossier distant des sites villes (défaut : /var/www/couvreur/sous-domaines/{nom})
  *   --skip-dep       Ne pas déployer le site département
  *   --skip-villes    Ne pas déployer les sites villes
  */
@@ -25,6 +25,8 @@
 const fs   = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+
+const ROOT_PARENT = path.resolve(__dirname, '..');
 
 // ─── Arguments CLI ───────────────────────────────────────────────────────────
 
@@ -67,8 +69,8 @@ const depNomLower = slugifyDep(depNom);
 const server      = getArg('--server')        || 'root@204.168.224.81';
 const localDep    = getArg('--local-dep')      || `output/${depCode}-${depNomLower}-dep`;
 const localVilles = getArg('--local-villes')   || `output/${depCode}-${depNomLower}`;
-const remoteDep   = getArg('--remote-dep')     || `/var/www/peintre-en-batiment-${depCode}`;
-const remoteVilles= getArg('--remote-villes')  || `/var/www/peintres/${depNomLower}`;
+const remoteDep   = getArg('--remote-dep')     || `/var/www/couvreur/couvreur${depCode}-pro`;
+const remoteVilles= getArg('--remote-villes')  || `/var/www/couvreur/sous-domaines/${depNomLower}`;
 const skipDep     = !hasFlag('--with-dep');
 const skipVilles  = hasFlag('--skip-villes');
 
@@ -175,7 +177,7 @@ if (!skipVilles) {
 let citiesAdded = []; // villes nouvellement déployées (slug)
 
 if (!skipVilles && fs.existsSync(localVilles)) {
-  const dashboardDir = 'dashboard-peintre';
+  const dashboardDir = path.join(ROOT_PARENT, 'dashboard-peintre', 'couvreur');
   const hasDashboard = fs.existsSync(dashboardDir);
 
   const cities = fs.readdirSync(localVilles).filter(f =>
@@ -205,14 +207,14 @@ if (!skipVilles && fs.existsSync(localVilles)) {
 
     console.log('');
     try {
-      execSync('node dashboard-peintre/generate-dashboard.js', { stdio: 'inherit' });
+      execSync('node dashboard-peintre/couvreur/generate-dashboard.js', { cwd: ROOT_PARENT, stdio: 'inherit' });
     } catch (e) {
       console.warn('⚠️  Dashboard non généré :', e.message);
     }
   } else {
-    // Pas de dashboard-peintre/ (submodule non initialisé) : toutes les villes sont considérées comme nouvelles
+    // Pas de dashboard-peintre/batiment (submodule non initialisé) : toutes les villes sont considérées comme nouvelles
     citiesAdded = cities;
-    console.log(`\nℹ️  dashboard-peintre/ absent (git submodule update --init pour l'activer). Le push Sheet considère ${cities.length} villes.`);
+    console.log(`\nℹ️  dashboard-peintre/batiment absent (git submodule update --init pour l'activer). Le push Sheet considère ${cities.length} villes.`);
   }
 }
 
@@ -231,14 +233,14 @@ function loadEnv(filePath = '.env') {
   return env;
 }
 
-const env = loadEnv();
-const sheetUrl   = env.DEPLOY_SHEET_URL   || '';
-const sheetToken = env.DEPLOY_SHEET_TOKEN || '';
+const env = loadEnv(path.join(ROOT_PARENT, '.env'));
+const sheetUrl   = env.DEPLOY_SHEET_COUVREUR_URL   || '';
+const sheetToken = env.DEPLOY_SHEET_COUVREUR_TOKEN || '';
 
 function pushToSheet() {
   return new Promise((resolve) => {
     if (!sheetUrl || !sheetToken) {
-      console.log('\nℹ️  Sheet : DEPLOY_SHEET_URL et DEPLOY_SHEET_TOKEN absents du .env, push ignoré.');
+      console.log('\nℹ️  Sheet : DEPLOY_SHEET_COUVREUR_URL et DEPLOY_SHEET_COUVREUR_TOKEN absents du .env, push ignoré.');
       return resolve();
     }
     if (citiesAdded.length === 0) {
@@ -246,7 +248,7 @@ function pushToSheet() {
       return resolve();
     }
 
-    const communes = JSON.parse(fs.readFileSync('data/communes.json', 'utf8'));
+    const communes = JSON.parse(fs.readFileSync(path.join(ROOT_PARENT, 'data', 'communes.json'), 'utf8'));
 
     function slugify(str) {
       return str.toLowerCase().replace(/['']/g, '-').replace(/\s+/g, '-').replace(/-{2,}/g, '-').replace(/^-|-$/g, '');
@@ -260,7 +262,7 @@ function pushToSheet() {
 
     const rows = citiesAdded.map(slug => {
       const name = idx[slug] || slug;
-      const base = `${slug}.peintre-en-batiment-${depCode}.com`;
+      const base = `${slug}.couvreur${depCode}-pro.fr`;
       return [name, base, `https://${base}/sitemap.xml`];
     });
 

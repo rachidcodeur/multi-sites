@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Générateur de commandes — Peintre Intérieur</title>
+  <title>Configurateur — Peintre Intérieur</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -28,7 +28,6 @@
     }
     .container { width: 100%; max-width: 800px; }
 
-    /* Onglets */
     .tabs {
       display: flex;
       gap: .4rem;
@@ -121,6 +120,14 @@
       color: #555;
       font-size: .9rem;
       line-height: 1.5;
+    }
+    .pane-info code {
+      background: #fff3e8;
+      color: #BD5722;
+      padding: 0 .3rem;
+      border-radius: 3px;
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: .85em;
     }
 
     .os-toggle {
@@ -223,15 +230,34 @@
       margin-bottom: 1rem;
       line-height: 1.5;
     }
+    .hierarchy {
+      background: #fff;
+      border: 1px solid rgba(1, 1, 34, 0.1);
+      border-radius: 10px;
+      padding: .8rem 1rem;
+      font-family: 'SF Mono', Menlo, monospace;
+      font-size: .78rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+    .hierarchy .root { color: #BD5722; font-weight: 700; }
+    .hierarchy .branch { color: #999; }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>Générateur de commandes</h1>
-    <div class="subtitle">Peintre Intérieur</div>
+    <h1>Configurateur</h1>
+    <div class="subtitle">Peintre Intérieur · génération &amp; déploiement</div>
   </div>
 
   <div class="container">
+
+    <div class="hierarchy">
+      <span class="root">/var/www/peintre-interieur/</span><br>
+      <span class="branch">├──</span> peintre-interieur-<span class="root">XX</span>/ &nbsp;&nbsp;<span class="branch">← site département</span><br>
+      <span class="branch">└──</span> sous-domaines/<span class="root">{nom_dep}</span>/<span class="root">{slug-ville}</span>/ &nbsp;&nbsp;<span class="branch">← sites villes</span>
+    </div>
 
     <div class="tabs">
       <button class="tab active" data-pane="single">Un département</button>
@@ -293,7 +319,7 @@
     <div id="output">
       <div class="empty">Choisis un onglet et entre tes données pour voir les commandes</div>
     </div>
-    <div class="hint">Les codes 1-9 acceptent 01 ou 1 · Corse = code 20</div>
+    <div class="hint">Codes 1-9 : tape <code>1</code> ou <code>01</code> · Corse = code 20 · Domaine = <code>peintre-interieur-XX.fr</code></div>
   </div>
 
 <script>
@@ -317,10 +343,20 @@ function slugify(str) {
     .replace(/['']/g, '-').replace(/\s+/g, '-')
     .replace(/-{2,}/g, '-').replace(/^-|-$/g, '');
 }
-function depCode2(dep) {
-  const s = String(dep);
-  if (s === '2A' || s === '2B') return s;
-  if (s.length >= 3) return s;
+
+// Padding 2 chiffres (matche peintre-interieur/generate.js → peintre-interieur-{NN}.fr).
+// 2A/2B et outre-mer 971-976 intacts.
+function depForDomain(dep) {
+  const s = String(dep).toUpperCase();
+  if (s === '2A' || s === '2B' || s.length >= 3) return s;
+  return s.padStart(2, '0');
+}
+
+// Forme du code dep utilisée pour le NOM DE DOSSIER LOCAL output/{XX}-{slug}.
+// Aussi padded à 2 chiffres pour cohérence.
+function depForLocalDir(dep) {
+  const s = String(dep).toUpperCase();
+  if (s === '2A' || s === '2B' || s.length >= 3) return s;
   return s.padStart(2, '0');
 }
 
@@ -338,41 +374,45 @@ function resolveDep(raw) {
 // ─── Génération d'un bloc de commandes pour UN département ───────────────────
 
 function buildSingle(depCode, depNomRaw) {
-  const depNom  = stripAccents(depNomRaw);
-  const slug    = slugify(depNomRaw);
-  const dep2    = depCode2(depCode);
-  const dirCity = depCode + '-' + slug;
-  const dirDep  = dirCity + '-dep';
+  const depNom    = stripAccents(depNomRaw);
+  const slugDep   = slugify(depNomRaw);
+  const depDomain = depForDomain(depCode);
+  const depDir    = depForLocalDir(depCode);
+  const dirCity   = depDir + '-' + slugDep;
+  const dirDep    = dirCity + '-dep';
 
-  const cmd1 = `cd template-peintre-interieur && node generate-dep.js --dep ${depCode} --dep-nom "${depNom}"`;
-  const cmd2 = `cd template-peintre-interieur && node generate.js --dep ${depCode} --dep-nom "${depNom}"`;
+  const remoteDep    = `/var/www/peintre-interieur/peintre-interieur-${depDomain}`;
+  const remoteVilles = `/var/www/peintre-interieur/sous-domaines/${slugDep}`;
+
+  const cmd1 = `cd peintre-interieur && node generate-dep.js --dep ${depCode} --dep-nom "${depNom}"`;
+  const cmd2 = `cd peintre-interieur && node generate.js --dep ${depCode} --dep-nom "${depNom}"`;
 
   let cmd3, combo;
   if (currentOs === 'win') {
-    cmd3 = `cd template-peintre-interieur ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \`
+    cmd3 = `cd peintre-interieur ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \`
   --local-villes output/${dirCity} \`
-  --remote-villes /var/www/peintres/${slug} \`
+  --remote-villes ${remoteVilles} \`
   --local-dep output/${dirDep} \`
-  --remote-dep /var/www/peintre-interieur-${dep2} \`
+  --remote-dep ${remoteDep} \`
   --server ubuntu@137.74.112.253`;
-    combo = `cd template-peintre-interieur ; node generate-dep.js --dep ${depCode} --dep-nom "${depNom}" ; node generate.js --dep ${depCode} --dep-nom "${depNom}" ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \`
+    combo = `cd peintre-interieur ; node generate-dep.js --dep ${depCode} --dep-nom "${depNom}" ; node generate.js --dep ${depCode} --dep-nom "${depNom}" ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \`
   --local-villes output/${dirCity} \`
-  --remote-villes /var/www/peintres/${slug} \`
+  --remote-villes ${remoteVilles} \`
   --local-dep output/${dirDep} \`
-  --remote-dep /var/www/peintre-interieur-${dep2} \`
+  --remote-dep ${remoteDep} \`
   --server ubuntu@137.74.112.253`;
   } else {
-    cmd3 = `cd template-peintre-interieur && node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \\
+    cmd3 = `cd peintre-interieur && node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \\
   --local-villes output/${dirCity} \\
-  --remote-villes /var/www/peintres/${slug} \\
+  --remote-villes ${remoteVilles} \\
   --local-dep output/${dirDep} \\
-  --remote-dep /var/www/peintre-interieur-${dep2} \\
+  --remote-dep ${remoteDep} \\
   --server ubuntu@137.74.112.253`;
-    combo = `cd template-peintre-interieur && node generate-dep.js --dep ${depCode} --dep-nom "${depNom}" && node generate.js --dep ${depCode} --dep-nom "${depNom}" && node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \\
+    combo = `cd peintre-interieur && node generate-dep.js --dep ${depCode} --dep-nom "${depNom}" && node generate.js --dep ${depCode} --dep-nom "${depNom}" && node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep \\
   --local-villes output/${dirCity} \\
-  --remote-villes /var/www/peintres/${slug} \\
+  --remote-villes ${remoteVilles} \\
   --local-dep output/${dirDep} \\
-  --remote-dep /var/www/peintre-interieur-${dep2} \\
+  --remote-dep ${remoteDep} \\
   --server ubuntu@137.74.112.253`;
   }
 
@@ -382,24 +422,28 @@ function buildSingle(depCode, depNomRaw) {
 // ─── Génération d'une ligne « tout-en-un » SANS le cd (pour batch) ──────────
 
 function buildBatchLine(depCode, depNomRaw) {
-  const depNom  = stripAccents(depNomRaw);
-  const slug    = slugify(depNomRaw);
-  const dep2    = depCode2(depCode);
-  const dirCity = depCode + '-' + slug;
-  const dirDep  = dirCity + '-dep';
+  const depNom    = stripAccents(depNomRaw);
+  const slugDep   = slugify(depNomRaw);
+  const depDomain = depForDomain(depCode);
+  const depDir    = depForLocalDir(depCode);
+  const dirCity   = depDir + '-' + slugDep;
+  const dirDep    = dirCity + '-dep';
   const sep = currentOs === 'win' ? ' ; ' : ' && ';
+
+  const remoteDep    = `/var/www/peintre-interieur/peintre-interieur-${depDomain}`;
+  const remoteVilles = `/var/www/peintre-interieur/sous-domaines/${slugDep}`;
 
   return [
     `node generate-dep.js --dep ${depCode} --dep-nom "${depNom}"`,
     `node generate.js --dep ${depCode} --dep-nom "${depNom}"`,
-    `node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep --local-villes output/${dirCity} --remote-villes /var/www/peintres/${slug} --local-dep output/${dirDep} --remote-dep /var/www/peintre-interieur-${dep2} --server ubuntu@137.74.112.253`
+    `node deploy.js --dep ${depCode} --dep-nom "${depNom}" --with-dep --local-villes output/${dirCity} --remote-villes ${remoteVilles} --local-dep output/${dirDep} --remote-dep ${remoteDep} --server ubuntu@137.74.112.253`
   ].join(sep);
 }
 
 function buildBatch(depList) {
   const cont = currentOs === 'win' ? '`' : '\\';
   const sep  = currentOs === 'win' ? ';'  : '&&';
-  const cdCmd = currentOs === 'win' ? 'cd template-peintre-interieur' : 'cd template-peintre-interieur';
+  const cdCmd = 'cd peintre-interieur';
 
   const lines = [`${cdCmd} ${sep} ${cont}`];
   depList.forEach((d, i) => {
@@ -441,11 +485,10 @@ function attachCopy() {
 // ─── Onglets + OS — état global initialisé en premier ────────────────────────
 
 const out = document.getElementById('output');
-let currentPane = localStorage.getItem('cmd-int-pane') || 'single';
-let currentOs = localStorage.getItem('cmd-int-os')
+let currentPane = localStorage.getItem('cmd-interieur-pane') || 'single';
+let currentOs = localStorage.getItem('cmd-interieur-os')
   || (/Win/i.test(navigator.platform) ? 'win' : 'mac');
 
-// Applique l'état des onglets sans déclencher de rendu (pas encore prêt)
 document.querySelectorAll('.tab').forEach(x => {
   x.classList.toggle('active', x.dataset.pane === currentPane);
 });
@@ -456,7 +499,6 @@ document.querySelectorAll('.os-btn').forEach(b => {
   b.classList.toggle('active', b.dataset.os === currentOs);
 });
 
-// Handlers (déclenchent refreshOutput, qui sera défini avant la fin du script)
 document.querySelectorAll('.tab').forEach(t => {
   t.addEventListener('click', () => {
     document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
@@ -464,13 +506,13 @@ document.querySelectorAll('.tab').forEach(t => {
     t.classList.add('active');
     document.querySelector(`.pane[data-pane="${t.dataset.pane}"]`).classList.add('active');
     currentPane = t.dataset.pane;
-    localStorage.setItem('cmd-int-pane', currentPane);
+    localStorage.setItem('cmd-interieur-pane', currentPane);
     refreshOutput();
   });
 });
 function setOs(os) {
   currentOs = os;
-  localStorage.setItem('cmd-int-os', os);
+  localStorage.setItem('cmd-interieur-os', os);
   document.querySelectorAll('.os-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.os === os);
   });
@@ -483,7 +525,7 @@ document.querySelectorAll('.os-btn').forEach(b => {
 // ─── Pane « single » ─────────────────────────────────────────────────────────
 
 const depInput = document.getElementById('dep');
-const STORAGE_KEY_SINGLE = 'cmd-int-dep-code';
+const STORAGE_KEY_SINGLE = 'cmd-interieur-dep-code';
 const saved = localStorage.getItem(STORAGE_KEY_SINGLE);
 if (saved) depInput.value = saved;
 
@@ -516,7 +558,7 @@ function renderSingle() {
 // ─── Pane « multi » ──────────────────────────────────────────────────────────
 
 const depMulti = document.getElementById('dep-multi');
-const STORAGE_KEY_MULTI = 'cmd-int-dep-multi';
+const STORAGE_KEY_MULTI = 'cmd-interieur-dep-multi';
 const savedMulti = localStorage.getItem(STORAGE_KEY_MULTI);
 if (savedMulti) depMulti.value = savedMulti;
 depMulti.addEventListener('input', () => {
@@ -582,8 +624,8 @@ function renderAll() {
 
 const depMissing    = document.getElementById('dep-missing');
 const villesMissing = document.getElementById('villes-missing');
-const STORAGE_KEY_MISSING_DEP    = 'cmd-int-missing-dep';
-const STORAGE_KEY_MISSING_VILLES = 'cmd-int-missing-villes';
+const STORAGE_KEY_MISSING_DEP    = 'cmd-interieur-missing-dep';
+const STORAGE_KEY_MISSING_VILLES = 'cmd-interieur-missing-villes';
 const savedMissingDep    = localStorage.getItem(STORAGE_KEY_MISSING_DEP);
 const savedMissingVilles = localStorage.getItem(STORAGE_KEY_MISSING_VILLES);
 if (savedMissingDep)    depMissing.value    = savedMissingDep;
@@ -607,20 +649,21 @@ function renderMissing() {
     return;
   }
   const { depCode, depNomRaw } = r;
-  const depNom  = stripAccents(depNomRaw);
-  const slug    = slugify(depNomRaw);
-  const dep2    = depCode2(depCode);
-  const dirCity = depCode + '-' + slug;
+  const depNom    = stripAccents(depNomRaw);
+  const slugDep   = slugify(depNomRaw);
+  const depDir    = depForLocalDir(depCode);
+  const dirCity   = depDir + '-' + slugDep;
+  const remoteVilles = `/var/www/peintre-interieur/sous-domaines/${slugDep}`;
   const villesCsv = villes.join(',');
 
   const cmd = currentOs === 'win'
-    ? `cd template-peintre-interieur ; node generate.js --dep ${depCode} --dep-nom "${depNom}" --villes "${villesCsv}" ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" \`
+    ? `cd peintre-interieur ; node generate.js --dep ${depCode} --dep-nom "${depNom}" --villes "${villesCsv}" ; node deploy.js --dep ${depCode} --dep-nom "${depNom}" \`
   --local-villes output/${dirCity} \`
-  --remote-villes /var/www/peintres/${slug} \`
+  --remote-villes ${remoteVilles} \`
   --server ubuntu@137.74.112.253`
-    : `cd template-peintre-interieur && node generate.js --dep ${depCode} --dep-nom "${depNom}" --villes "${villesCsv}" && node deploy.js --dep ${depCode} --dep-nom "${depNom}" \\
+    : `cd peintre-interieur && node generate.js --dep ${depCode} --dep-nom "${depNom}" --villes "${villesCsv}" && node deploy.js --dep ${depCode} --dep-nom "${depNom}" \\
   --local-villes output/${dirCity} \\
-  --remote-villes /var/www/peintres/${slug} \\
+  --remote-villes ${remoteVilles} \\
   --server ubuntu@137.74.112.253`;
 
   out.innerHTML = `

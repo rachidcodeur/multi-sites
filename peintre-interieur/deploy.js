@@ -10,9 +10,9 @@
  *   --dep-nom          Nom département (obligatoire)
  *   --server           Serveur SSH (défaut : ubuntu@137.74.112.253)
  *   --local-villes     Dossier local sites villes (défaut : output/{code}-{nom})
- *   --remote-villes    Dossier distant villes (défaut : /var/www/peintres/{nom})
+ *   --remote-villes    Dossier distant villes (défaut : /var/www/peintre-interieur/sous-domaines/{nom})
  *   --local-dep        Dossier local site département (défaut : output/{code}-{nom}-dep)
- *   --remote-dep       Dossier distant site dept (défaut : /var/www/peintre-interieur-{code})
+ *   --remote-dep       Dossier distant site dept (défaut : /var/www/peintre-interieur/peintre-interieur-{code})
  *   --with-dep         Déployer aussi le site département (sinon ignoré)
  *   --skip-villes      Ne pas déployer les villes
  */
@@ -61,8 +61,8 @@ const dep2 = depCode2(depCode);
 const server      = getArg('--server')        || 'ubuntu@137.74.112.253';
 const localVilles = getArg('--local-villes')  || `output/${depCode}-${slug}`;
 const localDep    = getArg('--local-dep')     || `output/${depCode}-${slug}-dep`;
-const remoteVilles= getArg('--remote-villes') || `/var/www/peintres/${slug}`;
-const remoteDep   = getArg('--remote-dep')    || `/var/www/peintre-interieur-${dep2}`;
+const remoteVilles= getArg('--remote-villes') || `/var/www/peintre-interieur/sous-domaines/${slug}`;
+const remoteDep   = getArg('--remote-dep')    || `/var/www/peintre-interieur/peintre-interieur-${dep2}`;
 const skipVilles  = hasFlag('--skip-villes');
 const skipDep     = !hasFlag('--with-dep');
 
@@ -89,8 +89,8 @@ function prepareRemote(remotePath) {
   // Nécessite : ubuntu a NOPASSWD sudo pour chown/chmod sur /var/www (cf /etc/sudoers.d/ubuntu-www)
   const cmd = [
     `sudo mkdir -p '${remotePath}'`,
-    `sudo chown -R ubuntu:www-data /var/www`,
-    `sudo chmod -R u+rwX,g+rX /var/www`,
+    `sudo chown -R ubuntu:www-data /var/www/peintre-interieur`,
+    `sudo chmod -R u+rwX,g+rX /var/www/peintre-interieur`,
   ].join(' && ');
   try {
     execSync(`ssh "${server}" "${cmd}"`, { stdio: 'pipe' });

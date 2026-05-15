@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <title>Politique de confidentialité | {{MARQUE}}</title>
+  <link rel="icon" href="public/images/favicon.webp" type="image/webp">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .legal-main { flex: 1; display: block; width: 100%; box-sizing: border-box; }
+    .legal-page { padding: 2rem 0 4rem; color: var(--color-text-strong); }
+    .legal-page h1 { font-family: var(--font); font-size: 1.75rem; color: var(--color-text-dark); margin-bottom: 0.75rem; }
+    .legal-page h2 { font-family: var(--font); font-size: 1.15rem; color: var(--color-text-dark); margin: 2rem 0 0.75rem; }
+    .legal-page p, .legal-page li { line-height: 1.65; margin-bottom: 0.65rem; }
+    .legal-page ul { margin: 0 0 1rem 1.25rem; padding: 0; }
+    .legal-site-brand { font-size: 1rem; margin-bottom: 1.75rem; color: var(--color-text-strong); }
+    .legal-site-brand strong { color: var(--color-text-dark); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="{{MARQUE}} — accueil">{{MARQUE}}</a>
+      <nav class="nav nav-desktop" aria-label="Navigation principale">
+        <a href="index.html#services">Nos prestations</a>
+        <a href="index.html#avis">Avis clients</a>
+        <a href="index.html#contact">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn btn-primary header-call header-call-desktop" aria-label="{{TEL}}">{{TEL}}</a>
+      <button type="button" class="header-menu-toggle" id="header-menu-toggle"
+              aria-expanded="false" aria-controls="header-menu" aria-label="Ouvrir le menu">
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+        <span class="header-menu-toggle-bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="header-menu" id="header-menu" hidden>
+    <div class="header-menu-backdrop" tabindex="-1"></div>
+    <div class="header-menu-panel" role="dialog" aria-modal="true" aria-labelledby="header-menu-title">
+      <div class="header-menu-panel-header">
+        <p id="header-menu-title" class="visually-hidden">Menu</p>
+        <button type="button" class="header-menu-close" id="header-menu-close" aria-label="Fermer le menu">
+          <svg class="header-menu-close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <nav class="nav nav-mobile" aria-label="Navigation principale">
+        <a href="index.html#services">Nos prestations</a>
+        <a href="index.html#avis">Avis clients</a>
+        <a href="index.html#contact">Devis gratuit</a>
+      </nav>
+      <a href="tel:{{TEL_HREF}}" class="btn header-call header-call-mobile" aria-label="{{TEL}}">{{TEL}}</a>
+    </div>
+  </div>
+
+  <main class="legal-main">
+    <div class="container legal-page">
+      <h1>Politique de confidentialité</h1>
+      <p class="legal-site-brand">Nom du site : <strong>{{MARQUE}}</strong></p>
+      <p><strong>URL de ce site :</strong> <a href="https://{{URL}}">https://{{URL}}</a></p>
+
+      <h2>Introduction</h2>
+      <p>Chez Home Service, nous attachons une grande importance à la protection de vos données personnelles. Cette politique s'applique au site <strong>{{MARQUE}}</strong> (adresse <a href="https://{{URL}}">https://{{URL}}</a>) et explique comment nous collectons, utilisons et protégeons vos informations lorsque vous visitez ce site et utilisez nos services.</p>
+
+      <h2>Collecte des données</h2>
+      <p>Nous pouvons collecter les données suivantes :</p>
+      <ul>
+        <li><strong>Informations personnelles :</strong> nom, prénom, email, téléphone, code postal, ville, message via le formulaire de contact ou de demande de devis.</li>
+        <li><strong>Données de navigation :</strong> adresse IP, type de navigateur, pages consultées, durée de visite, provenant de cookies ou outils d'analyse.</li>
+      </ul>
+      <p>Ces données sont collectées uniquement lorsque vous les fournissez volontairement ou via vos interactions sur le site.</p>
+
+      <h2>Utilisation des données</h2>
+      <p>Les informations collectées sont utilisées pour :</p>
+      <ul>
+        <li>Répondre à vos demandes de devis ou de contact.</li>
+        <li>Planifier et organiser vos travaux de peinture, revêtement ou décoration.</li>
+        <li>Améliorer notre site web et nos services.</li>
+        <li>Vous informer sur nos actualités, offres et services (si vous avez accepté de recevoir des communications).</li>
+      </ul>
+      <p>Nous ne vendons, ne louons ni ne partageons vos données personnelles avec des tiers à des fins commerciales.</p>
+
+      <h2>Cookies</h2>
+      <p>Notre site peut utiliser des cookies pour :</p>
+      <ul>
+        <li>Améliorer votre expérience de navigation.</li>
+        <li>Analyser l'utilisation du site et générer des statistiques.</li>
+      </ul>
+      <p>Vous pouvez gérer ou désactiver les cookies directement depuis votre navigateur, mais certaines fonctionnalités du site pourraient ne plus être accessibles.</p>
+
+      <h2>Durée de conservation</h2>
+      <p>Les données des demandes de contact et devis sont conservées 3 ans maximum après la dernière interaction.</p>
+      <p>Les données de navigation et statistiques anonymisées sont conservées 2 ans.</p>
+
+      <h2>Sécurité des données</h2>
+      <p>Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre :</p>
+      <ul>
+        <li>La perte, l'altération ou le vol.</li>
+        <li>L'accès non autorisé ou la divulgation.</li>
+      </ul>
+      <p>Seul le personnel habilité peut accéder à vos informations, et uniquement pour les finalités décrites ci-dessus.</p>
+
+      <h2>Partage des données</h2>
+      <p>Vos données peuvent être partagées avec :</p>
+      <ul>
+        <li>Nos prestataires techniques (hébergeur, outils de formulaire et d'analyse) uniquement pour assurer le fonctionnement du site.</li>
+        <li>Les autorités compétentes si la loi l'exige.</li>
+      </ul>
+
+      <h2>Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+      <ul>
+        <li>Accès à vos données personnelles.</li>
+        <li>Rectification des informations inexactes ou incomplètes.</li>
+        <li>Suppression de vos données.</li>
+        <li>Limitation du traitement de vos données.</li>
+        <li>Opposition au traitement.</li>
+        <li>Portabilité de vos données.</li>
+      </ul>
+      <p>Pour exercer ces droits, contactez-nous à :</p>
+      <p>Email : <a href="mailto:info@home-service.io">info@home-service.io</a><br>
+      Téléphone : <a href="tel:{{TEL_HREF}}">{{TEL}}</a></p>
+      <p>Vous pouvez également saisir la CNIL (<a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank">www.cnil.fr</a>) pour toute question relative à vos données personnelles.</p>
+
+      <h2>Modifications de la politique</h2>
+      <p>Cette politique de confidentialité peut être mise à jour pour refléter les changements législatifs ou techniques. La date de dernière mise à jour est indiquée ci-dessous.</p>
+      <p><strong>Dernière mise à jour :</strong> 31 mars 2026</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+
+      <div class="footer-col footer-col--brand">
+        <strong class="footer-logo">{{MARQUE}}</strong>
+        <p class="footer-desc">{{VAR_FOOTER_DESC}}</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Nos services</h3>
+        <ul class="footer-list">
+          <li><a href="index.html#services">Peinture intérieure</a></li>
+          <li><a href="index.html#services">Peinture extérieure</a></li>
+          <li><a href="index.html#services">Pose de papier peint</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Informations</h3>
+        <ul class="footer-list">
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Contact</h3>
+        <p class="footer-contact-line">{{CODE_POSTAL}} {{NOM_MAJ}}</p>
+        <p class="footer-contact-line">
+          <a href="tel:{{TEL_HREF}}">{{TEL}}</a>
+        </p>
+        <p class="footer-contact-line">
+          <a href="index.html#contact">Demande de devis gratuit</a>
+        </p>
+      </div>
+
+      <p class="footer-copy">
+        &copy; <span id="year"></span> {{MARQUE}}. Tous droits réservés.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      var toggle = document.getElementById('header-menu-toggle');
+      var menu   = document.getElementById('header-menu');
+      if (!toggle || !menu) return;
+
+      var backdrop = menu.querySelector('.header-menu-backdrop');
+
+      function openMenu() {
+        menu.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.classList.add('is-open');
+        document.body.classList.add('menu-open');
+      }
+
+      function closeMenu() {
+        menu.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      }
+
+      function isOpen() { return !menu.hasAttribute('hidden'); }
+
+      toggle.addEventListener('click', function () {
+        if (isOpen()) closeMenu(); else openMenu();
+      });
+
+      if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+      var closeBtn = document.getElementById('header-menu-close');
+      if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen()) closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

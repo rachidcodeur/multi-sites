@@ -1,0 +1,339 @@
+{
+  "_note": "Variants couvreur — chaque variable paragraphe est splittée en 2 parts (_1 et _2), 5 variantes par part, pickVariant déterministe par slug et par clé. Combinaisons possibles : 5×5 = 25 par paragraphe. Placeholders : {{NOM_COMPLET}}, {{NOM_A}}, {{NOM_DE}}, {{DEP_NOM}}, {{DEP_NOM_LE}}, {{DEP_NOM_A}}, {{DEP_NOM_DE}}, {{CODE_POSTAL}}, {{MARQUE}}.",
+
+  "var_hero_lead_1": [
+    "Pose neuve, rénovation, dépannage d'urgence après tempête ou entretien préventif : nos couvreurs zingueurs interviennent partout {{NOM_A}}.",
+    "Besoin d'une couverture neuve, d'une rénovation complète ou d'une intervention rapide ? Notre équipe est à votre service {{NOM_A}}.",
+    "Notre équipe couvre tous vos besoins de toiture {{NOM_A}} : pose neuve, rénovation, démoussage ou intervention d'urgence après une tempête.",
+    "Couvreur professionnel basé {{NOM_A}}, nous prenons en charge l'ensemble de vos travaux de toiture dans {{DEP_NOM_LE}}, de la simple réparation à la réfection totale.",
+    "Pour un projet de couverture neuve, une rénovation ou un dépannage urgent, nous nous déplaçons partout {{NOM_A}} sur simple appel."
+  ],
+
+  "var_hero_lead_2": [
+    "Tuiles, ardoises, zinc joint debout : nos équipes maîtrisent l'ensemble des matériaux pour garantir une étanchéité durable, du diagnostic à la livraison finale.",
+    "Nous maîtrisons toutes les techniques de couverture et chaque chantier est suivi par un chef d'équipe référent, garant d'un travail soigné et propre.",
+    "Nos couvreurs interviennent dans le strict respect des règles de l'art, et toutes nos prestations sont couvertes par la garantie décennale.",
+    "Du simple dépannage à la réfection totale, chaque chantier est exécuté avec la même exigence : propreté, ponctualité et finitions soignées.",
+    "Diagnostic offert, devis transparent sous 48 h et chantier suivi par un chef d'équipe : trois engagements simples pour un résultat à la hauteur."
+  ],
+
+  "var_services_intro_1": [
+    "Pose neuve, rénovation complète ou simple entretien : Couvreur {{NOM_COMPLET}} prend en charge tous vos besoins de toiture dans {{DEP_NOM_LE}}.",
+    "Notre offre couvre l'ensemble du cycle de vie d'une toiture : de la pose neuve à l'entretien préventif, en passant par la rénovation et les interventions d'urgence.",
+    "Couvreur {{NOM_COMPLET}} prend en charge la totalité de vos travaux de couverture : pose, rénovation, démoussage, isolation et fenêtres de toit.",
+    "Une gamme complète de prestations toiture, du diagnostic initial à la garantie décennale, pour les particuliers et les copropriétés {{NOM_A}}.",
+    "Pose neuve, réparation, entretien, isolation thermique : nous couvrons l'intégralité des besoins liés à votre toiture, partout {{NOM_A}}."
+  ],
+
+  "var_services_intro_2": [
+    "Échafaudages homologués, équipement professionnel et chef d'équipe référent sur chaque chantier garantissent un travail propre et sécurisé.",
+    "Nos équipes interviennent {{DEP_NOM_A}} avec un matériel adapté et un chef de chantier dédié, pour une coordination simple et un seul interlocuteur.",
+    "Vous bénéficiez d'un interlocuteur unique du premier devis à la livraison finale, et toutes nos prestations sont garanties par l'assurance décennale.",
+    "Nos couvreurs travaillent en hauteur dans des conditions optimales de sécurité, avec un équipement professionnel et un suivi rigoureux des règles de l'art.",
+    "Chaque prestation est garantie décennale et accompagnée d'un suivi rigoureux, du métrage initial jusqu'à la levée des dernières finitions."
+  ],
+
+  "var_service_toiture_1": [
+    "Pour une pose neuve ou une réfection complète, nous intervenons sur tous les types de couverture : tuiles terre cuite, ardoises naturelles, zinc ou bac acier.",
+    "Pour refaire entièrement votre toiture ou poser une couverture neuve, nous travaillons avec tous les matériaux du marché — tuiles, ardoises, zinc, bac acier.",
+    "Réfection totale ou pose neuve, sur tous les supports : c'est notre cœur de métier, exécuté par une équipe stable et expérimentée.",
+    "Tuile canal, tuile plate, ardoise ou zinc joint debout : nous posons et rénovons toutes les couvertures, anciennes comme contemporaines.",
+    "De la dépose de l'ancienne couverture à la pose neuve étanche et durable, nous travaillons sur toutes les pentes et tous les matériaux."
+  ],
+
+  "var_service_toiture_2": [
+    "La charpente est vérifiée, l'écran sous toiture posé selon la pente, et chaque détail soigné pour garantir l'étanchéité dans le temps.",
+    "Une équipe expérimentée et un chantier propre du démarrage à la livraison, avec une finition particulièrement soignée sur les points sensibles.",
+    "Nous reprenons les chevrons si nécessaire et soignons particulièrement les finitions de zinguerie autour des faîtages, noues et raccords de cheminée.",
+    "Avant toute pose, nous inspectons la charpente, puis nous installons l'écran sous toiture, le lattage et la couverture selon les règles de l'art.",
+    "Tout est réalisé selon les règles de l'art, avec une garantie décennale couvrant l'ensemble de l'ouvrage et un chef de chantier dédié."
+  ],
+
+  "var_service_zinguerie_1": [
+    "La zinguerie, c'est ce qui distingue une toiture vraiment étanche d'un simple assemblage de tuiles.",
+    "Toute la zinguerie de votre toiture est façonnée sur mesure dans notre atelier, par des artisans qualifiés.",
+    "Faîtages, noues, solins, raccords autour des cheminées et des lucarnes : nos zingueurs réalisent toutes les pièces sur mesure.",
+    "Le savoir-faire du zingueur est ce qui distingue un vrai couvreur d'un simple poseur de tuiles.",
+    "Nous façonnons toute la zinguerie de votre toiture sur mesure : raccords, solins, noues, abergements de cheminée."
+  ],
+
+  "var_service_zinguerie_2": [
+    "Nous fabriquons à l'atelier toutes les pièces sur mesure — faîtages, noues, solins, raccords — pour une étanchéité parfaite sur la durée.",
+    "Nous travaillons aussi bien le zinc naturel que le plomb traditionnel, selon votre couverture et l'esthétique recherchée.",
+    "L'étanchéité ainsi obtenue dure des décennies, sans entretien particulier autre qu'un démoussage tous les dix à quinze ans.",
+    "Chaque pièce est fabriquée à la main dans notre atelier, selon les dimensions exactes de votre toit et de ses points singuliers.",
+    "Zinc naturel en finition Quartz ou Anthra, ou plomb selon vos préférences : l'étanchéité parfaite est garantie sur l'ensemble des points sensibles."
+  ],
+
+  "var_service_gouttieres_1": [
+    "Gouttières pendantes ou rampantes, demi-rondes ou moulurées : nous posons et remplaçons tous les profils, dans tous les matériaux.",
+    "Pour la pose ou le remplacement de vos gouttières, nous travaillons le zinc, l'aluminium laqué, le cuivre et le PVC.",
+    "Le système d'évacuation des eaux pluviales protège vos façades, vos fondations et la maçonnerie de votre maison sur plusieurs décennies.",
+    "Vos gouttières doivent protéger les façades et les fondations sur plusieurs décennies sans entretien lourd.",
+    "Pose et remplacement de gouttières et descentes pluviales, toujours sur mesure et adaptées à votre habitation."
+  ],
+
+  "var_service_gouttieres_2": [
+    "La pente d'écoulement est calculée précisément, les raccords soudés à l'étain et les dauphins raccordés de manière parfaitement étanche.",
+    "Tous les profils sont disponibles — demi-rondes, moulurées, ovoïdes — et nous calculons systématiquement la pente d'écoulement avant pose pour garantir un drainage optimal.",
+    "Nous posons un système complet : gouttières, dauphins en fonte, descentes verticales, en zinc, aluminium, cuivre ou PVC selon votre budget et l'esthétique du bâti.",
+    "C'est pourquoi nous travaillons uniquement avec des matériaux de qualité — zinc, alu laqué, cuivre, PVC — et nous réalisons les soudures à l'étain dans les règles.",
+    "Tous matériaux, tous profils, crochets renforcés, soudures à l'étain : votre maison est durablement protégée des écoulements et infiltrations."
+  ],
+
+  "var_service_nettoyage_1": [
+    "Sous l'effet du climat, mousses, lichens et algues colonisent progressivement vos tuiles, retiennent l'humidité et accélèrent leur usure.",
+    "Le démoussage curatif est l'opération d'entretien la plus efficace pour prolonger la durée de vie de votre couverture.",
+    "Nous éliminons manuellement mousses, lichens et algues, puis appliquons un traitement chimique anti-repousse efficace.",
+    "Un nettoyage en douceur, manuel ou à basse pression, redonne à vos tuiles leur étanchéité d'origine et restaure l'esthétique de votre toit.",
+    "Démoussage complet, traitement fongicide curatif et application d'un hydrofuge protecteur : c'est une cure régulière qui prolonge la durée de vie de votre couverture."
+  ],
+
+  "var_service_nettoyage_2": [
+    "Nous procédons par un nettoyage manuel ou à basse pression, suivi d'un traitement anti-mousse et d'un hydrofuge protecteur, incolore ou pigmenté selon votre choix.",
+    "Le traitement fongicide longue durée est suivi d'un hydrofuge de surface, et vos tuiles retrouvent ainsi leur étanchéité d'origine pour de longues années.",
+    "Nous posons ensuite un hydrofuge — incolore ou pigmenté selon votre préférence — pour rétablir l'imperméabilité naturelle de votre couverture.",
+    "Vos noues retrouvent leur drainage normal et l'esthétique de votre toit est restaurée pour quinze à vingt ans selon votre exposition.",
+    "Cette intervention prolonge la durée de vie de votre couverture de plus de dix ans tout en préservant son aspect visuel."
+  ],
+
+  "var_service_isolation_1": [
+    "Pour les combles perdus, nous procédons par soufflage de ouate de cellulose ou de laine de verre haute densité.",
+    "L'isolation des combles perdus se fait par soufflage et les combles aménagés par pose de laine entre les chevrons.",
+    "Combles perdus traités par soufflage haute densité, combles aménagés par pose de laine minérale entre les chevrons.",
+    "Isolation thermique des combles aux dernières normes : soufflage pour les combles perdus, laine minérale entre chevrons pour les aménagés.",
+    "Selon le type de vos combles, nous choisissons la technique adaptée : soufflage pour les combles perdus, pose entre chevrons pour les aménagés."
+  ],
+
+  "var_service_isolation_2": [
+    "Pour les combles aménagés, nous posons une laine minérale entre les chevrons, et tous nos chantiers sont éligibles à MaPrimeRénov' et aux aides énergie.",
+    "Les aides MaPrimeRénov' sont incluses dans notre prestation, et nous montons le dossier pour vous, sans frais supplémentaires.",
+    "Nous nous chargeons des dossiers MaPrimeRénov' et CEE auxquels vos travaux ouvrent droit, gratuitement et de bout en bout.",
+    "Les aides énergie sont maximisées et nous gérons tout l'administratif à votre place, du devis à la validation du dossier.",
+    "Travaux éligibles MaPrimeRénov' et CEE, dossier monté par nos soins et accompagnement personnalisé jusqu'au versement de la prime."
+  ],
+
+  "var_service_velux_1": [
+    "Nous posons toutes les gammes Velux et Fakro : ouverture par rotation, par projection, motorisation électrique ou solaire.",
+    "Pour la pose de fenêtres de toit Velux ou Fakro, nous installons tous les modèles, du basique au motorisé solaire.",
+    "Nos couvreurs installent toutes les gammes Velux et Fakro avec le même soin du détail.",
+    "Une fenêtre de toit transforme un comble sombre en pièce à vivre lumineuse et ventilée.",
+    "Velux ou Fakro, nous posons tous les modèles avec une étanchéité périphérique impeccable."
+  ],
+
+  "var_service_velux_2": [
+    "Le solin est choisi selon votre couverture, pour une étanchéité parfaite et sans pont thermique sur les pourtours.",
+    "Chaque pose comprend la découpe précise, l'isolation périphérique et la mise en œuvre étanche à l'air et à l'eau.",
+    "Découpe propre de la charpente, isolation thermique au pourtour, solin adapté à votre couverture et étanchéité totale garantie.",
+    "Nous posons Velux et Fakro toutes options — rotation, projection, motorisée — avec un solin adapté à votre couverture, pour une étanchéité parfaite.",
+    "Découpe propre, isolation thermique, solin adapté à votre couverture et finitions soignées à l'intérieur comme à l'extérieur de la pièce."
+  ],
+
+  "var_approche_diagnostic_1": [
+    "Aucune intervention ne démarre sans une inspection complète de votre couverture, réalisée mètre carré par mètre carré.",
+    "Chaque chantier commence par un diagnostic détaillé de votre couverture, sur place et sans engagement.",
+    "Un diagnostic exhaustif précède toute proposition technique : tuiles, écran sous toiture, état de la charpente et points singuliers.",
+    "Nous montons systématiquement sur la toiture pour examiner chaque détail avant de proposer une solution.",
+    "Notre démarche commence toujours par l'auscultation de votre toiture, sans engagement de votre part."
+  ],
+
+  "var_approche_diagnostic_2": [
+    "Nous examinons tuiles, liteaux, chevrons, écran sous toiture, étanchéité des noues et solins, car la qualité du diagnostic conditionne la longévité du résultat final.",
+    "Nous vérifions chaque élément un par un — tuiles, liteaux, chevrons, noues, solins, abergements — et la qualité de l'examen initial conditionne celle du résultat.",
+    "C'est cette rigueur initiale qui garantit une intervention pertinente, un devis juste et un résultat durable.",
+    "Pas de devis à l'aveugle : votre couverture est inspectée poste par poste, et chaque préconisation s'appuie sur un état des lieux concret.",
+    "État des tuiles, fixations, voliges, écran sous toiture, étanchéité des noues : c'est cette rigueur du diagnostic qui garantit la qualité du résultat final."
+  ],
+
+  "var_approche_savoir_1": [
+    "Du geste artisanal traditionnel — brochage des tuiles canal, pose d'ardoise à crochets — à la technique contemporaine du zinc joint debout, notre équipe maîtrise tous les procédés.",
+    "Notre équipe maîtrise aussi bien les techniques traditionnelles que les procédés contemporains : tuiles canal, ardoise à crochets, zinc joint debout, sarking.",
+    "Du savoir-faire artisanal traditionnel aux techniques contemporaines, nous travaillons la couverture en tuile, ardoise et zinc.",
+    "Lecture des plans de charpente, calculs de pente, recouvrement réglementaire, raccords de zinguerie : chaque détail compte.",
+    "Le savoir-faire complet du couvreur artisan : tuile, ardoise, zinc, sarking et isolation par l'extérieur."
+  ],
+
+  "var_approche_savoir_2": [
+    "Tout est mis en œuvre dans le strict respect des règles de l'art et des normes professionnelles en vigueur.",
+    "Chaque procédé est appliqué dans le respect des règles de l'art, pour un résultat durable et conforme à votre cahier des charges.",
+    "Nous pratiquons aussi l'isolation par sarking et toutes nos prestations sont exécutées dans le respect scrupuleux des règles de l'art.",
+    "Nos couvreurs maîtrisent à la fois les techniques anciennes et les méthodes modernes, pour offrir un résultat à la hauteur de vos attentes.",
+    "Nous respectons les règles de l'art et les exigences contemporaines de performance thermique et d'étanchéité sur chaque chantier."
+  ],
+
+  "var_approche_devis_1": [
+    "Le déplacement à votre domicile est gratuit, nous prenons sur place les mesures précises, et vous recevez un chiffrage poste par poste sous 24 à 48 heures.",
+    "Visite technique gratuite à votre domicile, métrage sur place, devis détaillé envoyé sous 48 heures maximum.",
+    "Notre devis ne cache rien : déplacement offert, mesures précises sur site et chiffrage poste par poste.",
+    "Un devis clair, transmis sous 24 à 48 heures après la visite technique, et tout est détaillé ligne par ligne.",
+    "Notre transparence sur le chiffrage est totale : déplacement offert, métrage exact, ligne par ligne sur le devis."
+  ],
+
+  "var_approche_devis_2": [
+    "Main-d'œuvre, fournitures, location d'échafaudage, évacuation des gravats : tout est détaillé sur le devis, sans frais cachés.",
+    "Chaque poste est chiffré séparément — main-d'œuvre, matériaux, location d'échafaudage, évacuation — pour que vous compreniez à quoi correspond chaque euro.",
+    "Vous savez exactement à quoi correspond chaque ligne, sans surprise possible au moment de la facture finale.",
+    "Aucune surprise n'est possible quand vient le moment de signer : tout a été expliqué, chiffré et accepté en amont du chantier.",
+    "Nous voulons simplement que vous compreniez chaque euro du devis avant de prendre votre décision en toute sérénité."
+  ],
+
+  "var_intro_couvreur_1": [
+    "Couvreur {{NOM_COMPLET}} intervient sur l'ensemble de {{DEP_NOM_LE}} pour tous vos travaux de toiture : pose neuve, rénovation, dépannage en urgence ou entretien préventif.",
+    "Artisan couvreur zingueur basé {{NOM_A}}, nous intervenons sur tous les travaux de toiture {{DEP_NOM_A}} : pose, rénovation, dépannage d'urgence, démoussage.",
+    "Couvreur professionnel à votre service {{NOM_A}}, notre équipe assure la pose neuve, la réfection complète, le dépannage urgent et l'entretien de toiture.",
+    "Couvreur {{NOM_COMPLET}} regroupe sous un même toit couvreurs, zingueurs et charpentiers pour répondre à tous vos besoins de toiture dans {{DEP_NOM_LE}}.",
+    "Spécialistes de la couverture {{NOM_A}} et dans toute {{DEP_NOM_LE}}, nous prenons en charge la pose neuve, la rénovation, le dépannage en urgence et le démoussage."
+  ],
+
+  "var_intro_couvreur_2": [
+    "Notre équipe maîtrise la couverture en tuiles, ardoises et zinc, toujours dans le strict respect des règles de l'art et de la garantie décennale.",
+    "Tuiles, ardoises, zinc : nous maîtrisons aussi bien les techniques traditionnelles que les procédés contemporains, avec une garantie décennale sur chaque chantier.",
+    "Notre intervention s'étend à la pose en tuiles canal, tuiles plates, ardoises ou zinc joint debout, partout dans {{DEP_NOM_LE}}.",
+    "Pose, rénovation, démoussage, isolation : toutes nos prestations respectent les normes en vigueur et bénéficient de la garantie décennale.",
+    "Tous matériaux (tuile, ardoise, zinc), avec une exécution conforme aux règles de l'art et une couverture décennale incluse."
+  ],
+
+  "var_intro_reponse_1": [
+    "Nous nous engageons à étudier chaque demande dans la journée et à vous transmettre un devis détaillé sous 24 à 48 heures.",
+    "Votre demande est étudiée le jour même, et le devis détaillé vous est transmis sous 24 à 48 heures après visite technique.",
+    "Nous traitons toutes les demandes le jour même et vous remettons un devis chiffré sous 48 heures maximum.",
+    "Chaque demande reçoit une réponse dans la journée, et le devis détaillé est envoyé sous 24 à 48 heures après le métrage.",
+    "Premier contact rapide, devis complet remis sous 24 à 48 heures, sans engagement de votre part."
+  ],
+
+  "var_intro_reponse_2": [
+    "En cas d'urgence — tempête, fuite, ardoise tombée — une intervention de mise en sécurité est planifiée immédiatement, généralement sous 24 à 48 heures.",
+    "Pour les urgences toiture (tempête, fuite, ardoise envolée), notre équipe se déplace en 24 à 48 heures pour sécuriser le bâti.",
+    "En cas d'urgence absolue (tempête, infiltration active), nous priorisons l'intervention de mise en sécurité dans les 24 à 48 heures.",
+    "Pour les urgences — tempête, fuite, dommage de couverture — une visite de sécurisation est programmée immédiatement, partout {{DEP_NOM_A}}.",
+    "En cas d'urgence — tempête, fuite, ardoise tombée — nous déployons une intervention de mise en sécurité prioritaire dans toute {{DEP_NOM_LE}}."
+  ],
+
+  "var_intro_aides_1": [
+    "Toutes nos prestations sont couvertes par l'assurance décennale prévue par la loi Spinetta.",
+    "Tous nos travaux bénéficient automatiquement de l'assurance décennale prévue par la loi Spinetta.",
+    "L'assurance décennale couvre l'intégralité des chantiers que nous réalisons : dix ans de protection contre tout désordre.",
+    "Conformément à la loi Spinetta, tous nos travaux de couverture sont couverts par l'assurance décennale.",
+    "L'ensemble de nos prestations est garanti par la décennale loi Spinetta, sans aucune exception."
+  ],
+
+  "var_intro_aides_2": [
+    "Cette protection légale obligatoire est complétée par la garantie biennale et la garantie de parfait achèvement, soit dix ans de couverture intégrale.",
+    "Cette assurance est complétée par la garantie biennale et la garantie de parfait achèvement, pour une protection légale totale.",
+    "La garantie biennale et la garantie de parfait achèvement complètent cette couverture, vous protégeant contre tout désordre lié à nos travaux.",
+    "Cette garantie obligatoire vous protège pendant dix ans, et elle est complétée chez nous par les garanties biennale et de parfait achèvement.",
+    "S'y ajoutent la garantie biennale et la garantie de parfait achèvement, soit une couverture totale pour la durabilité comme pour les finitions."
+  ],
+
+  "var_intro_materiaux_1": [
+    "Nous travaillons exclusivement avec des fabricants reconnus : tuiles Terreal et Imerys, ardoises naturelles d'Espagne ou d'Angers, zinc VMZinc.",
+    "Nos matériaux sont soigneusement sélectionnés chez des fabricants reconnus : tuiles Terreal, Imerys ou Monier, ardoises naturelles, zinc VMZinc.",
+    "Seuls les fabricants de référence ont leur place sur nos chantiers : tuiles terre cuite Terreal et Imerys, ardoises naturelles d'Angers, zinc VMZinc.",
+    "Nous sélectionnons des matériaux haut de gamme pour chacun de nos chantiers : tuiles Terreal et Imerys, ardoises naturelles, zinc VMZinc.",
+    "Choix exclusif de matériaux issus de manufacturiers de référence : tuiles Terreal, Imerys ou Monier, ardoises naturelles, zinc VMZinc, Velux et Fakro."
+  ],
+
+  "var_intro_materiaux_2": [
+    "Fenêtres de toit Velux et Fakro : la qualité des matériaux conditionne directement la durabilité de votre couverture sur plusieurs décennies.",
+    "Velux et Fakro pour les fenêtres de toit : la qualité du composant fait celle de la couverture, et cette logique guide chaque chantier.",
+    "Velux et Fakro pour les fenêtres : une couverture dure aussi longtemps que ses matériaux, et ces marques nous offrent les meilleures garanties.",
+    "Aucune marque inconnue, aucun fournisseur opportuniste : votre toiture mérite des composants éprouvés et durables dans le temps.",
+    "La pérennité de votre toiture commence par ce choix initial, et nous refusons toute économie sur la qualité des composants."
+  ],
+
+  "var_reviews_intro_1": [
+    "La satisfaction de nos clients est notre meilleure vitrine.",
+    "Ces témoignages reflètent ce que nos clients ont particulièrement apprécié dans nos interventions.",
+    "Nos clients en parlent souvent mieux que nous.",
+    "Voici ce que disent nos clients après nos interventions {{DEP_NOM_A}}.",
+    "Quelques retours récents de propriétaires {{DEP_NOM_DE}}, après nos chantiers de couverture, de zinguerie ou de rénovation thermique."
+  ],
+
+  "var_reviews_intro_2": [
+    "Voici quelques retours sur nos prestations de couverture, de zinguerie et d'entretien de toiture, réalisées récemment dans {{DEP_NOM_LE}}.",
+    "Ponctualité, propreté du chantier, qualité du conseil et transparence du devis sont les points qui reviennent le plus dans les retours.",
+    "Voici quelques retours d'expérience récents : chantiers de réfection, urgences post-tempête, isolation ou pose de Velux.",
+    "Réfections complètes, urgences post-tempête, isolation des combles, pose de Velux : tous les chantiers sont décrits par les propriétaires concernés.",
+    "Les avis sont laissés librement, sans aucune sollicitation de notre part, et publiés ici en intégralité."
+  ],
+
+  "var_review_1_text_1": [
+    "Couvreur {{NOM_COMPLET}} a remplacé l'intégralité de la couverture de notre maison, soit 140 m² de tuiles canal.",
+    "Réfection complète de notre toiture sur 130 m² en tuile mécanique avec Couvreur {{NOM_COMPLET}}.",
+    "Nous avons fait remplacer toute la couverture, soit 160 m² de tuiles, par l'équipe de Couvreur {{NOM_COMPLET}}.",
+    "Nous avions besoin de refaire toute la toiture, 140 m² de tuiles canal anciennes, et Couvreur {{NOM_COMPLET}} a parfaitement répondu à la demande.",
+    "Dépose et pose neuve sur 145 m² de couverture, confiée à Couvreur {{NOM_COMPLET}} après comparaison de trois devis."
+  ],
+
+  "var_review_1_text_2": [
+    "Le chantier a été mené en moins de deux semaines, l'échafaudage était propre, l'équipe ponctuelle, et le devis tenu à l'euro près.",
+    "Les délais ont été tenus (dix jours), le chantier propre tout du long et le devis initial respecté scrupuleusement. À recommander.",
+    "Le chef de chantier était disponible et précis, l'équipe sérieuse, et le travail de zinguerie est de très haute qualité. Service impeccable.",
+    "Le chantier a été livré net en douze jours ouvrés, devis respecté et finitions de zinguerie particulièrement soignées. Nous recommandons sans réserve.",
+    "Le travail a été mené en treize jours, la communication parfaite tout du long, le chantier rendu propre, et la zinguerie autour des cheminées particulièrement bien réalisée."
+  ],
+
+  "var_review_2_text_1": [
+    "Suite à une tempête, j'avais plusieurs ardoises envolées et une fuite côté noue.",
+    "Après une tempête, j'avais une infiltration côté noue et deux ardoises envolées sur le pignon.",
+    "Dégât de tempête : ardoises arrachées, gouttière tordue par le vent, infiltration dans la chambre.",
+    "Urgence après orage : tuiles envolées et début d'infiltration côté noue, situation préoccupante.",
+    "Suite à une tempête l'hiver dernier, j'ai eu trois tuiles cassées et une fuite dans le grenier."
+  ],
+
+  "var_review_2_text_2": [
+    "Couvreur {{NOM_COMPLET}} est intervenu sous 48 heures pour sécuriser la toiture, puis a remplacé les éléments endommagés. Service réactif, conseils avisés, tarif honnête.",
+    "L'équipe est venue mettre en sécurité dès le lendemain, puis a réparé proprement la semaine suivante. Tarif raisonnable, problème entièrement réglé.",
+    "Intervention de mise en sécurité dans la journée, puis réparation définitive quatre jours plus tard. Devis transparent, équipe efficace, je recommande.",
+    "Couvreur {{NOM_COMPLET}} m'a sécurisé la toiture sous 24 heures, puis a effectué la réparation propre quelques jours plus tard, avec remplacement du solin. Très réactif et honnête.",
+    "L'intervention urgente a eu lieu le lendemain de mon appel, puis le remplacement définitif la semaine suivante. Service rapide, prix correct, je recommande."
+  ],
+
+  "var_review_3_text_1": [
+    "Nous avons fait isoler nos combles perdus par soufflage de ouate de cellulose et installer trois Velux dans la partie aménageable.",
+    "Isolation des combles avec pose de deux Velux dans la partie aménagée, sur recommandation d'un voisin.",
+    "Soufflage de laine de verre pour les combles perdus, et trois fenêtres de toit Velux posées en une journée.",
+    "Combles perdus isolés par soufflage haute densité, et deux Velux posés dans la partie aménageable.",
+    "Isolation de nos combles et pose de Velux : le tout réalisé en trois jours sans poussière dans la maison."
+  ],
+
+  "var_review_3_text_2": [
+    "L'équipe a travaillé proprement, dans le respect des aides MaPrimeRénov' que nous avions sollicitées. Confort thermique transformé, factures de chauffage en nette baisse.",
+    "Le dossier MaPrimeRénov' a été monté par leurs soins, ce qui a beaucoup simplifié la démarche. Le chantier était propre et le gain thermique évident dès le premier hiver.",
+    "Travail soigné, propreté irréprochable, dossier d'aides bouclé sans souci. Notre confort hivernal est radicalement meilleur depuis l'intervention.",
+    "L'équipe nous a assistés sur les dossiers MaPrimeRénov' et CEE. Le résultat est impeccable et nous voyons déjà des économies de chauffage sensibles.",
+    "La prime MaPrimeRénov' a été obtenue grâce à leur aide pour le dossier. Nous recommandons sans hésiter, équipe sérieuse et travail propre."
+  ],
+
+  "var_cta_text_1": [
+    "Un projet de toiture, une fuite à traiter en urgence, une question sur la zinguerie ? Notre équipe est joignable du lundi au samedi, de 8 h à 19 h.",
+    "Couverture neuve, dépannage, démoussage ou projet d'isolation : n'hésitez pas à nous appeler.",
+    "Toiture qui fuit, tuile envolée, projet de rénovation thermique : vous avez un seul interlocuteur à joindre, du lundi au samedi.",
+    "Vous avez une question sur votre couverture {{NOM_A}} ou un devis à demander ? Appelez-nous du lundi au samedi, de 8 h à 19 h.",
+    "Pour tout besoin de couvreur — du dépannage à la pose neuve — nous sommes joignables six jours sur sept, de 8 h à 19 h."
+  ],
+
+  "var_cta_text_2": [
+    "Nous vous rappelons rapidement pour qualifier votre besoin et planifier une visite technique sur site dans les meilleurs délais.",
+    "Notre standard est ouvert du lundi au samedi de 8 h à 19 h, et nous vous rappelons sous quelques heures, devis sous 48 h après la visite.",
+    "Nous sommes disponibles six jours sur sept et planifions rapidement une visite technique gratuite sur site, partout dans {{DEP_NOM_LE}}.",
+    "Nous étudions votre demande dans la journée et planifions la visite technique rapidement, partout {{DEP_NOM_A}}, gratuitement.",
+    "Vous serez rappelé rapidement, vous recevrez un devis sous 48 heures, et la visite technique est entièrement gratuite."
+  ],
+
+  "var_footer_desc_1": [
+    "Couvreur zingueur professionnel intervenant {{NOM_A}} et dans toute {{DEP_NOM_LE}} depuis plus de 25 ans.",
+    "Artisan couvreur depuis plus de 25 ans, intervenant {{NOM_A}} et dans toute {{DEP_NOM_LE}}.",
+    "Spécialiste de la couverture, de la zinguerie et de l'isolation de combles dans {{DEP_NOM_LE}}.",
+    "Couvreur {{NOM_COMPLET}} : 25 ans d'expérience sur toitures {{DEP_NOM_A}}.",
+    "Artisan couvreur zingueur intervenant {{NOM_A}} et dans toute {{DEP_NOM_LE}}."
+  ],
+
+  "var_footer_desc_2": [
+    "Pose de couverture neuve, rénovation de toiture, zinguerie sur mesure, démoussage et isolation des combles, avec qualité d'exécution et transparence garanties.",
+    "Couverture neuve, rénovation, zinguerie, démoussage et isolation. Décennale garantie, équipe interne, transparence du devis à la livraison finale.",
+    "Pose neuve, rénovation complète, dépannage en urgence, démoussage avec hydrofuge. Travail garanti décennale, devis clairs et intervention rapide.",
+    "Tuiles, ardoises, zinc, fenêtres de toit, isolation des combles. Équipe interne, garantie décennale, accompagnement administratif MaPrimeRénov' inclus.",
+    "Pose et rénovation de toiture, zinguerie sur mesure, traitement hydrofuge, isolation des combles. Engagement qualité, réactivité et garantie décennale incluse."
+  ]
+}

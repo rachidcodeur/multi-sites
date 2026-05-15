@@ -220,13 +220,19 @@ function generate() {
   const dirCity = depCode + '-' + slug;
   const dirDep  = dirCity + '-dep';
 
-  const cmd1 = `node generate-dep.js --dep ${depCode} --dep-nom ${depNom}`;
-  const cmd2 = `node generate.js --dep ${depCode} --dep-nom ${depNom}`;
+  const cmd1 = `cd peintre-en-batiment && node generate-dep.js --dep ${depCode} --dep-nom ${depNom}`;
+  const cmd2 = `cd peintre-en-batiment && node generate.js --dep ${depCode} --dep-nom ${depNom}`;
 
   let cmd3, combo;
   if (currentOs === 'win') {
     // PowerShell : backtick ` pour continuation de ligne, && fonctionne en PS 7+
-    cmd3 = `node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \`
+    cmd3 = `cd peintre-en-batiment ; node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \`
+  --local-villes output/${dirCity} \`
+  --remote-villes /var/www/peintres/${slug} \`
+  --local-dep output/${dirDep} \`
+  --remote-dep /var/www/peintre-en-batiment-${depCode} \`
+  --server root@204.168.224.81`;
+    combo = `cd peintre-en-batiment ; node generate-dep.js --dep ${depCode} --dep-nom ${depNom} ; node generate.js --dep ${depCode} --dep-nom ${depNom} ; node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \`
   --local-villes output/${dirCity} \`
   --remote-villes /var/www/peintres/${slug} \`
   --local-dep output/${dirDep} \`
@@ -234,14 +240,19 @@ function generate() {
   --server root@204.168.224.81`;
   } else {
     // Bash/Zsh : backslash \ pour continuation
-    cmd3 = `node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \\
+    cmd3 = `cd peintre-en-batiment && node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \\
+  --local-villes output/${dirCity} \\
+  --remote-villes /var/www/peintres/${slug} \\
+  --local-dep output/${dirDep} \\
+  --remote-dep /var/www/peintre-en-batiment-${depCode} \\
+  --server root@204.168.224.81`;
+    combo = `cd peintre-en-batiment && node generate-dep.js --dep ${depCode} --dep-nom ${depNom} && node generate.js --dep ${depCode} --dep-nom ${depNom} && node deploy.js --dep ${depCode} --dep-nom ${depNom} --with-dep \\
   --local-villes output/${dirCity} \\
   --remote-villes /var/www/peintres/${slug} \\
   --local-dep output/${dirDep} \\
   --remote-dep /var/www/peintre-en-batiment-${depCode} \\
   --server root@204.168.224.81`;
   }
-  combo = `${cmd1} && ${cmd2} && ${cmd3}`;
 
   out.innerHTML = `
     <div class="dep-name">${depNomRaw} (${depCode})</div>
